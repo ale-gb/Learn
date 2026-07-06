@@ -15,4 +15,9 @@ When the teach skill is used:
 
 Commit and push all work directly to `main`. Don't open pull requests.
 
+Whenever a new lesson or reference document is created in any topic,
+update the root `index.html` in the same commit so it always lists
+every lesson and reference document, for every topic, in numerical
+order with human-readable titles.
+
 
