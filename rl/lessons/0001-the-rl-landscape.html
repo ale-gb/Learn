@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0001 — The RL Landscape</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0001 · Orientation</p>
+<h1>The RL Landscape: Where Everything Fits</h1>
+<p class="lede">A map of the field, so every algorithm you meet from here on has a slot to go in.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">Your job spans general RL with a lean toward controller optimization and simulated agents, and you want paper fluency on top. Before any single algorithm is worth learning deeply, you need the coordinate system that tells you where it sits relative to everything else — that's what lets you place a <em>new</em> algorithm or paper in seconds instead of re-deriving your understanding from scratch each time.</p>
+</div>
+
+<h2>The core loop</h2>
+<p>Almost everything in RL is one loop, repeated: an <strong>agent</strong> observes a <strong>state</strong>, takes an <strong>action</strong>, and the <strong>environment</strong> returns a <strong>reward</strong> and a new state. The agent's entire objective is to choose actions to maximize the reward it accumulates over time — not just the next reward, but the expected sum of all future rewards (usually discounted, so sooner reward counts more).</p>
+
+<div class="sidenote">Formally: a policy <code>π(a|s)</code> maps states to actions (or a distribution over them); the goal is to find the π that maximizes expected discounted return <code>E[Σ γᵗrₜ]</code>. This is the entire objective of the field, stated precisely. We'll build up the full formalism (MDPs, value functions) in the next lesson — for now, hold onto the shape of the objective, not the notation.</div>
+
+<h2>Two axes that organize almost everything</h2>
+<p>Every RL algorithm you'll meet can be placed on two largely independent axes. Knowing them turns "what is this new paper doing" into a quick lookup instead of a mystery.</p>
+
+<h3>Axis 1 — Model-free vs. model-based</h3>
+<ul>
+<li><strong>Model-free:</strong> the agent never learns an explicit model of how the environment works. It learns purely from the reward signal produced by experience — trial, error, update.</li>
+<li><strong>Model-based:</strong> the agent learns (or is given) a model that predicts "if I do this, what happens next" — and uses it to plan or generate imagined experience, which is often far more sample-efficient.</li>
+</ul>
+
+<h3>Axis 2 — How the policy is represented</h3>
+<ul>
+<li><strong>Value-based:</strong> learn how good each action is (a Q-function); the policy falls out by picking the best-valued action. No explicit policy is stored.</li>
+<li><strong>Policy-based:</strong> directly parametrize and optimize the policy itself (e.g. with a neural network and gradient ascent on expected return).</li>
+<li><strong>Actor-critic:</strong> learn both at once — a policy ("actor") and a value function ("critic") that reduces the noise in the actor's gradient estimates. Most modern deep RL used in practice lives here.</li>
+</ul>
+
+<h2>Where the major algorithm families sit</h2>
+<table>
+<tr><th>Family</th><th>Axis 2</th><th>Axis 1</th><th>Status / where you'll meet it</th></tr>
+<tr><td>DQN</td><td>Value-based</td><td>Model-free</td><td>Foundational (2015); discrete actions; the "hello world" of deep RL</td></tr>
+<tr><td>PPO</td><td>Actor-critic</td><td>Model-free</td><td>Current default workhorse — continuous control <em>and</em> the backbone of RLHF for LLMs</td></tr>
+<tr><td>SAC</td><td>Actor-critic</td><td>Model-free</td><td>Off-policy, sample-efficient; common choice for robotics/continuous control</td></tr>
+<tr><td>Dreamer / MBPO-style</td><td>Actor-critic</td><td>Model-based</td><td>Learns a world model to plan/imagine rollouts in; big sample-efficiency wins where simulation is expensive</td></tr>
+<tr><td>Offline RL (CQL, IQL...)</td><td>Varies</td><td>Model-free (usually)</td><td>Learns from a fixed dataset, no environment interaction at all</td></tr>
+<tr><td>RLHF / RLAIF (LLM alignment)</td><td>Actor-critic (or DPO, which skips RL entirely)</td><td>Model-free</td><td>PPO applied with a learned reward model standing in for the environment's reward</td></tr>
+</table>
+
+<div class="callout">
+<p class="kicker">Your corner of the map</p>
+<p style="margin-bottom:0">Controller optimization and simulated-agent work overwhelmingly lives in <strong>actor-critic, model-free</strong> methods (PPO, SAC) run at massive parallelism on GPU-native simulators — Brax, MJX, gymnax, PureJaxRL. Model-based RL shows up when simulation itself is the bottleneck. One adjacent, non-RL family worth knowing by name: direct policy-search/evolutionary methods (e.g. CMA-ES) — sometimes used for controller optimization instead of RL entirely, especially when the reward landscape is smooth and dimensionality is low.</p>
+</div>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="policy-based|policy based">
+  <p class="quiz-prompt">Which representation directly parametrizes and optimizes the policy, without learning a value function as an intermediate step?</p>
+  <input class="quiz-input" type="text" placeholder="type your answer">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">A team has a working simulator but real rollouts are extremely expensive to compute — which axis-1 choice would you reach for first?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Value-based, since Q-functions need less data overall</button>
+    <button class="quiz-option" data-choice="b">Model-based, since a learned model lets you plan without new data</button>
+    <button class="quiz-option" data-choice="c">Offline-only, since no new rollouts should ever run</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary source for next time</p>
+<p style="margin-bottom:0">Read <a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">Sutton &amp; Barto, <em>Reinforcement Learning: An Introduction</em></a>, Chapter 3 (Finite Markov Decision Processes) — it puts precise notation on the "core loop" above. If you'd rather watch something first, <a href="https://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank" rel="noopener">CS285 Lecture 1</a> covers the same ground at lecture pace.</p>
+</div>
+
+<p class="ask-your-teacher">Anything in this map feel off, or is there an algorithm you've run into that doesn't seem to fit cleanly on these two axes? Ask — that's usually a sign the taxonomy needs a third axis, and it's worth working out together rather than filing away as confusing.</p>
+
+<div class="lesson-nav">
+  <span>&larr; Start of course</span>
+  <span>Next: MDP formalism (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
