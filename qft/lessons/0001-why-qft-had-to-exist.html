@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0001 — Why Quantum Field Theory Had to Exist</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0001 · Orientation</p>
+<h1>Why Quantum Field Theory Had to Exist</h1>
+<p class="lede">One idea sits underneath the entire edifice: <em>the field is what's real, and particles are its ripples.</em> This lesson is the argument for why physics was forced to that idea — the map you'll hang everything else on.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">Your goal is <strong>conceptual mastery</strong>, and we're about to spend several lessons rebuilding foundations (least action, relativity, the harmonic oscillator). Before that, you deserve to know what those foundations are <em>for</em>. A "bad" QFT course usually means a course that taught the machinery without ever making this one motivating move land. So we start here — with the single question the whole subject answers.</p>
+</div>
+
+<h2>Two triumphs that refuse to share a room</h2>
+<p>By the late 1920s physics had two spectacularly successful theories:</p>
+<ul>
+<li><strong>Quantum mechanics</strong> — small, slow things. A particle is described by a wavefunction \( \psi(\mathbf{x}, t) \); \( |\psi|^2 \) is a probability density over <em>where the one particle is</em>. Particle number is fixed and baked into the framework.</li>
+<li><strong>Special relativity</strong> — fast things. Space and time mix; the iron law is Einstein's \( E^2 = (pc)^2 + (mc^2)^2 \), and its most famous special case, \( E = mc^2 \): <em>energy and mass are interconvertible.</em></li>
+</ul>
+<p>Each is a pillar. The trouble is what happens when you insist on both at once — which nature obviously does, since electrons are both quantum and, when you push them, relativistic.</p>
+
+<h2>The collision</h2>
+<p>Here is the cleanest way to feel the incompatibility. Quantum mechanics says energy fluctuates; you cannot pin it down arbitrarily well over a short time (\( \Delta E\,\Delta t \gtrsim \hbar \)). Relativity says energy <em>is</em> mass — that with enough energy \( E \geq 2mc^2 \) you can simply <strong>make a new particle–antiparticle pair</strong> out of the vacuum.</p>
+<p>Put those together and something breaks: in any small region, for a short time, the number of particles is <strong>uncertain</strong>. Reach for an electron with enough energy to localize it sharply, and you supply enough energy to conjure <em>more</em> electrons. So the central object of ordinary QM — a wavefunction for <em>one</em> particle, or for a fixed number <em>N</em> of them — is describing a world that doesn't exist. The particle number isn't a constant you can build your Hilbert space around; it's a <em>variable</em>.</p>
+
+<div class="sidenote">Historically people first tried to just make the Schrödinger equation relativistic — that gives the Klein–Gordon and Dirac equations as <em>single-particle</em> wave equations. Both misbehave: negative-energy solutions, and (for Klein–Gordon) negative probabilities. Dirac's famous patch — reinterpret the negative-energy sea, predict antimatter — was the first crack of light. But the honest fix isn't a cleverer wave equation. It's to stop describing one particle at all.</div>
+
+<h2>The move that resolves everything</h2>
+<p>The resolution is to change what the fundamental object <em>is</em>. Instead of a wavefunction riding on top of a particle, we promote the <strong>field</strong> — a quantity defined at every point of spacetime, like the electromagnetic field — to be the basic entity. Then we <strong>quantize the field itself</strong>.</p>
+<p>When you do, particles reappear not as the starting assumption but as the <em>output</em>: they are the discrete, quantized <strong>excitations</strong> — the "ripples" or quanta — of the underlying field. A photon is a ripple in the electromagnetic field. An electron is a ripple in the electron field. Two electrons are just two ripples in the one electron field that fills all of space.</p>
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>Reality is made of a handful of <strong>fields</strong> filling all of spacetime. What we call a "particle" is a quantized excitation of a field. Quantum field theory is the theory you get by applying the rules of quantum mechanics not to a particle, but to a field.</p>
+</div>
+
+<p>Notice how much this single move pays for at once — every one of these was a <em>problem</em> a moment ago:</p>
+<ul>
+<li><strong>Variable particle number</strong> is automatic: a field can carry zero ripples, one, or a thousand, and creating/destroying them is built in.</li>
+<li><strong>Antiparticles</strong> fall out for free — every field comes with them, no negative-energy sea required.</li>
+<li><strong>Identical particles are genuinely identical:</strong> two electrons are the same because they're excitations of the <em>same</em> field. Their statistics (Pauli exclusion, and the whole spin–statistics connection) come from how the field is quantized.</li>
+<li><strong>Forces become exchange:</strong> particles interact by exchanging quanta of other fields — the seed of Feynman diagrams and, eventually, the whole Standard Model.</li>
+</ul>
+
+<h2>The reframe, in one table</h2>
+<table>
+<tr><th>Theory</th><th>Fundamental object</th><th>What a "particle" is</th></tr>
+<tr><td>Classical mechanics</td><td>A particle with a definite trajectory</td><td>The primitive — a little billiard ball</td></tr>
+<tr><td>Quantum mechanics</td><td>A wavefunction \( \psi(\mathbf{x},t) \) for a fixed number of particles</td><td>Still primitive; QM just makes it fuzzy</td></tr>
+<tr><td>Quantum field theory</td><td>A quantum <strong>field</strong> \( \phi(\mathbf{x},t) \), one per species, filling spacetime</td><td>A quantized excitation of the field — <em>derived</em>, not assumed</td></tr>
+</table>
+
+<h2>Why the warm-up ahead is exactly this</h2>
+<p>"Quantize a field" is three technical ideas stacked together, and each is one prerequisite we're about to re-anchor. Seeing why now makes the warm-up feel like sharpening tools for a job you understand, not busywork.</p>
+
+<ul class="roadmap">
+  <li class="now" data-step="00"><strong>You are here.</strong> Orientation: particles are excitations of fields, and here's why that was forced on us.</li>
+  <li data-step="01"><strong>The principle of least action &amp; Lagrangian mechanics</strong> — the <em>language</em>. A field theory is defined by writing down one object, a Lagrangian, for the field. We need to remember how a Lagrangian encodes dynamics, and why "least action" is the right lens.</li>
+  <li data-step="02"><strong>Special relativity in covariant notation</strong> — the <em>arena</em>. Fields live on spacetime and must respect relativity manifestly. We'll re-fluent the index/four-vector notation that makes that automatic (and fix our metric convention).</li>
+  <li data-step="03"><strong>The quantum harmonic oscillator &amp; ladder operators</strong> — the <em>literal building block</em>. Here's the punchline you can hold onto: a free quantum field is <strong>nothing but an infinite collection of harmonic oscillators</strong>, one for each mode of vibration. "Add a ripple" is exactly the oscillator's raising operator. Master this one prerequisite and half of QFT's machinery is already yours.</li>
+  <li data-step="04"><strong>Classical field theory &amp; the Klein–Gordon field</strong> — assembling 01–02 into a genuine (still classical) field, ready to be quantized.</li>
+  <li data-step="05"><strong>→ QFT proper:</strong> canonically quantize that field and watch particles fall out of it. The payoff.</li>
+</ul>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="field|a field|the field|quantum field">
+  <p class="quiz-prompt">In QFT, the fundamental object is not the particle. A particle is instead a quantized excitation of a ⟶ ?</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="a">
+  <p class="quiz-prompt">Which fact, once combined with quantum mechanics, makes a fixed-particle-number wavefunction the wrong object to build the theory on?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Energy can convert into mass, so particles can be created</button>
+    <button class="quiz-option" data-choice="b">Energy is conserved, so the total number cannot ever change</button>
+    <button class="quiz-option" data-choice="c">Momentum is quantized, so positions become sharply well defined</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary source for next time</p>
+<p style="margin-bottom:0">Read the <strong>introduction to <a href="https://www.damtp.cam.ac.uk/user/tong/qft.html" target="_blank" rel="noopener">David Tong's QFT lecture notes</a></strong> (the first few pages, "What is Quantum Field Theory?") — it makes exactly this argument, in the concept-first voice we'll anchor on all course. For the same idea told with even more physical swagger, A. Zee's <em>QFT in a Nutshell</em> §I.1 ("Who Needs It?") is a delight. Optional and thoroughly enjoyable: <a href="https://www.youtube.com/playlist?list=PLhsb6tmzSpiwrZuDMyweABm7FShZu3YUv" target="_blank" rel="noopener">Sidney Coleman's Lecture 1</a>.</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher for this — ask me anything. Good questions to fire back right now: <em>"Isn't the electromagnetic field already a field — so was light secretly QFT all along?"</em> or <em>"If particles are ripples, what exactly is doing the rippling — is the field 'made of' anything?"</em> Both open doors we'll want to walk through, and chasing the thing that nags you is how the concepts actually stick.</p>
+
+<div class="lesson-nav">
+  <span>&larr; Start of course</span>
+  <span>Next: Warm-up I — the principle of least action (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>
