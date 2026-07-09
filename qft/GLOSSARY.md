@@ -14,4 +14,28 @@ it consistently.
 
 ## Terms
 
-_(empty — terms will be added as the user demonstrates understanding of them)_
+_Added from extra-curricular lesson `x0001` (2026-07-09), where the user demonstrated
+working fluency with these. They recur throughout QFT (thermal field theory,
+entanglement entropy, the effective-action "integrate out" logic)._
+
+- **Density matrix** \( \rho \) — operator description of a quantum state that carries
+  both quantum superposition and classical (statistical) uncertainty:
+  \( \rho = \sum_i p_i |\psi_i\rangle\langle\psi_i| \). Diagonal entries are classical
+  probabilities; off-diagonal entries are **coherences**. Expectation values:
+  \( \langle\hat O\rangle = \mathrm{Tr}(\rho\hat O) \).
+- **Pure vs mixed state** — pure: maximal knowledge, \( \mathrm{Tr}(\rho^2)=1 \) (a single
+  state vector suffices). Mixed: \( \mathrm{Tr}(\rho^2)<1 \). The purity dropping below 1
+  is the quantitative signature of lost coherence.
+- **Partial trace** \( \rho_A = \mathrm{Tr}_B(\rho_{AB}) \) — the *unique* operation giving
+  a subsystem's effective state that reproduces all local measurement statistics when the
+  rest of the system is inaccessible. Turns entanglement into local classical ignorance.
+- **Reduced density matrix** — the state \( \rho_A \) obtained by partial-tracing out the
+  unobserved degrees of freedom.
+- **Decoherence** — the (unitary) process by which a system entangles with an
+  inaccessible environment, so that tracing the environment out suppresses the system's
+  off-diagonal coherences by the environment-state overlap
+  \( \langle E_i|E_j\rangle \to 0 \). Produces the *appearance* of collapse without any
+  non-unitary step.
+- **Pointer states / einselection** — the (usually near-classical, e.g. position) states
+  singled out as robust against environmental monitoring; environment-induced
+  superselection determines the basis in which decoherence occurs.

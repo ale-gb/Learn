@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X0001 — Decoherence &amp; the Measurement Problem</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Extra-curricular · Quantum Foundations</p>
+<h1>Decoherence &amp; the Measurement Problem</h1>
+<p class="lede">Why interacting with a big object doesn't collapse a wavefunction — how entanglement plus an inaccessible environment <em>fakes</em> collapse perfectly — and why, despite all that, the measurement postulate refuses to go away.</p>
+
+<p><span class="tag">Extra-curricular</span> <span class="tag">off the warm-up track</span> <span class="tag">density matrices</span></p>
+
+<div class="callout">
+  <p class="kicker">About this lesson</p>
+  <p style="margin-bottom:0">This consolidates a long dialogue you worked through on measurement and decoherence. It sits <em>beside</em> the main QFT warm-up rather than inside it — but it's not a detour: the density-matrix / partial-trace machinery here is exactly the language of open quantum systems, the "system + environment" split recurs throughout field theory, and the discretized double-slit model at the end is a baby lattice theory. Several of the sharpest turns below — the "disjoint supports" objection and reading collapse-fraction straight off the interference fringes — were <em>your own</em> deductions; they're preserved as the spine.</p>
+</div>
+
+<h2>The question that starts it all</h2>
+<p>People say "the observer" is central to quantum mechanics, and hint that consciousness collapses the wavefunction. So sharpen it into an experiment: put a system in superposition, let it interact with a <em>mindless</em> macroscopic object, evolve, and only later measure with a real apparatus. Does the macroscopic interaction already collapse the state?</p>
+<p>This is <strong>Wigner's friend with the friend replaced by a rock</strong>. Answering it forces us to be precise about what "measurement" even is — and the answer dissolves the role of consciousness entirely.</p>
+
+<h2>Step 1 — "Measurement" is just entanglement</h2>
+<p>Take a two-level system \( |\psi\rangle_S = c_0|0\rangle + c_1|1\rangle \) and a macroscopic apparatus/environment starting in \( |E_{\text{init}}\rangle \). A measurement interaction is a perfectly ordinary <em>unitary</em> evolution that correlates them (a von Neumann "pre-measurement"): whatever state the system is in, the environment records it.</p>
+<p>By linearity of the Schrödinger equation, the joint state becomes <strong>entangled</strong>:</p>
+\[ |\Psi_{SE}\rangle = c_0\,|0\rangle\otimes|E_0\rangle \;+\; c_1\,|1\rangle\otimes|E_1\rangle \]
+<p>Notice what has <em>not</em> happened: nothing collapsed. \( |\Psi_{SE}\rangle \) is still a pure state evolving unitarily. The whole "measurement" is just the system getting entangled with a big thing.</p>
+
+<h2>Step 2 — The density matrix, and where coherence lives</h2>
+<p>A state vector only describes <strong>pure</strong> states — maximal knowledge. To carry <em>classical</em> uncertainty (statistical ignorance) alongside quantum superposition, use the density operator \( \rho = \sum_i p_i |\psi_i\rangle\langle\psi_i| \). For our system alone, if it were still pure,</p>
+\[ \rho_S = \begin{pmatrix} |c_0|^2 & c_0 c_1^{*} \\[2pt] c_1 c_0^{*} & |c_1|^2 \end{pmatrix}. \]
+<p>The <strong>diagonal</strong> entries are classical probabilities of \( |0\rangle \) or \( |1\rangle \). The <strong>off-diagonal</strong> entries are the <em>coherences</em> — they are what makes this a superposition rather than a coin flip; they are responsible for interference.</p>
+
+<div class="sidenote">Handy facts: \( \mathrm{Tr}\,\rho = 1 \); \( \rho = \rho^\dagger \); \( \rho \succeq 0 \) (no negative probabilities); expectation values are \( \langle \hat O\rangle = \mathrm{Tr}(\rho\hat O) \). And the purity test: \( \mathrm{Tr}(\rho^2)=1 \) for a pure state, \( \lt 1 \) for a mixed one. That number dropping below 1 <em>is</em> loss of coherence, quantified.</div>
+
+<h2>Step 3 — Why you are <em>forced</em> to trace out the environment</h2>
+<p>You only have access to \( S \); you cannot measure the \( 10^{23} \) degrees of freedom of the environment \( E \). To predict any local measurement of an observable \( \hat O_A \) you must promote it to \( \hat O_A \otimes \hat I_B \) on the whole space, and demand a local \( \rho_A \) reproducing the true statistics:</p>
+\[ \mathrm{Tr}_A\!\big(\rho_A \hat O_A\big) \;=\; \mathrm{Tr}_{AB}\!\big(\rho_{AB}\,(\hat O_A \otimes \hat I_B)\big) \quad\text{for all } \hat O_A. \]
+<p>Expanding the right side in a product basis and collecting terms, there is a <em>unique</em> operator that satisfies this — the <strong>partial trace</strong>:</p>
+\[ \rho_A = \mathrm{Tr}_B(\rho_{AB}) \equiv \sum_j \langle b_j|\,\rho_{AB}\,|b_j\rangle. \]
+<p>So the partial trace is not a recipe someone chose; it's forced by the demand that local measurements come out right. Physically: <strong>"if I am blind to \(B\), what is the effective state of \(A\)?"</strong> If \(A\) and \(B\) are entangled, ignoring \(B\) averages over its outcomes — and that averaging launders quantum entanglement into classical ignorance about \(A\). This is exactly why a pure entangled \( \rho_{AB} \) yields a <em>mixed</em> \( \rho_A \).</p>
+
+<h2>Step 4 — Coherence dies exponentially</h2>
+<p>Trace the environment out of our entangled \( |\Psi_{SE}\rangle \). The diagonal survives untouched; the off-diagonals come back multiplied by the <strong>overlap of the environment states</strong>:</p>
+\[ \rho_S = |c_0|^2|0\rangle\langle0| + |c_1|^2|1\rangle\langle1| \;+\; c_0 c_1^{*}\,\langle E_1|E_0\rangle\,|0\rangle\langle1| \;+\; \text{h.c.} \]
+<p>Now, the environment is really \(N\) little pieces each scattering off the system, so its overlap factorizes:</p>
+\[ \langle E_1|E_0\rangle = \prod_{i=1}^{N}\langle e_{1,i}|e_{0,i}\rangle \sim (1-\epsilon)^{N} \xrightarrow[\;N\ \text{large}\;]{} 0. \]
+<p>Each piece is only slightly disturbed (\(1-\epsilon\)), but raised to Avogadro-scale \(N\) the product collapses to zero in a fraction of a nanosecond. The reduced state becomes diagonal:</p>
+\[ \rho_S \approx \begin{pmatrix} |c_0|^2 & 0 \\ 0 & |c_1|^2 \end{pmatrix}. \]
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>Nothing collapsed. The global state is still a pure superposition — the quantum information didn't vanish, it <strong>leaked into correlations with the environment you can't access</strong>. Trace that environment out and, <em>locally</em>, what's left is mathematically identical to a classical mixture in which a collapse "happened." Decoherence is the appearance of collapse, manufactured by ignorance of the environment.</p>
+</div>
+
+<p class="sidenote">Which basis survives (position, not weird superpositions of it) is itself explained: the environment "monitors" certain observables, <strong>einselecting</strong> robust <em>pointer states</em> — environment-induced superselection (Zurek). That's why the classical world looks like it does.</p>
+
+<h2>Step 5 — You cannot beat it downstream (your "disjoint supports" idea)</h2>
+<p>Tempting escape: after the first interaction, evolve the system cleverly so that a genuine early collapse would send it somewhere a surviving superposition wouldn't — engineer the final distributions to have <em>disjoint supports</em>, so a single click tells you what happened.</p>
+<p>It cannot work, and the reason is <strong>linearity</strong>. Whether collapse or decoherence occurred, the local state right after the interaction is the <em>same</em> matrix:</p>
+\[ \rho_{\text{collapse}} = p_1|1\rangle\langle1| + p_2|2\rangle\langle2| \;=\; \rho_{\text{decohered}}. \]
+<p>Any physical evolution is a completely-positive trace-preserving map \( \mathcal{E} \), and every such map is <em>linear</em>:</p>
+\[ \mathcal{E}\big(p_1\rho_1 + p_2\rho_2\big) = p_1\,\mathcal{E}(\rho_1) + p_2\,\mathcal{E}(\rho_2). \]
+<p>Identical inputs give identical outputs. Even if \( |1\rangle\to|\phi_A\rangle \) and \( |2\rangle\to|\phi_B\rangle \) land in disjoint detectors, both stories predict "\(A\) with probability \(p_1\), \(B\) with \(p_2\)" — and a single click at \(A\) can't tell you whether it <em>was</em> \(|1\rangle\) all along or was only "realized" as \(A\) at the final measurement. The only way to tell them apart is to stop tracing out the environment and measure the \(S\)–\(E\) correlations directly (that's what the reversal, Wigner's-friend, and Leggett–Garg experiments below do).</p>
+
+<h2>Step 6 — So why keep the measurement postulate at all?</h2>
+<p>If decoherence turns superpositions into classical-looking mixtures, why not drop "collapse" and keep unitary evolution everywhere? Because decoherence solves a lot, but leaves one thing untouched.</p>
+<table>
+<tr><th>Decoherence <em>does</em> explain</th><th>Decoherence does <em>not</em> explain</th></tr>
+<tr><td>Why interference is lost (off-diagonals vanish deterministically)</td><td>Why you get <strong>one</strong> definite outcome — the detector clicks <em>once</em></td></tr>
+<tr><td>Which basis becomes classical (einselection / pointer states)</td><td>Why <em>this</em> branch is realized and the other isn't</td></tr>
+<tr><td>The quantum→classical transition at the level of ensembles</td><td>Single events — nothing in linear evolution deletes a branch</td></tr>
+</table>
+<p>The reduced \( \rho_S \) describes an <em>ensemble</em>: run it many times and you'll get \(|c_1|^2\), \(|c_2|^2\). But a single run gives a single fact. Strict unitarity keeps the whole universe in \( c_1|1\rangle|E_1\rangle + c_2|2\rangle|E_2\rangle \) forever — decoherence stops the branches interfering but never annihilates one. To get from "branches don't interfere" to "only one branch is in my lab," you must either:</p>
+<ul>
+<li><strong>Add the measurement postulate</strong> (Copenhagen): a pragmatic patch — apply the Born rule, pick one outcome, update. An admission the theory is silent on single events.</li>
+<li><strong>Accept Many-Worlds</strong> (Everett): refuse the patch, keep only unitarity, and both outcomes are real — experienced by decohered, orthogonal copies of you.</li>
+</ul>
+<p>There's even a consistency reason you can't simply "derive collapse from decoherence": the partial-trace argument already <em>uses</em> the Born rule (\( \langle\hat O\rangle = \mathrm{Tr}(\rho\hat O)\)) to justify tracing out. Using a Born-rule tool to then derive the Born rule is circular. (Zurek's <em>envariance</em> program tries to break this circle from entanglement symmetry — elegant, still debated.)</p>
+
+<h2>Worked example — why the double-slit screen doesn't collapse the electron</h2>
+<p>Apply the machinery to the most familiar setup. As the electron reaches the barrier its wavefunction has three parts: the bit that hits the solid wall, and the bits through the left and right slits.</p>
+<p><strong>The wall decoheres; the slits don't.</strong> The part that hits the wall scatters inelastically off the lattice — environment states diverge, \( \langle E_{\text{hit}}|E_{\text{miss}}\rangle \to 0 \), that portion is "measured" and stops. But the part passing the slits barely touches anything. A massive, rigid screen recoils by less than its own quantum/thermal jitter, so the screen state is <em>the same</em> whichever slit the electron took:</p>
+\[ |E_L\rangle \approx |E_R\rangle \quad\Longrightarrow\quad \langle E_R|E_L\rangle \approx 1. \]
+<p>The overlap that multiplies the coherences is \(\approx 1\), so the off-diagonal terms <strong>survive</strong>. No which-path information leaked; no decoherence.</p>
+
+<h3>Making it exact: discretize space</h3>
+<p>Put the electron on a lattice, \( |\psi\rangle_S = \sum_i c_i|x_i\rangle \), with wall sites \(X_{\text{wall}}\) (each giving an orthogonal, distinct recoil \( \langle E_i|E_j\rangle\approx\delta_{ij}\)) and open slits \(x_L, x_R\) (leaving the screen in its ground state \(|E_0\rangle\)). The entangled output is</p>
+\[ |\Psi_{\text{out}}\rangle = \sum_{x_i\in X_{\text{wall}}} c_i|x_i\rangle\otimes|E_i\rangle \;+\; c_L|x_L\rangle\otimes|E_0\rangle \;+\; c_R|x_R\rangle\otimes|E_0\rangle. \]
+<p>Trace out the screen. Every wall cross-term dies (orthogonal recoils); the two slit terms share the <em>same</em> \(|E_0\rangle\) so their cross-term lives. The reduced state splits cleanly:</p>
+\[ \rho_S = \underbrace{\sum_{x_i\in X_{\text{wall}}} |c_i|^2\,|x_i\rangle\langle x_i|}_{\text{decohered: hit the wall}} \;+\; \underbrace{\big(c_L|x_L\rangle+c_R|x_R\rangle\big)\big(c_L^{*}\langle x_L|+c_R^{*}\langle x_R|\big)}_{\text{coherent: passed the slits}}. \]
+<p>The screen acted as a <strong>selective position-projector</strong>: it measured the electron everywhere <em>except</em> at the slits, and the surviving coherent piece is exactly what propagates on to interfere.</p>
+
+<h3>A subtlety you caught: a click on the far screen proves nothing by itself</h3>
+<p>Seeing one electron land at the back does <em>not</em> prove it stayed coherent — it only proves it wasn't absorbed by the wall. A state collapsed to \(|x_L\rangle\) is a sharp position, so by \( \Delta x\,\Delta p \gtrsim \hbar/2 \) it has huge momentum spread and fans out into a broad wave that also lands all over the back screen. The collapsed and coherent distributions <em>overlap</em>, so a single click is ambiguous. You need the <strong>ensemble</strong>.</p>
+
+<h3>Reading collapse off the fringes: visibility</h3>
+<p>Let a fraction \(f\) of electrons fully decohere and \(1-f\) stay coherent. The ensemble state carries a damped coherence \( \gamma = 1-f \):</p>
+\[ \rho_{\text{ens}} = (1-f)\,\rho_{\text{coh}} + f\,\rho_{\text{dec}} = \begin{pmatrix} \tfrac12 & \tfrac{1-f}{2}\\[2pt] \tfrac{1-f}{2} & \tfrac12\end{pmatrix}, \]
+<p>and propagating to the back screen gives</p>
+\[ P(y) \propto 2|\psi_0|^2\big(1 + \gamma\cos\Delta\phi\big), \qquad V \equiv \frac{I_{\max}-I_{\min}}{I_{\max}+I_{\min}} = \gamma = 1-f. \]
+<p>So — <strong>your deduction, made quantitative</strong> — a crisp pattern with dark nodes (\(I_{\min}\approx0\), \(V\approx1\)) means \(f\approx0\): almost none of the electrons collapsed at the slits. The visible fringes <em>are</em> the off-diagonal terms of the density matrix, made of light.</p>
+
+<h2>The real dividing line: information, not size</h2>
+<p>The punchline that overturns the naive Copenhagen picture: <strong>size does not cause collapse. Irreversible leakage of which-path information does.</strong> Two macroscopic interactions, opposite outcomes:</p>
+<table>
+<tr><th>Interaction</th><th>What happens</th><th>Coherence?</th></tr>
+<tr><td><strong>Beam splitter / mirror</strong> (trillions of atoms)</td><td>Elastic, coherent scattering off bulk modes; rigid recoil below the mirror's own uncertainty. \( \langle E_{\text{refl}}|E_{\text{trans}}\rangle\approx1 \)</td><td>Survives — this is how we <em>build</em> superpositions</td></tr>
+<tr><td><strong>CCD pixel / retina</strong></td><td>Inelastic absorption → irreversible macroscopic avalanche. \( \langle E_{\text{click}}|E_{\text{no click}}\rangle\approx0 \)</td><td>Destroyed — genuine decoherence</td></tr>
+</table>
+<p>This is why quantum computing is even possible: qubits are steered by macroscopic lasers, cables, and fields all day. What matters is keeping those interactions elastic and reversible so no which-path record is left behind.</p>
+
+<h2>How the actual experiments peer behind the veil</h2>
+<p>Since local operations can't distinguish collapse from decoherence, experiments enlarge the "system" to include the macroscopic object and refuse to let information escape to an uncontrolled environment — then probe the global coherence three ways:</p>
+<table>
+<tr><th>Strategy</th><th>Collapse predicts</th><th>Unitary+decoherence predicts</th><th>Result</th></tr>
+<tr><td><strong>Coherent reversal</strong> (apply \( \hat U^\dagger \))</td><td>Irreversible — phase gone</td><td>Recover the pristine superposition</td><td>Reversal achieved (O'Connell 2010, a naked-eye mechanical drum)</td></tr>
+<tr><td><strong>Wigner's friend</strong> (rotated / Bell-basis on the "friend")</td><td>Mixed state, no cross-terms</td><td>Interference from the off-diagonals</td><td>Coherence confirmed (Proietti 2019, Bong 2020)</td></tr>
+<tr><td><strong>Leggett–Garg</strong> \( K_3 = C_{12}+C_{23}-C_{13} \)</td><td>\( K_3 \le 1 \) (macrorealism)</td><td>\( K_3 \) up to \( 1.5 \)</td><td>\( K_3 > 1 \) for ever-larger objects</td></tr>
+</table>
+<p>Every result to date: no mass threshold where Schrödinger evolution spontaneously fails. Consciousness is nowhere in the story — a "measurement" is just entanglement with enough inaccessible degrees of freedom to make the leak irreversible. (Objective-collapse theories like Penrose's gravitational proposal predict a real threshold and are still being tested.)</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="overlap|inner product|their overlap|the overlap">
+  <p class="quiz-prompt">After tracing out the environment, the surviving off-diagonal coherences are multiplied by the ⟶ ? of the two environment states, which is why they vanish as it goes to zero.</p>
+  <input class="quiz-input" type="text" placeholder="two words">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="a">
+  <p class="quiz-prompt">According to the modern (decoherence) view, what actually determines whether an interaction destroys a superposition?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Whether it irreversibly records which path was taken</button>
+    <button class="quiz-option" data-choice="b">Whether the object it hits is a large, massive body</button>
+    <button class="quiz-option" data-choice="c">Whether any momentum at all is exchanged there</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">The canonical reference is <a href="https://arxiv.org/abs/quant-ph/0105127" target="_blank" rel="noopener">Zurek, <em>Decoherence, einselection, and the quantum origins of the classical</em></a> (Rev. Mod. Phys. 75, 715, 2003) — pointer states, einselection, and envariance, from the person who built much of this. For the measurement-problem framing and how decoherence meets each interpretation, <a href="https://arxiv.org/abs/quant-ph/0312059" target="_blank" rel="noopener">Schlosshauer's review</a> (Rev. Mod. Phys. 76, 1267, 2004) is the clearest single read.</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any of this. Two threads worth pulling: <em>"Show me einselection explicitly — why does the environment pick position rather than momentum as the pointer basis?"</em> and <em>"Where does this reappear in QFT — is the 'system + environment' split the same idea as integrating out heavy fields or short-distance modes?"</em> (It is, and that link is worth making before we hit renormalization.)</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0001-why-qft-had-to-exist.html">0001 — Why QFT Had to Exist</a></span>
+  <span>Main track resumes: Warm-up I — least action (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>
