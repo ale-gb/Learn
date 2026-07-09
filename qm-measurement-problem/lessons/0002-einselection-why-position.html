@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0002 — Einselection: Why the World Chooses Position</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0002 · Decoherence &amp; Classicality</p>
+<h1>Einselection: Why the World Chooses Position</h1>
+<p class="lede">Decoherence kills superpositions — but superpositions <em>of what</em>? Something must pick out the special basis that survives. This lesson is the answer: the environment selects the states it can watch without disturbing, and because forces depend on position, those states are localized. That selection is where the classical world comes from.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">In <a href="0001-decoherence-and-the-measurement-problem.html">lesson 0001</a> we said the reduced density matrix "goes diagonal." You may have felt a splinter: <em>diagonal in which basis?</em> A matrix is only diagonal relative to a choice of basis — so "decoherence diagonalizes \(\rho\)" is not yet a physical statement. We owe you the missing ingredient: the dynamical rule that singles out <strong>one</strong> preferred basis — the <em>pointer basis</em> — and the reason it turns out to be position. This is <strong>einselection</strong> (environment-induced superselection), and it's the step that turns decoherence from bookkeeping into an explanation of the classical world.</p>
+</div>
+
+<h2>The splinter: diagonality is basis-dependent</h2>
+<p>Take the decohered state from last time, \( \rho_S = \tfrac12|0\rangle\langle0| + \tfrac12|1\rangle\langle1| \). It looks like a nice classical mixture of \(|0\rangle\) and \(|1\rangle\). But rewrite it in the rotated basis \( |\pm\rangle = \tfrac{1}{\sqrt2}(|0\rangle\pm|1\rangle) \) and you get \( \rho_S = \tfrac12|+\rangle\langle+| + \tfrac12|-\rangle\langle-| \) — an <em>equally</em> valid "classical mixture," now of \(|+\rangle\) and \(|-\rangle\). The maximally mixed matrix is diagonal in every basis at once.</p>
+<p>So "the off-diagonal terms vanished" cannot be the whole story: which entries are "off-diagonal" depends on the basis you wrote \(\rho\) in. Worse, <em>any</em> density matrix is diagonal in its own eigenbasis (the Schmidt basis of the system–environment state), so you can always find a basis in which "collapse happened." If the theory doesn't tell us <em>which</em> basis is the physical, stable, classical one, it predicts nothing. This is the <strong>preferred-basis problem</strong>, and it is the real content of "why position."</p>
+
+<h2>Pointer states are the robust states</h2>
+<p>The resolution is dynamical, and it's due to Zurek. Don't ask which basis \(\rho\) happens to be diagonal in at one instant; ask which states are <strong>stable</strong> — which ones the environment can monitor <em>without kicking the system around</em>, so that they persist instead of smearing into superpositions.</p>
+<p>Model the coupling as an interaction Hamiltonian in which the environment reads off some system observable \(\hat A\):</p>
+\[ \hat H_{\text{int}} = \hat A_S \otimes \hat B_E . \]
+<p>Feed in an eigenstate of \(\hat A\), say \(\hat A|a\rangle = a|a\rangle\), with the environment in \(|E_0\rangle\). The interaction gives</p>
+\[ \hat H_{\text{int}}\,\big(|a\rangle\otimes|E_0\rangle\big) = a\,|a\rangle \otimes \hat B|E_0\rangle . \]
+<p>The system stays put in \(|a\rangle\); only the environment evolves (conditioned on \(a\)). The state \(|a\rangle\) is <strong>robust</strong> — it gets <em>recorded</em> by the environment but is never <em>disturbed</em> by it. A superposition \(\sum_a c_a|a\rangle\), by contrast, becomes entangled with distinct environment states and decoheres. So the surviving, classical basis is the eigenbasis of \(\hat A\).</p>
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>The pointer states are the ones the environment monitors <em>without</em> perturbing — formally, the eigenstates of the observable \(\hat\Pi\) that <strong>commutes with the interaction Hamiltonian</strong>, \([\hat\Pi,\hat H_{\text{int}}]=0\) (Zurek's commutativity criterion). They alone survive; every superposition of them is einselected away. The classical basis isn't put in by hand — it's chosen by <em>what the environment couples to</em>.</p>
+</div>
+
+<h2>Why that observable is position</h2>
+<p>Now the physics answer to "why not momentum, or energy, or some weird basis." It comes down to a single empirical fact about the interactions that dominate everyday environments:</p>
+<blockquote>Real environments — photons, air molecules, phonons — scatter off an object according to <em>where it is</em>. Forces are functions of position.</blockquote>
+<p>That means the coupling operator \(\hat A\) is (almost always) a function of position, \(\hat A = f(\hat x)\). The environment is, physically, a <strong>position monitor</strong>: it continually measures where things are. So the einselected pointer states are the (approximate) eigenstates of position — <em>localized wave packets</em>. A superposition of an object "here" and "there" — a Schrödinger-cat state in position — is exactly what the environment reads out fastest, so it decoheres almost instantly. A single localized packet is left alone.</p>
+<p>This is the same fact you already met wearing a different hat. In the double slit, "which-path information" leaking to the environment <em>was</em> position monitoring; the rigid screen preserved coherence precisely because it failed to resolve the electron's position at the slits. Which-path decoherence and einselection of position are one phenomenon.</p>
+
+<div class="sidenote">How fast? For a superposition of two locations a distance \(\Delta x\) apart in a thermal environment, the decoherence time is shorter than the ordinary dynamical (relaxation) time by a factor \( \big(\lambda_{\text{dB}}/\Delta x\big)^2 \), where \(\lambda_{\text{dB}}\) is the thermal de Broglie wavelength — often \( \sim 10^{-40} \) for a dust grain separated by a hair's width. Position superpositions don't merely decohere; they decohere <em>overwhelmingly</em> faster the more macroscopically separated they are. That steepness is why big things are <em>never</em> caught mid-superposition.</div>
+
+<h2>The refinement: coherent states, not sharp positions</h2>
+<p>Exact position eigenstates can't be the final answer, and the reason is the system's own dynamics. A perfectly sharp \(|x\rangle\) has infinite momentum spread (\(\Delta x\,\Delta p \ge \hbar/2\)), so the free Hamiltonian \( \hat H_S = \hat p^2/2m \) blows it apart instantly — it is not robust at all. The true pointer states are a <strong>compromise</strong> between two competing bosses: the interaction \(\hat H_{\text{int}}\) wants sharp position; the self-Hamiltonian \(\hat H_S\) wants to not spread. The winners are <strong>minimum-uncertainty Gaussian wave packets</strong> — approximate coherent states — localized in <em>both</em> position and momentum, i.e. localized in phase space.</p>
+<p>Zurek makes this quantitative with the <strong>predictability sieve</strong>: take every candidate pure initial state, let it evolve under the full system-plus-environment dynamics, and measure how fast it loses purity — how quickly its entropy \( S = -\mathrm{Tr}(\rho\ln\rho) \) grows as it entangles with the environment. Sift out everything except the states that stay pure longest, that generate the <em>least</em> entanglement. For a particle whose environment monitors position, the sieve's survivors are exactly those Gaussian coherent states. They are the <em>most predictable</em> states — the ones whose future the environment barely disturbs.</p>
+
+<div class="callout">
+  <p class="kicker">This is where classicality comes from</p>
+  <p style="margin-bottom:0">Einselection hands you localized wave packets that <em>stay</em> localized and, by Ehrenfest's theorem, ride along Newtonian trajectories \( \langle\hat x\rangle(t) \). A world made of objects with reasonably definite positions <em>and</em> momenta — points moving through phase space — is not assumed; it is <strong>selected</strong>, continuously, by the environment monitoring position. Classical mechanics is the physics of the pointer states our environment leaves alone.</p>
+</div>
+
+<h2>A crucial caveat: "position" is contingent, not a law</h2>
+<p>The rule is "eigenstates of whatever the environment monitors" — and that is <em>usually</em> position only because scattering forces are position-dependent. Change the coupling and you change the pointer basis. When the self-Hamiltonian dominates over a weak environment and the system's energy is effectively conserved, the pointer states become <strong>energy eigenstates</strong> instead (einselection of energy — relevant for, e.g., a mode in a cavity, or quantum-optical damping). For a superconducting loop the pointer observable is magnetic flux; for a spin coupled through \(\hat\sigma_z\), it's \(\hat\sigma_z\). So the everyday dominance of position is a <em>fact about our interactions</em>, not a metaphysical law — a genuinely deep and slightly humbling point. The environment doesn't privilege position; <em>our</em> environment happens to measure it, everywhere, all the time.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="commutes|commute|it commutes">
+  <p class="quiz-prompt">Zurek's commutativity criterion says the pointer observable is the one that ⟶ ? with the interaction Hamiltonian (so its eigenstates are monitored without being disturbed).</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">Why is the everyday pointer basis position rather than, say, momentum or energy?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Because position is the only truly continuous observable</button>
+    <button class="quiz-option" data-choice="b">Because scattering forces depend on where the object is</button>
+    <button class="quiz-option" data-choice="c">Because momentum is conserved and so cannot be measured</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary source</p>
+<p style="margin-bottom:0">Go to <a href="https://arxiv.org/abs/quant-ph/0105127" target="_blank" rel="noopener">Zurek, <em>Decoherence, einselection, and the quantum origins of the classical</em></a> (Rev. Mod. Phys. 75, 715, 2003) — §III on pointer states and the commutativity criterion, and §VI on the predictability sieve and coherent states. His shorter <a href="https://arxiv.org/abs/quant-ph/0306072" target="_blank" rel="noopener">"Decoherence and the transition from quantum to classical — REVISITED"</a> (the updated <em>Physics Today</em> 1991 article) is a gentler first pass at the same ideas. For textbook-level detail, Schlosshauer's <em>Decoherence and the Quantum-to-Classical Transition</em> (2007), ch. 2–5.</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push back on any of this. Two threads worth pulling: <em>"If the environment is constantly measuring position, why doesn't that measurement inject energy and heat everything up — how can einselection be gentle?"</em> (the answer is the difference between decoherence and dissipation, and their wildly different timescales), and <em>"If everyone's environment einselects the same position basis, is that why different observers agree on classical facts?"</em> — which is exactly <strong>quantum Darwinism</strong>, a natural next lesson.</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0001-decoherence-and-the-measurement-problem.html">0001 — Decoherence &amp; the Measurement Problem</a></span>
+  <span>Next up: quantum Darwinism — why observers agree (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>

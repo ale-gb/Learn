@@ -36,6 +36,10 @@
 ## Working notes
 - Workspace created 2026-07-09, by promoting the decoherence lesson (originally written as a
   QFT "extra-curricular" lesson `x0001`) into the founding lesson `0001` of this dedicated topic.
-- Candidate next lessons: einselection / why the pointer basis is position; the Wigner's-friend
-  no-go theorems; Bell nonlocality done carefully; what actually distinguishes Many-Worlds from
-  Copenhagen operationally; objective-collapse theories and how they're tested.
+- Lesson `0002` (einselection: why the pointer basis is position) written 2026-07-09 — covers the
+  preferred-basis problem, the commutativity criterion, why interactions monitor position, the
+  predictability sieve / coherent states, and the contingency caveat (energy/flux pointer bases).
+  Two forward threads seeded in it: decoherence-vs-dissipation timescales, and quantum Darwinism.
+- Candidate next lessons: quantum Darwinism (why observers agree on classical facts — flagged as
+  the natural 0003); the Wigner's-friend no-go theorems; Bell nonlocality done carefully; what
+  actually distinguishes Many-Worlds from Copenhagen operationally; objective-collapse tests.

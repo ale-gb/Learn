@@ -43,3 +43,19 @@ _Established in lesson 0001 (the learner demonstrated working fluency with these
 - **The measurement problem** — the tension between linear unitary evolution (which keeps the
   universe in a superposition) and the observation of single, definite outcomes. Decoherence
   explains loss of interference and basis selection but **not** why one outcome is realized.
+
+_Established in lesson 0002 (einselection)._
+
+- **Preferred-basis problem** — the fact that "the density matrix goes diagonal" is empty until
+  something singles out *which* basis is the stable, classical one (any \( \rho \) is diagonal in
+  its own eigenbasis). Einselection is the resolution.
+- **Pointer states / pointer basis** — the states left robust by the environment: the eigenstates
+  of the observable the environment monitors. Superpositions of them decohere; they themselves
+  persist and label the classical alternatives.
+- **Commutativity criterion** — Zurek's rule for finding the pointer observable \( \hat\Pi \): it
+  is the one commuting with the interaction, \( [\hat\Pi,\hat H_{\text{int}}]=0 \), so its
+  eigenstates are recorded by the environment without being disturbed.
+- **Predictability sieve** — the procedure that ranks candidate pure states by how slowly they
+  lose purity (generate entropy) under system+environment dynamics; the survivors are the pointer
+  states. For a position-monitored particle it selects Gaussian **coherent states** (minimum-
+  uncertainty wave packets localized in phase space) — the seeds of classical trajectories.
