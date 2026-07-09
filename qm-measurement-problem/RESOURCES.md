@@ -50,6 +50,22 @@ literature rather than parametric recall.
   Sharpens the Wigner's-friend result into a Bell-like no-go theorem with experiment.
 - Leggett–Garg inequality: original — [Leggett & Garg, PRL 54, 857 (1985)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.54.857); review — [Emary, Lambert & Nori, Rep. Prog. Phys. 77, 016001 (2014)](https://arxiv.org/abs/1304.5133). "Bell inequalities in time" / macroscopic realism.
 
+## Knowledge — objective collapse (gravity-induced)
+
+- [Paper: **On Gravity's Role in Quantum State Reduction** — R. Penrose](https://link.springer.com/article/10.1007/BF02105068)
+  Gen. Rel. Grav. 28, 581 (1996). The original proposal that superposing distinct mass
+  distributions is unstable, with lifetime \( \tau \approx \hbar/E_G \) set by the gravitational
+  self-energy \( E_G \) of the mass-distribution *difference*. The basis of the Diósi–Penrose
+  model; the primary source behind the "gravity aside" in lesson 0001.
+- [Paper: **Towards Quantum Superpositions of a Mirror** — Marshall, Simon, Penrose, Bouwmeester](https://arxiv.org/abs/quant-ph/0210001)
+  PRL 91, 130401 (2003). The proposal to test gravity-induced collapse by superposing a tiny
+  mirror — the "opposite regime" from the double slit, where \( E_G \) is actually appreciable.
+- [Paper: **Underground test of gravity-related wave function collapse** — Donadi et al.](https://www.nature.com/articles/s41567-020-1008-4)
+  Nat. Phys. 17, 74 (2021); [arXiv:2111.13490](https://arxiv.org/abs/2111.13490). Searched for
+  the spontaneous radiation predicted by collapse and **ruled out the parameter-free
+  Diósi–Penrose model**, forcing the smearing length \( R_0 \gtrsim 10^{-10}\,\mathrm{m} \). The
+  cleanest example of foundations being decided by experiment.
+
 ## Wisdom (communities)
 - [**Physics Stack Exchange**](https://physics.stackexchange.com/questions/tagged/quantum-interpretations) — the `quantum-interpretations` / `measurement-problem` tags collect expert-answered versions of exactly the conceptual snags this workspace targets.
 - [**r/QuantumFoundations**](https://www.reddit.com/r/QuantumFoundations/) and the foundations threads on [**r/Physics**](https://www.reddit.com/r/Physics/) — for sanity-checking interpretive intuitions.

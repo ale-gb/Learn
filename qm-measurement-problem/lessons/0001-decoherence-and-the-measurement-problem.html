@@ -121,7 +121,38 @@
 <tr><td><strong>Wigner's friend</strong> (rotated / Bell-basis on the "friend")</td><td>Mixed state, no cross-terms</td><td>Interference from the off-diagonals</td><td>Coherence confirmed (Proietti 2019, Bong 2020)</td></tr>
 <tr><td><strong>Leggett–Garg</strong> \( K_3 = C_{12}+C_{23}-C_{13} \)</td><td>\( K_3 \le 1 \) (macrorealism)</td><td>\( K_3 \) up to \( 1.5 \)</td><td>\( K_3 > 1 \) for ever-larger objects</td></tr>
 </table>
-<p>Every result to date: no mass threshold where Schrödinger evolution spontaneously fails. Consciousness is nowhere in the story — a "measurement" is just entanglement with enough inaccessible degrees of freedom to make the leak irreversible. (Objective-collapse theories like Penrose's gravitational proposal predict a real threshold and are still being tested.)</p>
+<p>Every result to date: no mass threshold where Schrödinger evolution spontaneously fails. Consciousness is nowhere in the story — a "measurement" is just entanglement with enough inaccessible degrees of freedom to make the leak irreversible. But there is a serious rival idea in which a threshold <em>does</em> exist and has nothing to do with information leaking — <strong>gravity</strong>. It's worth seeing exactly why it, too, leaves the double slit alone.</p>
+
+<h2>Aside: doesn't gravity collapse it? Penrose &amp; the slit screen</h2>
+<p>Roger Penrose proposed a genuinely different collapse mechanism (<a href="https://link.springer.com/article/10.1007/BF02105068" target="_blank" rel="noopener">Penrose 1996</a>; the Diósi–Penrose model). The idea: a superposition of two different <em>mass distributions</em> is a superposition of two different <em>spacetime geometries</em>. General relativity then makes the shared notion of "time translation" between the two branches slightly ill-defined, and that ambiguity shows up as an intrinsic uncertainty in the state's energy. A state with an uncertain energy is not stationary — it should decay. Penrose estimates the lifetime as</p>
+\[ \tau \;\approx\; \frac{\hbar}{E_G}, \qquad E_G \;=\; \frac{G}{2}\iint \frac{\Delta\rho(\mathbf r)\,\Delta\rho(\mathbf r')}{|\mathbf r-\mathbf r'|}\,\mathrm d^3r\,\mathrm d^3r', \qquad \Delta\rho \equiv \rho_1-\rho_2, \]
+<p>where \(E_G\) is the gravitational self-energy of the <strong>difference</strong> \(\Delta\rho\) between the two branches' mass distributions. Read that carefully, because it is the whole answer to your question:</p>
+
+<div class="key-idea">
+  <p class="kicker">The load-bearing feature</p>
+  <p>\(E_G\) depends only on the mass that is actually <strong>displaced between the two branches</strong> — the difference \(\Delta\rho=\rho_1-\rho_2\). Mass that sits in the <em>same</em> place in both branches cancels out and contributes <em>nothing</em>, no matter how much of it there is. Penrose collapse is driven by how differently the branches curve spacetime, not by total mass.</p>
+</div>
+
+<h3>The electron is far too light</h3>
+<p>The thing actually in spatial superposition at the slits is the electron — a superposition of "at the left slit" and "at the right slit." So \(\Delta\rho\) is just the electron's own mass \(m_e\) smeared over its wavepacket size \(a\). With \(a\sim 1\,\text{nm}\),</p>
+\[ E_G \;\sim\; \frac{G m_e^2}{a} \;\sim\; 10^{-62}\ \text{J} \qquad\Longrightarrow\qquad \tau \;\sim\; \frac{\hbar}{E_G} \;\sim\; 10^{27}\ \text{s}. \]
+<p>That is of order a <em>billion times the age of the universe</em>. Even wildly generous choices of \(a\) leave \(\tau\) astronomically longer than the microseconds the electron spends in flight. The electron's own gravitational self-collapse simply never happens on any relevant timescale.</p>
+
+<h3>The screen is heavy — but it doesn't move</h3>
+<p>"Fine," you might say, "but the <em>screen</em> is macroscopic — grams, \(\sim 10^{23}\) nucleons. Surely <em>its</em> \(E_G\) is enormous and it collapses instantly, dragging the electron down with it?" Here is the punchline, and it is the very same fact that made the screen fail to <em>decohere</em> the electron two sections ago.</p>
+<p>Recall why the slit screen preserves coherence: it is so rigid and massive that the electron's feeble tug displaces it by far less than its own quantum zero-point spread, so its two branch-states are essentially identical, \(|E_L\rangle \approx |E_R\rangle\). But "the screen's mass distribution is essentially identical in the two branches" is exactly the statement that</p>
+\[ \Delta\rho_{\text{screen}} \;=\; \rho^{(L)}_{\text{screen}} - \rho^{(R)}_{\text{screen}} \;\approx\; 0. \]
+<p>So although the screen weighs a great deal, almost none of that mass is <em>displaced</em> between the two alternatives. Its \(E_G\) is therefore tiny — not because the screen is light (it isn't), but because the difference \(\Delta\rho\) it contributes is nearly zero. Its \(\tau\) is again astronomically long. The screen's huge mass is simply <strong>irrelevant to Penrose collapse, because it sits in the same place whether the electron went left or right.</strong></p>
+
+<div class="callout">
+  <p class="kicker">Why both mechanisms switch off together</p>
+  <p style="margin-bottom:0">Decoherence is governed by the <em>overlap</em> of the branch environment states, \(\langle E_L|E_R\rangle\); Penrose collapse is governed by the <em>difference</em> of the branch mass distributions, \(\Delta\rho\). These are two faces of one quantity: <strong>how different are the two branches out there in the world?</strong> A rigid slit screen makes the branches nearly indistinguishable — same recoil, same mass distribution — so it sends <em>both</em> \(\langle E_L|E_R\rangle\to 1\) <em>and</em> \(\Delta\rho\to 0\). Neither decoherence nor gravity has anything to act on, for one and the same physical reason: nothing about the screen records which slit the electron chose.</p>
+</div>
+
+<h3>When gravity <em>would</em> bite</h3>
+<p>Penrose's mechanism is not idle — it just needs the opposite regime from the double slit. Put a genuinely macroscopic, well-localized mass into a superposition of two <em>distinct, separated</em> locations (displacement comparable to or larger than its own size), and \(\Delta\rho\) becomes a real chunk of relocated mass: \(E_G\) grows, \(\tau\) shrinks to something finite and testable. That is precisely the aim of proposals to superpose a tiny mirror or a levitated nanocrystal (Marshall–Simon–Penrose–Bouwmeester, 2003). The double slit is the exact reverse: the object that <em>is</em> superposed (the electron) is far too light, and the object that is heavy (the screen) is not superposed — so gravity stays silent.</p>
+
+<div class="sidenote">Status check: the <em>parameter-free</em> Diósi–Penrose model — mass density smeared only at the nuclear scale — predicts a faint spontaneous emission of radiation from charges as collapse jiggles them. An underground germanium experiment at Gran Sasso searched for it and saw nothing, <strong>ruling that version out</strong> and forcing the smearing length up to \(R_0 \gtrsim 10^{-10}\,\text{m}\) (<a href="https://www.nature.com/articles/s41567-020-1008-4" target="_blank" rel="noopener">Donadi et&nbsp;al., <em>Nature Physics</em> 2021</a>; <a href="https://arxiv.org/abs/2111.13490" target="_blank" rel="noopener">arXiv</a>). Variants with larger \(R_0\) survive — so gravity-induced collapse remains a live, falsifiable idea, just not in its simplest form.</div>
 
 <h2>Check your recall</h2>
 
@@ -142,9 +173,19 @@
   <p class="quiz-feedback"></p>
 </div>
 
+<div class="quiz quiz-mc" data-answer="a">
+  <p class="quiz-prompt">In Penrose's model, why does the massive slit screen <em>not</em> gravitationally collapse the superposition?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Almost none of its mass moves between the branches</button>
+    <button class="quiz-option" data-choice="b">The screen is far too light to ever bend spacetime</button>
+    <button class="quiz-option" data-choice="c">Gravity is far too weak to collapse any real state</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
 <div class="primary-source">
 <p class="kicker">Primary sources</p>
-<p style="margin-bottom:0">The canonical reference is <a href="https://arxiv.org/abs/quant-ph/0105127" target="_blank" rel="noopener">Zurek, <em>Decoherence, einselection, and the quantum origins of the classical</em></a> (Rev. Mod. Phys. 75, 715, 2003) — pointer states, einselection, and envariance, from the person who built much of this. For the measurement-problem framing and how decoherence meets each interpretation, <a href="https://arxiv.org/abs/quant-ph/0312059" target="_blank" rel="noopener">Schlosshauer's review</a> (Rev. Mod. Phys. 76, 1267, 2004) is the clearest single read.</p>
+<p style="margin-bottom:0">The canonical reference is <a href="https://arxiv.org/abs/quant-ph/0105127" target="_blank" rel="noopener">Zurek, <em>Decoherence, einselection, and the quantum origins of the classical</em></a> (Rev. Mod. Phys. 75, 715, 2003) — pointer states, einselection, and envariance, from the person who built much of this. For the measurement-problem framing and how decoherence meets each interpretation, <a href="https://arxiv.org/abs/quant-ph/0312059" target="_blank" rel="noopener">Schlosshauer's review</a> (Rev. Mod. Phys. 76, 1267, 2004) is the clearest single read. On the gravity thread, <a href="https://link.springer.com/article/10.1007/BF02105068" target="_blank" rel="noopener">Penrose, <em>On Gravity's Role in Quantum State Reduction</em></a> (Gen. Rel. Grav. 28, 581, 1996) is the original proposal.</p>
 </div>
 
 <p class="ask-your-teacher">I'm your teacher — push on any of this. Two threads worth pulling: <em>"Show me einselection explicitly — why does the environment pick position rather than momentum as the pointer basis?"</em> and <em>"Where does this reappear in QFT — is the 'system + environment' split the same idea as integrating out heavy fields or short-distance modes?"</em> (It is, and that link is worth making before we hit renormalization.)</p>
