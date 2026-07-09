@@ -1,9 +1,11 @@
 # 0002 — Demonstrated strong grasp of density matrices, decoherence, and the measurement problem
 
 Captured 2026-07-09 from a dialogue (originally with another assistant) that the user
-asked to be consolidated into extra-curricular lesson `x0001`. The dialogue is strong
-evidence of current fluency — not just recognition — on a cluster of topics that recur
-throughout QFT and open quantum systems.
+asked to be consolidated into a lesson. That lesson now lives in the sibling workspace
+`qm-measurement-problem/` (lesson `0001`); this record is kept here because the demonstrated
+knowledge directly informs QFT teaching too. The dialogue is strong evidence of current
+fluency — not just recognition — on a cluster of topics that recur throughout QFT and open
+quantum systems.
 
 ## What the user demonstrably understands (from their own reasoning in the thread)
 - **Density-matrix formalism:** pure vs mixed states, coherences as off-diagonal terms,
@@ -39,5 +41,6 @@ throughout QFT and open quantum systems.
   user most wants to truly understand).
 
 ## Housekeeping
-- Extra-curricular lessons use an `x`-prefixed number (`x0001`, `x0002`, …) so they don't
-  disturb the main warm-up sequence (`0001`, `0002`, …). Recorded in NOTES.md.
+- QFT lessons stay on the main sequential warm-up track (`0001`, `0002`, …). Standalone
+  QM-foundations lessons live in the sibling topic `qm-measurement-problem/` rather than as
+  "extra-curricular" entries here. Recorded in NOTES.md.

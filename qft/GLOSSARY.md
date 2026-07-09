@@ -14,9 +14,10 @@ it consistently.
 
 ## Terms
 
-_Added from extra-curricular lesson `x0001` (2026-07-09), where the user demonstrated
-working fluency with these. They recur throughout QFT (thermal field theory,
-entanglement entropy, the effective-action "integrate out" logic)._
+_Added 2026-07-09, where the user demonstrated working fluency with these (in the dialogue
+now captured as lesson `0001` of the sibling `qm-measurement-problem/` workspace). Kept here
+because they recur throughout QFT — thermal field theory, entanglement entropy, and the
+effective-action "integrate out" logic._
 
 - **Density matrix** \( \rho \) — operator description of a quantum state that carries
   both quantum superposition and classical (statistical) uncertainty:

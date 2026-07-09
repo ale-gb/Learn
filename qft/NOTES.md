@@ -32,11 +32,12 @@
 - Lesson 0001 (orientation: why QFT had to exist) written first; it also lays out the
   warm-up roadmap so the user can see the path. Next planned: warm-up I — the
   principle of least action / Lagrangian mechanics.
-- Extra-curricular lessons (off the main warm-up track) are numbered with an `x`
-  prefix — `x0001`, `x0002`, … — so they never disturb the main sequence numbering,
-  and are listed under an "Extra-curricular" subsection in the root index.html.
-- 2026-07-09: wrote `x0001` (Decoherence & the measurement problem), consolidating a
-  dialogue the user brought in. It revealed strong fluency with density matrices,
-  partial trace, and decoherence — see learning-record 0002. Do not re-teach those;
-  use them as tools. Bridge to make later: "system + environment / integrate out" ==
-  integrating out heavy/short-distance modes in QFT (flag when we reach RG).
+- 2026-07-09: a decoherence / measurement-problem lesson was briefly written here as an
+  "extra-curricular" lesson, then promoted into its own dedicated sibling topic,
+  `qm-measurement-problem/` (a collection of single-focus QM-foundations lessons). QFT
+  lessons stay on the main sequential track; foundations excursions live in that sibling
+  topic now, not here.
+- That excursion still informs QFT teaching: the user demonstrated strong fluency with
+  density matrices, partial trace, and decoherence (see learning-record 0002). Do not
+  re-teach those; use them as tools. Bridge to make later: "system + environment /
+  integrate out" == integrating out heavy/short-distance modes in QFT (flag when we reach RG).
