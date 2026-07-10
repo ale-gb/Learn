@@ -74,12 +74,24 @@
 <tr><td>Which basis becomes classical (einselection / pointer states)</td><td>Why <em>this</em> branch is realized and the other isn't</td></tr>
 <tr><td>The quantum→classical transition at the level of ensembles</td><td>Single events — nothing in linear evolution deletes a branch</td></tr>
 </table>
-<p>The reduced \( \rho_S \) describes an <em>ensemble</em>: run it many times and you'll get \(|c_1|^2\), \(|c_2|^2\). But a single run gives a single fact. Strict unitarity keeps the whole universe in \( c_1|1\rangle|E_1\rangle + c_2|2\rangle|E_2\rangle \) forever — decoherence stops the branches interfering but never annihilates one. To get from "branches don't interfere" to "only one branch is in my lab," you must either:</p>
+<h3>The heart of it: decoherence gives an <em>improper</em> mixture</h3>
+<p>The diagonal \( \rho_S = |c_1|^2|1\rangle\langle1| + |c_2|^2|2\rangle\langle2| \) <em>looks</em> like a classical list of outcomes-with-probabilities. But there are two ways to reach that same matrix, and they mean utterly different things:</p>
+<ul>
+<li>A <strong>proper mixture</strong> — a genuine classical ensemble in which each system really <em>is</em> in a definite \(|1\rangle\) or \(|2\rangle\), and \(|c_i|^2\) is your <em>ignorance</em> of which. "It's definitely one of these; I just don't know which."</li>
+<li>An <strong>improper mixture</strong> — the <em>identical</em> matrix, but obtained by tracing the environment out of a <em>pure, entangled</em> global state. Nothing is definite; the whole is still a superposition.</li>
+</ul>
+<p>Decoherence produces the <em>improper</em> kind. The full state of system + apparatus + environment is, by unitary evolution,</p>
+\[ |\Psi\rangle = c_1\,|1\rangle|A_1\rangle|E_1\rangle + c_2\,|2\rangle|A_2\rangle|E_2\rangle, \]
+<p>a pure superposition with <strong>both branches still present</strong>. Decoherence suppressed the interference <em>between</em> them and buried the coherence in the environment — but it <em>deleted nothing</em>. Hence: the same matrix, two meanings. Mathematically \(\rho_S\) is a distribution over outcomes, yet decoherence has <em>not</em> established that one outcome occurred — only that <em>if</em> outcomes were definite they would carry these weights and wouldn't interfere.</p>
+<p>And decoherence <strong>structurally cannot</strong> close that gap. Selecting one branch — \( c_1|1\rangle|A_1\rangle|E_1\rangle + c_2|2\rangle|A_2\rangle|E_2\rangle \;\to\; |1\rangle|A_1\rangle|E_1\rangle \) with probability \(|c_1|^2\) — is <em>nonlinear and non-unitary</em>: it is not something the Schrödinger equation can do, it <em>is</em> the collapse postulate. Decoherence is a <em>consequence</em> of the Schrödinger equation, so it lives entirely inside unitary evolution and can never perform this selection. (The reversal and Wigner's-friend experiments further down confirm exactly this — the coherence stays recoverable and both branches genuinely remain, so decoherence demonstrably does <em>not</em> collapse. Yet in the lab you see exactly <em>one</em>. That mismatch is the whole problem.)</p>
+<p>To get from "both branches present, merely non-interfering" to "only one branch is in my lab," you must therefore add something the dynamics does not contain — you must either:</p>
 <ul>
 <li><strong>Add the measurement postulate</strong> (Copenhagen): a pragmatic patch — apply the Born rule, pick one outcome, update. An admission the theory is silent on single events.</li>
 <li><strong>Accept Many-Worlds</strong> (Everett): refuse the patch, keep only unitarity, and both outcomes are real — experienced by decohered, orthogonal copies of you.</li>
 </ul>
 <p>There's even a consistency reason you can't simply "derive collapse from decoherence": the partial-trace argument already <em>uses</em> the Born rule (\( \langle\hat O\rangle = \mathrm{Tr}(\rho\hat O)\)) to justify tracing out. Using a Born-rule tool to then derive the Born rule is circular. (Zurek's <em>envariance</em> program tries to break this circle from entanglement symmetry — elegant, still debated.)</p>
+
+<div class="sidenote">Don't conflate this gap with the <em>records</em> story: that the environment <em>redundantly records</em> the outcome (quantum Darwinism — a later lesson) explains why independent observers <em>agree</em> on it and why the pointer basis is robust — but only <em>within</em> a branch. Across branches, every outcome still occurs, each with its own consistent records. Records buy inter-observer agreement, not single-outcome-ness.</div>
 
 <h2>Worked example — why the double-slit screen doesn't collapse the electron</h2>
 <p>Apply the machinery to the most familiar setup. As the electron reaches the barrier its wavefunction has three parts: the bit that hits the solid wall, and the bits through the left and right slits.</p>
