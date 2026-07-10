@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0001 — Covariant Derivatives Live on Bundles</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0001 · Connections &amp; Bundles</p>
+<h1>Covariant Derivatives Live on Bundles</h1>
+<p class="lede">Why \(\nabla_X f = X(f)\) for an ordinary function, yet the wavefunction needs a genuine correction term — and why the deciding factor is not that \(\psi\) is complex, but that it is <em>charged</em>.</p>
+
+<div class="callout">
+  <p class="kicker">The puzzle</p>
+  <p style="margin-bottom:0">In Schuller's <a href="https://youtu.be/nEaiZBbCVtI" target="_blank" rel="noopener">lecture on connections</a> he builds a covariant derivative \(\nabla\) and <em>requires</em> that on a function it collapses to the plain directional derivative, \(\nabla_X f = X(f)\). Elsewhere he says the QM wavefunction is a complex field on spacetime that <em>does</em> need a covariant derivative to compare values at neighbouring points. Contradiction? If \(\nabla\) is trivial on functions, why is \(\psi\) — which also looks like a function \(M\to\mathbb{C}\) — any different? Is it because it's complex? This lesson resolves it, and the resolution is one of the most useful ideas in geometric physics.</p>
+</div>
+
+<h2>One manifold, many bundles — and a connection lives on just one</h2>
+<p>The hidden assumption in the puzzle is that "\(\nabla\)" is a single universal operator. It isn't. A covariant derivative is always a derivative of sections of <strong>one specified vector bundle</strong>, and it comes with a <em>connection</em> tailored to that bundle.</p>
+<p>A vector bundle \(E \xrightarrow{\pi} M\) attaches to each point \(x\in M\) a <strong>fibre</strong> \(E_x\) — a vector space — and a <strong>section</strong> is a field assigning to each \(x\) a vector in \(E_x\). Different bundles over the same spacetime:</p>
+<ul>
+<li>the <strong>tangent bundle</strong> \(TM\): fibres are tangent spaces, sections are vector fields;</li>
+<li>the <strong>trivial line bundle</strong> \(M\times\mathbb{R}\): fibres are copies of \(\mathbb{R}\), sections are ordinary functions \(f:M\to\mathbb{R}\);</li>
+<li>a <strong>complex line bundle</strong> \(E\): fibres are 1-dimensional complex spaces \(\cong\mathbb{C}\), sections are wavefunctions.</li>
+</ul>
+<p>Here is the crux. The fibres over two different points are <em>different vector spaces</em>. To differentiate a section you must compare \(s(x)\) and \(s(x+dx)\) — but they live in \(E_x\) and \(E_{x+dx}\), and there is no God-given way to subtract vectors from different spaces. A <strong>connection</strong> is precisely the extra structure that supplies the missing rule: how to <em>parallel-transport</em> a fibre element from \(x+dx\) back to \(x\) so the comparison makes sense. And a connection is defined <em>on a particular bundle</em> — the connection on \(TM\) (the Christoffel symbols \(\Gamma\)) knows how to carry tangent vectors and says nothing whatever about any other bundle.</p>
+
+<h2>Why a function needs no correction term</h2>
+<p>Now Schuller's axiom \(\nabla_X f = X(f)\). A scalar function is a section of the <em>trivial</em> line bundle \(M\times\mathbb{R}\). "Trivial" is the load-bearing word: its fibres come with a <strong>canonical identification</strong> — every fibre is literally the same \(\mathbb{R}\), with the same distinguished number \(1\). Because neighbouring fibres are already identified, comparing \(f(x+dx)\) with \(f(x)\) is just subtraction; no transport rule is needed and no correction term appears:</p>
+\[ \nabla_X f = X(f) = \mathrm{d}f(X). \]
+<p>Put physically: a bare number carries no internal "direction" that could get rotated as you move from point to point, so there is nothing for a connection to correct. In Schuller's construction this is the base case (functions are \((0,0)\)-tensors); the Leibniz rule then propagates \(\nabla\) up to all tensor fields, where the \(\Gamma\)'s <em>do</em> appear because tangent vectors <em>do</em> point in internal directions. So \(\nabla_X f = X(f)\) is not a universal fact about functions — it is the statement that the scalar bundle is <strong>trivially connected</strong>.</p>
+
+<h2>The wavefunction lives on a different bundle</h2>
+<p>Written \(\psi(x)\in\mathbb{C}\), the wavefunction impersonates a function — but geometrically it is a section of a complex line bundle \(E\) carrying a local \(\mathrm{U}(1)\) structure. The physics that makes the bundle non-trivial is <strong>local phase (gauge) symmetry</strong>: you may rotate the phase independently at every point,</p>
+\[ \psi(x)\;\longrightarrow\;e^{i\alpha(x)}\,\psi(x),\qquad \alpha(x)\ \text{arbitrary at each } x. \]
+<p>Because that choice is free at every point, there is <em>no canonical</em> sense in which \(\psi(x)\) and \(\psi(x+dx)\) have "the same phase" — unlike the trivial scalar bundle, these fibres are <em>not</em> pre-identified. So to differentiate you must supply a transport rule for phase: a connection on <em>this</em> bundle. That connection is the gauge potential \(A_\mu\) — physically, the electromagnetic vector potential — and the covariant derivative is written \(D\) to keep it distinct from the spacetime \(\nabla\):</p>
+\[ D_\mu\psi = \partial_\mu\psi + iqA_\mu\,\psi. \]
+<p>The extra piece \(iqA_\mu\psi\) is exactly the parallel-transport correction for phase. It earns the name "covariant" because \(A_\mu\) transforms in concert with \(\psi\): under \(\psi\to e^{i\alpha}\psi\) one takes \(A_\mu\to A_\mu-\tfrac1q\partial_\mu\alpha\), and then</p>
+\[ D_\mu\psi \;\longrightarrow\; e^{i\alpha(x)}\,D_\mu\psi, \]
+<p>so \(D_\mu\psi\) rotates the same way \(\psi\) does — which is what lets you build gauge-invariant physics from it. (The plain \(\partial_\mu\psi\) does <em>not</em> transform this way; that mismatch is the whole reason \(D\) is needed.)</p>
+
+<h2>So — is it because it's complex? No: it's because it's charged</h2>
+<p>This is the heart of your question, and the way to settle it is two clean test cases.</p>
+
+<h3>Test 1 — a complex field that needs no connection</h3>
+<p>Take a complex scalar with charge \(q=0\) (an <em>uncharged</em> field). It is fully complex, yet its \(\mathrm{U}(1)\) phase is only a <strong>global</strong> symmetry, not a gauged one. The bundle is canonically trivial, the connection is flat (\(A_\mu=0\)), and</p>
+\[ D_\mu\phi = \partial_\mu\phi. \]
+<p>Just like a real function. So being complex is <em>not</em> what forces a correction term — a free, uncharged wavefunction uses the plain \(\partial_\mu\) too.</p>
+
+<h3>Test 2 — a <em>real</em> field that <em>does</em> need one</h3>
+<p>Take a doublet of <strong>real</strong> scalars \(\vec\phi=(\phi_1,\phi_2)^{\mathsf T}\) with a local \(\mathrm{SO}(2)\) gauge symmetry — you may rotate the pair by an arbitrary angle at each point. The fields are strictly real, but they are sections of a non-trivial rank-2 real bundle, so you must introduce an \(\mathrm{SO}(2)\) connection \(A_\mu\) (a Lie-algebra-valued, i.e. antisymmetric, matrix):</p>
+\[ D_\mu\vec\phi = \partial_\mu\vec\phi + A_\mu\,\vec\phi. \]
+<p>Real fields, genuine connection. The pattern is unmistakable:</p>
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>There is no universal covariant derivative — a connection is extra structure attached to a <strong>specific bundle</strong>. \(\nabla_X f = X(f)\) says the scalar bundle is trivially connected; the wavefunction's bundle is not, so it needs its own connection, the gauge field. What forces a non-trivial correction term is that the field is <strong>charged under a local gauge symmetry</strong> (a non-trivial bundle) — <em>not</em> whether its components are real or complex.</p>
+</div>
+
+<h2>The unifying picture</h2>
+<p>Christoffel symbols and the electromagnetic potential are the <em>same kind of object</em> — connections — living on different bundles, and their curvatures are cousins too.</p>
+
+<table>
+<tr><th></th><th>Tangent bundle \(TM\)</th><th>Gauge \(\mathrm{U}(1)\) line bundle \(E\)</th></tr>
+<tr><td>Sections</td><td>vector / tensor fields</td><td>the wavefunction \(\psi\)</td></tr>
+<tr><td>Local symmetry</td><td>change of frame (diffeomorphisms)</td><td>local phase \(\psi\to e^{i\alpha(x)}\psi\)</td></tr>
+<tr><td>Connection</td><td>Christoffel \(\Gamma^{\lambda}{}_{\mu\nu}\) (Levi-Civita)</td><td>potential \(A_\mu\) (electromagnetism)</td></tr>
+<tr><td>Covariant derivative</td><td>\(\nabla_\mu V^\nu = \partial_\mu V^\nu + \Gamma^{\nu}{}_{\mu\lambda}V^\lambda\)</td><td>\(D_\mu\psi = \partial_\mu\psi + iqA_\mu\psi\)</td></tr>
+<tr><td>On a scalar</td><td>\(\nabla_X f = X(f)\) (trivial)</td><td>\(D_\mu\phi = \partial_\mu\phi\) if \(q=0\) (trivial)</td></tr>
+<tr><td>Curvature</td><td>Riemann \(R^{\rho}{}_{\sigma\mu\nu}\)</td><td>field strength \(F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu\)</td></tr>
+</table>
+
+<p>Both curvatures measure the same thing — the failure of a vector (or a phase) to return to itself after parallel transport around a small closed loop. The electromagnetic field <em>is</em> the curvature of the \(\mathrm{U}(1)\) connection, exactly as the Riemann tensor is the curvature of the spacetime connection.</p>
+
+<p>And the punchline that ties the whole taxonomy together: if a field carries <em>both</em> spacetime indices <em>and</em> gauge charge — a charged vector boson, say — its covariant derivative must include <strong>both</strong> connections at once:</p>
+\[ D_\mu V^\nu = \partial_\mu V^\nu + \underbrace{\Gamma^{\nu}{}_{\mu\lambda}V^\lambda}_{\text{spacetime}} + \underbrace{iqA_\mu V^\nu}_{\text{gauge}}. \]
+<p>You hit each index with the connection belonging to the bundle that index lives on. That single rule dissolves the original confusion completely.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="charged|gauged|charged under it">
+  <p class="quiz-prompt">The property that forces a field's covariant derivative to carry a non-trivial connection term is not being complex, but being ⟶ ? under a local gauge symmetry.</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="a">
+  <p class="quiz-prompt">Why does \(\nabla_X f = X(f)\) for a scalar function, with no correction term at all?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">The trivial scalar bundle canonically identifies its fibres</button>
+    <button class="quiz-option" data-choice="b">A plain real number carries no internal gauge direction</button>
+    <button class="quiz-option" data-choice="c">The Christoffel symbols vanish for absolutely every field</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary source</p>
+<p style="margin-bottom:0">Rewatch Schuller's <a href="https://youtu.be/nEaiZBbCVtI" target="_blank" rel="noopener">connections lecture</a> with this distinction in hand — it's the tangent-bundle connection he's building there. For the gauge-bundle side, the cleanest written development is <a href="https://tales.mbivert.com/Lectures_on_Geometric_Anatomy_of_Theoretical_Physics.pdf" target="_blank" rel="noopener">Simon Rea's notes</a> on Schuller's course (chapters on bundles and connections), and Baez &amp; Muniain's <em>Gauge Fields, Knots and Gravity</em> Part II, which builds "electromagnetism = a \(\mathrm{U}(1)\) connection" from scratch.</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any of this. Two natural next threads: <em>"Show me curvature as holonomy — how \(F_{\mu\nu}\) and the Riemann tensor are literally the same 'transport around a loop' construction,"</em> and <em>"What exactly is the difference between the principal \(\mathrm{U}(1)\) bundle and the associated complex line bundle the wavefunction actually lives in?"</em> — the second is the piece of the story Schuller builds most carefully.</p>
+
+<div class="lesson-nav">
+  <span>&larr; Start of this collection</span>
+  <span>Next up: curvature as holonomy (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>
