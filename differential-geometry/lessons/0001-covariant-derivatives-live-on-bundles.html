@@ -37,9 +37,9 @@
 \[ \psi(x)\;\longrightarrow\;e^{i\alpha(x)}\,\psi(x),\qquad \alpha(x)\ \text{arbitrary at each } x. \]
 <p>Because that choice is free at every point, there is <em>no canonical</em> sense in which \(\psi(x)\) and \(\psi(x+dx)\) have "the same phase" — unlike the trivial scalar bundle, these fibres are <em>not</em> pre-identified. So to differentiate you must supply a transport rule for phase: a connection on <em>this</em> bundle. That connection is the gauge potential \(A_\mu\) — physically, the electromagnetic vector potential — and the covariant derivative is written \(D\) to keep it distinct from the spacetime \(\nabla\):</p>
 \[ D_\mu\psi = \partial_\mu\psi + iqA_\mu\,\psi. \]
-<p>The extra piece \(iqA_\mu\psi\) is exactly the parallel-transport correction for phase. It earns the name "covariant" because \(A_\mu\) transforms in concert with \(\psi\): under \(\psi\to e^{i\alpha}\psi\) one takes \(A_\mu\to A_\mu-\tfrac1q\partial_\mu\alpha\), and then</p>
-\[ D_\mu\psi \;\longrightarrow\; e^{i\alpha(x)}\,D_\mu\psi, \]
-<p>so \(D_\mu\psi\) rotates the same way \(\psi\) does — which is what lets you build gauge-invariant physics from it. (The plain \(\partial_\mu\psi\) does <em>not</em> transform this way; that mismatch is the whole reason \(D\) is needed.)</p>
+<p>The extra piece \(iqA_\mu\psi\) is exactly the parallel-transport correction for phase. It earns the name "covariant" because \(A_\mu\) transforms in concert with \(\psi\): a field of charge \(q\) responds to the local phase change as \(\psi\to e^{iq\alpha(x)}\psi\), the potential shifts as \(A_\mu\to A_\mu-\partial_\mu\alpha\), and then</p>
+\[ D_\mu\psi \;\longrightarrow\; e^{iq\alpha(x)}\,D_\mu\psi, \]
+<p>so \(D_\mu\psi\) rotates exactly the way \(\psi\) does — which is what lets you build gauge-invariant physics from it. (The plain \(\partial_\mu\psi\) does <em>not</em> transform this way; that mismatch is the whole reason \(D\) is needed — and, as we'll pin down below, it is also what "charge" really <em>means</em>.)</p>
 
 <h2>So — is it because it's complex? No: it's because it's charged</h2>
 <p>This is the heart of your question, and the way to settle it is two clean test cases.</p>
@@ -58,6 +58,29 @@
   <p class="kicker">The one idea</p>
   <p>There is no universal covariant derivative — a connection is extra structure attached to a <strong>specific bundle</strong>. \(\nabla_X f = X(f)\) says the scalar bundle is trivially connected; the wavefunction's bundle is not, so it needs its own connection, the gauge field. What forces a non-trivial correction term is that the field is <strong>charged under a local gauge symmetry</strong> (a non-trivial bundle) — <em>not</em> whether its components are real or complex.</p>
 </div>
+
+<h2>The missing link: what "charged" actually means</h2>
+<p>Fair objection at this point: I keep saying "charged" and "transforms under the local gauge symmetry" as if they're the same thing, without saying <em>why</em>. Here's the link, and it's almost a definition once you see where the charge sits.</p>
+
+<h3>The charge is how much the field rotates</h3>
+<p>There is <em>one</em> gauge freedom — a single function \(\alpha(x)\). But different fields respond to it by different amounts. A field of charge \(q\) transforms as</p>
+\[ \psi(x)\;\longrightarrow\;e^{\,iq\,\alpha(x)}\,\psi(x). \]
+<p>The charge \(q\) is nothing more than <strong>how much that field's phase turns</strong> under the symmetry — its "weight." An electron carries \(q=-e\), an up quark \(q=+\tfrac23 e\), a neutrino \(q=0\). So "charged" and "transforms under the local phase symmetry" aren't two separate facts to be connected: they are the <em>same</em> fact, and \(q\) is the number that measures it.</p>
+
+<h3>Uncharged means it doesn't transform</h3>
+<p>Set \(q=0\): then \(\psi\to e^{\,i\cdot 0\cdot\alpha}\psi=\psi\), unchanged. The field is <em>inert</em> under the symmetry — it sits in the trivial representation. A single real field is <em>stuck</em> at \(q=0\), because \(e^{iq\alpha}\) would turn a real number complex; that's why a lone real scalar is always neutral. A real <em>doublet</em>, though, can be genuinely <em>rotated</em> by \(\mathrm{SO}(2)\) at each point — that rotation is a real transformation, so it carries charge despite being real. (A charge-1 complex field and an \(\mathrm{SO}(2)\) real doublet are the very same object in different clothes.)</p>
+
+<h3>Why transforming forces the connection — with the <em>same</em> \(q\)</h3>
+<p>Now differentiate, and watch where the charge reappears. Because \(\alpha\) depends on position,</p>
+\[ \partial_\mu\big(e^{\,iq\alpha}\psi\big) = e^{\,iq\alpha}\big(\partial_\mu\psi + iq\,(\partial_\mu\alpha)\,\psi\big). \]
+<p>That stray \(iq\,(\partial_\mu\alpha)\,\psi\) is exactly what breaks covariance — and <em>only</em> a field with \(q\neq 0\) produces it. The compensating gauge term that cancels it is \(iqA_\mu\psi\), carrying the <strong>same \(q\)</strong>. So the number measuring "how much you rotate under the symmetry" is <em>identical</em> to the number measuring "how strongly you couple to \(A_\mu\)." One quantity, two hats — that identity is the whole answer to your question.</p>
+
+<h3>And that same \(q\) is the electric charge</h3>
+<p>Step back for the punchline. A complex field with ordinary phase-invariant dynamics already has a <em>global</em> \(\mathrm{U}(1)\) symmetry (rotate by a <em>constant</em> \(\alpha\)), and by Noether's theorem that hands you a <strong>conserved charge</strong>. "Gauging" the symmetry means <em>demanding</em> the phase convention be a purely local choice — and that demand is what forces the new field \(A_\mu\) into existence. Once it does, the previously merely-conserved charge becomes the <em>coupling</em> to \(A_\mu\): the electric charge that sources electromagnetism and feels the Lorentz force. The one number \(q\) is therefore simultaneously the weight under the symmetry, the Noether charge, and the physical electric charge.</p>
+
+<p>So "charged, not complex" is no longer mysterious: complexness merely supplies a phase that <em>could</em> be rotated — a place for a charge to live. <strong>Charge is whether it actually rotates</strong> under the local symmetry (\(q\neq 0\)), and that is precisely the condition that makes \(\partial_\mu\) fail and a connection necessary. A neutral field — real, or complex with \(q=0\) — sits inert in the trivial representation and needs none.</p>
+
+<div class="sidenote">For a non-abelian gauge group the same story generalizes: "charge" becomes <em>which representation</em> the field sits in (the trivial rep = uncharged; the fundamental, adjoint, … = various charges), and the transformation \(\psi\to e^{iq\alpha}\psi\) becomes \(\psi\to U(x)\,\psi\) with \(U(x)\) a local group element in that representation. The covariant derivative then carries a matrix-valued connection \(A_\mu\). Same principle, richer bookkeeping — this is the road to Yang–Mills and the Standard Model.</div>
 
 <h2>The unifying picture</h2>
 <p>Christoffel symbols and the electromagnetic potential are the <em>same kind of object</em> — connections — living on different bundles, and their curvatures are cousins too.</p>
@@ -93,6 +116,16 @@
     <button class="quiz-option" data-choice="a">The trivial scalar bundle canonically identifies its fibres</button>
     <button class="quiz-option" data-choice="b">A plain real number carries no internal gauge direction</button>
     <button class="quiz-option" data-choice="c">The Christoffel symbols vanish for absolutely every field</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">In the gauge transformation \(\psi\to e^{iq\alpha(x)}\psi\), what <em>is</em> the charge \(q\)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Whether the field is complex rather than purely real</button>
+    <button class="quiz-option" data-choice="b">How much the field rotates under the phase symmetry</button>
+    <button class="quiz-option" data-choice="c">How strongly spacetime curves in the field's region</button>
   </div>
   <p class="quiz-feedback"></p>
 </div>
