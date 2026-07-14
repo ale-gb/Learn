@@ -48,8 +48,8 @@
 <p><strong>Build transport from an ODE.</strong> Call a vector field \(V(t)\) along \(\gamma\) <em>parallel</em> if</p>
 \[ \nabla_{\dot\gamma}\,V = 0. \]
 <p>This is a linear, first-order ODE along the curve; by the standard existence–uniqueness theorem it has a unique solution for each initial vector \(v_0\in T_PM\). Define \(\tilde\Pi_{\gamma}^{\,0,t}(v_0) := V(t)\). Linearity of the ODE makes \(\tilde\Pi\) a vector-space isomorphism — a parallel transport, produced purely from \(\nabla\).</p>
-<p><strong>Feed it back into the limit.</strong> Pick a <em>parallel frame</em> \(\{E_i(t)\}\) along \(\gamma\) (each \(\nabla_{\dot\gamma}E_i = 0\); they exist by transporting a basis of \(T_PM\)), and expand \(Y(t) = y^i(t)\,E_i(t)\). By additivity and Leibniz,</p>
-\[ \nabla_{\dot\gamma}Y = \dot y^i(t)\,E_i(t) + y^i(t)\underbrace{\nabla_{\dot\gamma}E_i}_{=\,0} = \dot y^i(t)\,E_i(t). \]
+<p><strong>Feed it back into the limit.</strong> Pick a <em>parallel frame</em> \(\{E_i(t)\}\) along \(\gamma\) (each \(\nabla_{\dot\gamma}E_i = 0\); they exist by transporting a basis of \(T_PM\)), and expand \(Y(t) = y^i(t)\,E_i(t)\). The covariant derivative along the curve, \(\nabla_{\dot\gamma}Y\), is itself a <em>vector field along \(\gamma\)</em> — a function of \(t\), valued in \(T_{\gamma(t)}M\) — so we keep the argument explicit on both sides. By additivity and Leibniz,</p>
+\[ \big(\nabla_{\dot\gamma}Y\big)(t) = \dot y^i(t)\,E_i(t) + y^i(t)\underbrace{\nabla_{\dot\gamma}E_i}_{=\,0} = \dot y^i(t)\,E_i(t). \]
 <p>Since the frame is parallel, \(E_i(h) = \tilde\Pi_{\gamma,h}E_i(0)\), so transporting \(Y_{\gamma(h)}\) back to \(P\) merely holds its components fixed in that frame:</p>
 \[ \tilde\Pi_{\gamma,h}^{-1}\,Y_{\gamma(h)} = \tilde\Pi_{\gamma,h}^{-1}\big(y^i(h)\,E_i(h)\big) = y^i(h)\,E_i(0). \]
 <p>Drop this into the integral definition:</p>
