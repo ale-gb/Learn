@@ -36,6 +36,12 @@
   consolidates a Q&A the learner brought in about Schuller's connections lecture: why
   \(\nabla_X f = X(f)\) but the wavefunction needs \(D\) — answer: different bundles, and the
   deciding property is *charge*, not complexness.
+- Lesson `0002` (parallel transport = covariant derivative) written 2026-07-10 from a learner
+  question: a non-circular, coordinate-free proof that Schuller's axiomatic \(\nabla\) and the
+  parallel-transport limit define the same connection (transport ⇒ Leibniz by linearity of
+  \(\Pi^{-1}\); axioms ⇒ transport by solving \(\nabla_{\dot\gamma}V=0\)); \(\Gamma\) is only the
+  coordinate shadow. Seeds the curvature-as-holonomy thread.
 - Candidate next lessons: curvature as holonomy (\(F_{\mu\nu}\) & Riemann as transport-around-a-
-  loop); principal vs associated bundles; the exterior derivative & differential forms; Lie
+  loop) — the natural 0003; where the \(\Gamma\)'s emerge in a chart from \(\nabla_{\partial_i}\partial_j\);
+  principal vs associated bundles; the exterior derivative & differential forms; Lie
   groups/algebras and how they act on fibres; the metric & Levi-Civita connection.

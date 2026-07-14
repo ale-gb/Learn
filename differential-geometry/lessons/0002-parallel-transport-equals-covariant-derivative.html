@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0002 — Two Faces of a Connection: Transport = Derivative</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0002 · Connections &amp; Bundles</p>
+<h1>Two Faces of a Connection: Parallel Transport = Covariant Derivative</h1>
+<p class="lede">The covariant derivative can be defined two ways — as an axiomatic operator (Schuller's Leibniz rule) or as a limit of parallel transport. They are the same object. Here is the proof — <em>without</em> the circular shortcut that smuggles in Christoffel symbols.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0"><a href="0001-covariant-derivatives-live-on-bundles.html">Lesson 0001</a> set up a connection as the rule for comparing fibres at neighbouring points. There are two standard ways to package that rule: the <strong>integral</strong> one (parallel-transport a vector back and subtract) and the <strong>differential</strong> one (Schuller's axioms). It is tempting to "prove" they agree by writing both in a chart and matching the \(\Gamma\)'s — but that is <em>circular</em>. This lesson gives the honest, coordinate-free equivalence, and shows that \(\Gamma\) is a shadow that never enters the real argument.</p>
+</div>
+
+<h2>The two definitions</h2>
+<p><strong>Differential (Schuller's axioms).</strong> A connection is a map \(\nabla\) sending a vector field \(X\) and a vector field \(Y\) to a vector field \(\nabla_X Y\), satisfying</p>
+<ul>
+<li>\(C^\infty\)-linearity in \(X\): \(\nabla_{fX}Y = f\,\nabla_X Y\) (and additivity in \(X\));</li>
+<li>additivity in \(Y\): \(\nabla_X(Y+Z) = \nabla_X Y + \nabla_X Z\);</li>
+<li>the <strong>Leibniz rule</strong>: \(\nabla_X(fY) = X(f)\,Y + f\,\nabla_X Y\).</li>
+</ul>
+<p><strong>Integral (parallel transport).</strong> Suppose instead we are handed, for every curve \(\gamma\), a <em>parallel-transport</em> map \(\Pi_{\gamma,h}: T_{P}M \to T_{\gamma(h)}M\) (with \(P=\gamma(0)\)) that is (i) a linear isomorphism, (ii) the identity at \(h=0\), (iii) smooth in \(h\). Its inverse carries a vector at \(\gamma(h)\) back to \(P\), where it can be compared with \(Y_P\). Define</p>
+\[ D_X Y\big|_P \;=\; \lim_{h\to 0}\frac{\Pi_{\gamma,h}^{-1}\big(Y_{\gamma(h)}\big) - Y_P}{h}, \qquad X = \dot\gamma(0). \]
+<p>The claim is that these define the <em>same</em> structure. To prove it honestly we treat them as two <em>a priori independent</em> objects and show each implies the other.</p>
+
+<div class="sidenote">Why the quick "proof" is circular: write the axiomatic \(\nabla\) in a chart to get \(\nabla_X Y = \big(X(Y^k) + \Gamma^{k}{}_{ij}X^iY^j\big)\partial_k\); <em>define</em> transport as the solution of \(\dot V^k + \Gamma^{k}{}_{ij}\dot\gamma^i V^j = 0\); plug it into the limit and — unsurprisingly — recover the same \(\Gamma\). That is \(\nabla\to\Gamma\to\Pi\to\Gamma\to\nabla\): you assumed the link you set out to prove. So we forbid \(\Gamma\) entirely.</div>
+
+<h2>Part 1 — transport implies the axioms</h2>
+<p>Take the integral derivative \(D\) and show it obeys Schuller's axioms. The Leibniz rule is the revealing one, so watch it fall out with nothing but linearity of \(\Pi^{-1}\).</p>
+\[ D_X(fY)\big|_P = \lim_{h\to0}\frac{\Pi_{\gamma,h}^{-1}\big(f(\gamma(h))\,Y_{\gamma(h)}\big) - f(P)\,Y_P}{h}. \]
+<p>Because \(\Pi_{\gamma,h}^{-1}\) is <em>linear</em> (Property i), the scalar \(f(\gamma(h))\) pulls straight through it:</p>
+\[ \Pi_{\gamma,h}^{-1}\big(f(\gamma(h))\,Y_{\gamma(h)}\big) = f(\gamma(h))\,\Pi_{\gamma,h}^{-1}\big(Y_{\gamma(h)}\big). \]
+<p>Now add and subtract \(f(P)\,\Pi_{\gamma,h}^{-1}Y_{\gamma(h)}\) in the numerator and split:</p>
+\[ D_X(fY)\big|_P = \lim_{h\to0}\underbrace{\frac{f(\gamma(h))-f(P)}{h}}_{\to\,X(f)\,|_P}\;\underbrace{\Pi_{\gamma,h}^{-1}Y_{\gamma(h)}}_{\to\,Y_P} \;+\; f(P)\,\lim_{h\to0}\frac{\Pi_{\gamma,h}^{-1}Y_{\gamma(h)} - Y_P}{h}. \]
+<p>The first bracket is the directional derivative of the function \(f\) along \(\gamma\), namely \(X(f)\), and the transported vector tends to \(Y_P\) (transport \(\to\) identity as \(h\to0\)). The second limit is exactly \(D_X Y|_P\). Hence</p>
+\[ \boxed{\,D_X(fY)\big|_P = X(f)\,Y_P + f(P)\,D_X Y\big|_P\,}. \]
+<p>That is the Leibniz axiom — and \(\Gamma\) never appeared. Additivity in \(Y\) follows the same way from linearity of \(\Pi^{-1}\); and one checks the limit depends only on the tangent vector \(X_P=\dot\gamma(0)\) (not on the rest of the curve) and is linear in it, giving the \(C^\infty\)-linearity in \(X\). So <strong>every parallel transport defines an axiomatic connection.</strong></p>
+
+<h2>Part 2 — the axioms imply transport</h2>
+<p>Now start from an axiomatic \(\nabla\) with no transport in sight, and <em>manufacture</em> the transport map from it — then check the limit formula reproduces \(\nabla\).</p>
+<p><strong>Build transport from an ODE.</strong> Call a vector field \(V(t)\) along \(\gamma\) <em>parallel</em> if</p>
+\[ \nabla_{\dot\gamma}\,V = 0. \]
+<p>This is a linear, first-order ODE along the curve; by the standard existence–uniqueness theorem it has a unique solution for each initial vector \(v_0\in T_PM\). Define \(\tilde\Pi_{\gamma}^{\,0,t}(v_0) := V(t)\). Linearity of the ODE makes \(\tilde\Pi\) a vector-space isomorphism — a parallel transport, produced purely from \(\nabla\).</p>
+<p><strong>Feed it back into the limit.</strong> Pick a <em>parallel frame</em> \(\{E_i(t)\}\) along \(\gamma\) (each \(\nabla_{\dot\gamma}E_i = 0\); they exist by transporting a basis of \(T_PM\)), and expand \(Y(t) = y^i(t)\,E_i(t)\). By additivity and Leibniz,</p>
+\[ \nabla_{\dot\gamma}Y = \dot y^i(t)\,E_i(t) + y^i(t)\underbrace{\nabla_{\dot\gamma}E_i}_{=\,0} = \dot y^i(t)\,E_i(t). \]
+<p>Since the frame is parallel, \(E_i(h) = \tilde\Pi_{\gamma,h}E_i(0)\), so transporting \(Y_{\gamma(h)}\) back to \(P\) merely holds its components fixed in that frame:</p>
+\[ \tilde\Pi_{\gamma,h}^{-1}\,Y_{\gamma(h)} = \tilde\Pi_{\gamma,h}^{-1}\big(y^i(h)\,E_i(h)\big) = y^i(h)\,E_i(0). \]
+<p>Drop this into the integral definition:</p>
+\[ D_X Y\big|_P = \lim_{h\to0}\frac{y^i(h)\,E_i(0) - y^i(0)\,E_i(0)}{h} = \dot y^i(0)\,E_i(0) = \big(\nabla_{\dot\gamma}Y\big)\big|_P. \]
+<p>The limit built from the ODE-generated transport lands <em>exactly</em> on the axiomatic derivative. So <strong>every axiomatic connection defines a parallel transport whose transport-limit is that same connection.</strong></p>
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>Parallel transport (integral) and Schuller's axioms (differential) are two presentations of the <em>same</em> structure — an affine connection. Transport \(\Rightarrow\) Leibniz by linearity of \(\Pi^{-1}\); the axioms \(\Rightarrow\) transport by solving \(\nabla_{\dot\gamma}V=0\). Neither direction uses a chart, so the equivalence is genuine, not circular. The Christoffel symbols \(\Gamma\) are only the <strong>coordinate shadow</strong> that appears when you force either formulation into a chart — secondary to the geometry, never part of the proof.</p>
+</div>
+
+<h2>What this buys you</h2>
+<p>The "integral vs differential" pairing is the same relationship as antiderivative vs derivative, or holonomy vs curvature: one accumulates the rule along a whole curve, the other reads it off infinitesimally. Having both is practical — Leibniz-style manipulations are easy in the differential picture, while global statements (holonomy, the effect of going around a loop) are natural in the transport picture. And it retires the worry that a connection is "really" its Christoffel symbols: \(\Gamma\) is a chart-dependent bookkeeping device for one and the same coordinate-free object.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="linear|linearity|it is linear|linear isomorphism">
+  <p class="quiz-prompt">In Part 1, the single property of \(\Pi^{-1}\) that lets the scalar \(f(\gamma(h))\) pass through it — and makes the Leibniz rule appear — is that \(\Pi^{-1}\) is ⟶ ?</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">Why is "write \(\nabla\) in a chart, define transport from those \(\Gamma\)'s, then recover \(\Gamma\)" not a valid proof of equivalence?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Because Christoffel symbols are not smooth enough here</button>
+    <button class="quiz-option" data-choice="b">Because it assumes the very link it sets out to prove</button>
+    <button class="quiz-option" data-choice="c">Because parallel transport is not linear in a chart</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary source</p>
+<p style="margin-bottom:0">Schuller develops both pictures in his <a href="https://www.youtube.com/playlist?list=PLPH7f_7ZlzxTi6kS4vCmv4ZKm9u8g5yic" target="_blank" rel="noopener">lectures on connections and parallel transport</a>; the corresponding chapters of <a href="https://tales.mbivert.com/Lectures_on_Geometric_Anatomy_of_Theoretical_Physics.pdf" target="_blank" rel="noopener">Simon Rea's notes</a> give the coordinate-free statements cleanly. For the textbook version of the transport&nbsp;\(\leftrightarrow\)&nbsp;connection equivalence (existence/uniqueness of the parallel-transport ODE), see John M. Lee, <em>Introduction to Riemannian Manifolds</em>, ch. 4, or do Carmo, <em>Riemannian Geometry</em>, ch. 2.</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any step. Two natural next threads: <em>"Now put it in a chart — show me exactly where the \(\Gamma\)'s emerge from \(\nabla_{\partial_i}\partial_j\),"</em> and <em>"If transport around an open curve is the connection, what does transport around a <strong>closed loop</strong> measure?"</em> — that last one is <strong>curvature as holonomy</strong>, the natural next lesson.</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0001-covariant-derivatives-live-on-bundles.html">0001 — Covariant Derivatives Live on Bundles</a></span>
+  <span>Next up: curvature as holonomy (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>
