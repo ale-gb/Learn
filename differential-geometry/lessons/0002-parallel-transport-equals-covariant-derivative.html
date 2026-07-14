@@ -18,12 +18,14 @@
 </div>
 
 <h2>The two definitions</h2>
-<p><strong>Differential (Schuller's axioms).</strong> A connection is a map \(\nabla\) sending a vector field \(X\) and a vector field \(Y\) to a vector field \(\nabla_X Y\), satisfying</p>
+<p><strong>Differential (Schuller's axioms).</strong> A connection is a map \(\nabla\) that differentiates tensor fields along a vector field \(X\); on the two cases the proof actually needs — functions and vector fields — it satisfies</p>
 <ul>
+<li><strong>on a function</strong> (a \((0,0)\)-tensor): \(\nabla_X f = X(f)\) — the base case, the axiom <a href="0001-covariant-derivatives-live-on-bundles.html">lesson 0001</a> turned on;</li>
 <li>\(C^\infty\)-linearity in \(X\): \(\nabla_{fX}Y = f\,\nabla_X Y\) (and additivity in \(X\));</li>
 <li>additivity in \(Y\): \(\nabla_X(Y+Z) = \nabla_X Y + \nabla_X Z\);</li>
 <li>the <strong>Leibniz rule</strong>: \(\nabla_X(fY) = X(f)\,Y + f\,\nabla_X Y\).</li>
 </ul>
+<p>The \(X(f)\) sitting inside the Leibniz rule is precisely that first axiom in action — it is what pins that term to the ordinary directional derivative and nothing else. (In Schuller's tensor-algebra build the logic is even tidier: \(\nabla_X f = X(f)\) together with a single Leibniz rule over the tensor product <em>gives</em> the vector-field rule above.)</p>
 <p><strong>Integral (parallel transport).</strong> Suppose instead we are handed, for every curve \(\gamma\), a <em>parallel-transport</em> map \(\Pi_{\gamma,h}: T_{P}M \to T_{\gamma(h)}M\) (with \(P=\gamma(0)\)) that is (i) a linear isomorphism, (ii) the identity at \(h=0\), (iii) smooth in \(h\). Its inverse carries a vector at \(\gamma(h)\) back to \(P\), where it can be compared with \(Y_P\). Define</p>
 \[ D_X Y\big|_P \;=\; \lim_{h\to 0}\frac{\Pi_{\gamma,h}^{-1}\big(Y_{\gamma(h)}\big) - Y_P}{h}, \qquad X = \dot\gamma(0). \]
 <p>The claim is that these define the <em>same</em> structure. To prove it honestly we treat them as two <em>a priori independent</em> objects and show each implies the other.</p>
@@ -39,7 +41,7 @@
 \[ D_X(fY)\big|_P = \lim_{h\to0}\underbrace{\frac{f(\gamma(h))-f(P)}{h}}_{\to\,X(f)\,|_P}\;\underbrace{\Pi_{\gamma,h}^{-1}Y_{\gamma(h)}}_{\to\,Y_P} \;+\; f(P)\,\lim_{h\to0}\frac{\Pi_{\gamma,h}^{-1}Y_{\gamma(h)} - Y_P}{h}. \]
 <p>The first bracket is the directional derivative of the function \(f\) along \(\gamma\), namely \(X(f)\), and the transported vector tends to \(Y_P\) (transport \(\to\) identity as \(h\to0\)). The second limit is exactly \(D_X Y|_P\). Hence</p>
 \[ \boxed{\,D_X(fY)\big|_P = X(f)\,Y_P + f(P)\,D_X Y\big|_P\,}. \]
-<p>That is the Leibniz axiom — and \(\Gamma\) never appeared. Additivity in \(Y\) follows the same way from linearity of \(\Pi^{-1}\); and one checks the limit depends only on the tangent vector \(X_P=\dot\gamma(0)\) (not on the rest of the curve) and is linear in it, giving the \(C^\infty\)-linearity in \(X\). So <strong>every parallel transport defines an axiomatic connection.</strong></p>
+<p>That is the Leibniz axiom — and \(\Gamma\) never appeared. The <em>function</em> axiom comes for free too: a scalar has nothing to transport (its fibres are canonically identified, exactly as in lesson 0001), so the transport-limit of a function collapses to \(\lim_{h\to0}\frac{f(\gamma(h))-f(P)}{h}=X(f)\), i.e. \(D_X f = X(f)\). Additivity in \(Y\) follows the same way from linearity of \(\Pi^{-1}\); and one checks the limit depends only on the tangent vector \(X_P=\dot\gamma(0)\) (not on the rest of the curve) and is linear in it, giving the \(C^\infty\)-linearity in \(X\). So <strong>every parallel transport defines an axiomatic connection.</strong></p>
 
 <h2>Part 2 — the axioms imply transport</h2>
 <p>Now start from an axiomatic \(\nabla\) with no transport in sight, and <em>manufacture</em> the transport map from it — then check the limit formula reproduces \(\nabla\).</p>
