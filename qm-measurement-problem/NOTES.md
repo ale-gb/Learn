@@ -47,7 +47,11 @@
   Wigner's classification (particles = Poincaré irreps labeled by mass & spin Casimirs). Gently
   corrected the premise (magnitude² is observable). Note: this learner enjoys the symmetry/
   representation-theory angle — good vein to mine.
-- Candidate next lessons: quantum Darwinism (why observers agree on classical facts); position as
-  a Galilei-boost generator & the origin of \( [\hat x,\hat p]=i\hbar \) (follow-on to 0003);
-  uncertainty relations as representation theory (thread seeded in 0003); the Wigner's-friend
+- Lesson `0004` (quantum Darwinism) written 2026-07-11 — the promised sequel to 0002. Objectivity
+  = redundancy: the environment broadcasts many copies of the pointer observable; the information
+  plateau & \( R_\delta \); no-cloning ⇒ only one objective basis; honest boundary (agreement, not
+  definite outcomes — same limit as 0001). Experiments (Unden NV centers, Ciampini photonic).
+- Candidate next lessons: Spectrum Broadcast Structures (sharper objectivity, follow-on to 0004);
+  position as a Galilei-boost generator & the origin of \( [\hat x,\hat p]=i\hbar \) (follow-on to
+  0003); uncertainty relations as representation theory (thread seeded in 0003); the Wigner's-friend
   no-go theorems; Bell nonlocality done carefully; objective-collapse tests.

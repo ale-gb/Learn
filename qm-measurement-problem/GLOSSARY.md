@@ -65,6 +65,22 @@ _Established in lesson 0003 (where observables come from)._
   *linking* two sectors (like the relative phase between a charge-0 and charge-1 state) is not
   observable. A fixed Casimir label (an elementary particle's spin/mass) is effectively such a
   sector label.
+_Established in lesson 0004 (quantum Darwinism)._
+
+- **Quantum Darwinism** — the account (Zurek) of why the classical world is *objective*: the
+  environment not only decoheres a system but stores **many redundant copies** of its einselected
+  pointer observable, so many observers can each read a small environment fragment, agree, and not
+  disturb the system. Explains intersubjective agreement — not the definite-outcome / Born-rule
+  problem, which it inherits unchanged from decoherence.
+- **Redundancy** \( R_\delta \) — the number of disjoint environment fragments each carrying all
+  but a fraction \( \delta \) of the system's classical information; \( R_\delta = 1/f_\delta \)
+  with \( f_\delta \) the fragment fraction needed. Large \( R \) *is* objectivity, quantified.
+- **Information plateau** — the shape of \( I(\mathcal S{:}\mathcal F)=H_{\mathcal S}+H_{\mathcal F}-H_{\mathcal S\mathcal F} \)
+  vs fragment size: a fast rise to \( H_{\mathcal S} \) (all the classical info, from a tiny
+  fragment), a long flat plateau (extra fragments are redundant), then a jump to \( 2H_{\mathcal S} \)
+  only when nearly all of \( \mathcal E \) is captured (the non-redundant quantum/coherence info).
+  The plateau is the fingerprint of an objective, classical observable.
+
 - **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
   (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
   a unitary flow. Some classical observables (radial momentum on \( r>0 \), an oscillator's

@@ -24,6 +24,21 @@ literature rather than parametric recall.
   The measurement problem stated carefully, with its history (EPR, Schrödinger's cat) and the
   landscape of responses. A high-trust map of the whole debate.
 
+## Knowledge — quantum Darwinism & objectivity
+
+- [Paper: **Quantum Darwinism** — W. H. Zurek](https://arxiv.org/abs/0903.5082)
+  Nat. Phys. 5, 181 (2009). The founding account: redundancy, the information plateau,
+  "environment as a witness," and why the classical world is objective. Anchor for lesson 0004.
+- [Paper: **Quantum Darwinism in an Everyday Environment: Huge Redundancy in Scattered Photons** — Riedel & Zurek](https://arxiv.org/abs/1001.3419)
+  PRL 105, 020404 (2010). The concrete estimate — a dust grain's position recorded in \( \sim10^8 \)
+  independent photon fragments — that makes "objectivity = redundancy" quantitative.
+- [Review: **Roads to objectivity: Quantum Darwinism, Spectrum Broadcast Structures, and Strong Quantum Darwinism**](https://arxiv.org/abs/2007.04276)
+  (2020). Maps quantum Darwinism against the sharper "Spectrum Broadcast Structure" notion of
+  objectivity — the natural next step after lesson 0004.
+- [Experiment: **Revealing the Emergence of Classicality Using Nitrogen-Vacancy Centers** — Unden et al.](https://arxiv.org/abs/1809.10456)
+  PRL 123, 140402 (2019). Redundant records imprinted on a nuclear-spin environment — a lab
+  demonstration of the redundancy structure. (Photonic version: Ciampini et al., PRA 98, 020101, 2018.)
+
 ## Knowledge — interpretations & foundations
 
 - [Book: **Speakable and Unspeakable in Quantum Mechanics** — J. S. Bell](https://www.cambridge.org/core/books/speakable-and-unspeakable-in-quantum-mechanics/)

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0004 — Quantum Darwinism: Why the Classical World Is Objective</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0004 · Decoherence &amp; Classicality</p>
+<h1>Quantum Darwinism: Why the Classical World Is Objective</h1>
+<p class="lede">Decoherence picks out a pointer basis — but why is the classical world an <em>objective</em> fact that countless independent observers agree on, and seem to read without disturbing it? Because the environment doesn't merely destroy coherence; it <strong>broadcasts many redundant copies</strong> of the pointer observable. Objectivity is redundancy.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">This is the promised sequel to <a href="0002-einselection-why-position.html">lesson 0002</a>, which asked: if everyone's environment einselects the same pointer basis, is <em>that</em> why observers agree? The answer is quantum Darwinism (Zurek). It builds on <a href="0001-decoherence-and-the-measurement-problem.html">0001</a> (decoherence) and 0002 (einselection) and delivers the missing ingredient — <strong>objectivity</strong> — while staying honest about the one thing it does <em>not</em> solve.</p>
+</div>
+
+<h2>The puzzle: classical facts are objective</h2>
+<p>A hallmark of the classical world is that its facts are <strong>objective</strong>: many observers can independently find the value of a classical variable (the Moon's position, a needle's reading), they all <em>agree</em>, they do so <em>without disturbing</em> it, and they treat the value as having been there all along. Quantum mechanics seems to forbid exactly this:</p>
+<ul>
+<li>a measurement generically <em>disturbs</em> the system (you can't peek at an unknown state for free);</li>
+<li>the <strong>no-cloning theorem</strong> forbids copying an unknown quantum state, so a quantum property can't just be duplicated for everyone to read.</li>
+</ul>
+<p>So how can a property become a shared, robust, seemingly pre-existing fact accessible to arbitrarily many observers?</p>
+
+<h2>You never measure the system — you measure the environment</h2>
+<p>The resolution starts with a simple observation about how we actually perceive things. You do not look at the Moon by prodding it; you intercept a <em>tiny fraction of the sunlight it has scattered</em>. Nearly all of our information about the macroscopic world arrives second-hand, carried by a <strong>fragment of the environment</strong> — photons, mostly — that has interacted with the object.</p>
+<p>Decoherence (lesson 0001) was the statement that the environment <em>monitors</em> the system, copying which-pointer-state information into itself and destroying local coherence. Quantum Darwinism is the next step: that same environment doesn't just erase the superposition — it <strong>keeps many independent records</strong> of the pointer observable, and those records are what observers read.</p>
+
+<h2>Objectivity = redundancy</h2>
+<p>Split the environment \(\mathcal E\) into many fragments \(\mathcal E_1,\mathcal E_2,\dots\) — different patches of scattered photons reaching different observers. The central claim is that <strong>many disjoint fragments each carry a nearly complete record of the same pointer observable</strong>. Then:</p>
+<ul>
+<li>many observers, each grabbing a <em>different, small</em> fragment, independently learn the <em>same</em> value and agree;</li>
+<li>they never touch the system, so they don't disturb it;</li>
+<li>because the record is copied many times, one observer reading it doesn't use it up — the next observer's fragment still carries it.</li>
+</ul>
+<p>The value becomes an objective fact precisely because it is <strong>redundant</strong> — stored in a great many independent places. The number of such independent copies is the <strong>redundancy</strong> \(R\); for a macroscopic object monitored by scattered light it is astronomically large. That huge \(R\) <em>is</em> classical objectivity, quantified.</p>
+
+<h2>Survival of the fittest: only the pointer observable is broadcast</h2>
+<p>Here is where the Darwinian metaphor bites. Of all the observables of the system, <em>only one</em> gets its information proliferated across the environment: the einselected <strong>pointer observable</strong> from lesson 0002. Complementary observables (superpositions of pointer states) leave <em>no</em> redundant imprint — to reconstruct them you would need to capture almost the <em>entire</em> environment at once, which no ordinary observer can. So the "fittest" states — those that both <em>survive</em> monitoring and get <em>copied</em> — are the pointer states, and objectivity is conferred on exactly them.</p>
+<p>This upgrades einselection. Lesson 0002 explained <em>which</em> basis becomes classical (the one the environment monitors without disturbing); quantum Darwinism explains why that basis is an <strong>objective fact for everyone</strong> — it is the one the environment redundantly advertises.</p>
+
+<h2>The quantitative fingerprint: the information plateau</h2>
+<p>Make it precise with mutual information. For a fragment \(\mathcal F\) of the environment, \(I(\mathcal S{:}\mathcal F)=H_{\mathcal S}+H_{\mathcal F}-H_{\mathcal S\mathcal F}\) measures how much \(\mathcal F\) tells you about the system \(\mathcal S\). Plot it against the fragment's size:</p>
+<ul>
+<li>a <em>tiny</em> fragment already rises to \(I \approx H_{\mathcal S}\) — essentially <em>all</em> the classical (pointer) information about the system;</li>
+<li>adding more environment then does almost nothing: a long, flat <strong>classical plateau</strong> at \(H_{\mathcal S}\). The extra fragments are redundant — they repeat what you already know;</li>
+<li>only when you capture <em>nearly the whole</em> environment does \(I\) climb past the plateau, up toward \(2H_{\mathcal S}\). That final surplus is the <em>quantum</em>, non-redundant information — the coherences — accessible only to someone holding essentially all of \(\mathcal E\).</li>
+</ul>
+<p>The redundancy is read off as \(R_\delta = 1/f_\delta\), where \(f_\delta\) is the fraction of the environment needed to supply all but \(\delta\) of \(H_{\mathcal S}\). A short rise, a long plateau, and a huge \(R_\delta\) are the signature that an observable has become classical and objective.</p>
+
+<h2>No-cloning, and why there is only <em>one</em> objective basis</h2>
+<p>Doesn't all this copying violate no-cloning? No — and the way it doesn't is illuminating. No-cloning forbids duplicating an <em>unknown, arbitrary</em> state. But the <em>orthogonal</em> eigenstates of a single fixed observable carry <strong>classical</strong> information, and classical information <em>can</em> be copied and broadcast freely. So the environment is allowed to make endless redundant records of the pointer observable — but it can do so for <strong>only one</strong> observable at a time. You cannot have redundant records of two complementary observables at once; that <em>would</em> violate no-cloning (and complementarity). No-cloning therefore doesn't block objectivity — it <em>restricts</em> it to a single observable, which is exactly why the classical world has one shared, definite basis of facts rather than many conflicting ones.</p>
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>Objectivity is <strong>redundancy</strong>. The environment doesn't just decohere the system — it stores many independent copies of the einselected pointer observable, so countless observers can each read a small fragment and agree, without disturbing the system. No-cloning permits this for exactly <em>one</em> observable, which is why there is a single, shared classical reality. Quantum Darwinism thus explains why the classical world is an <em>objective</em> fact — not merely why it looks classical.</p>
+</div>
+
+<h2>What it explains — and the boundary it doesn't cross</h2>
+<p>Quantum Darwinism genuinely adds something beyond bare decoherence: it explains <strong>intersubjective agreement</strong>, why classical properties seem pre-existing and can be read without disturbance, and why classical reality is robust and shared. It turns "the environment ruined the coherence" into "the environment published the answer."</p>
+<p>But be careful about its limits — it is the same boundary flagged in <a href="0001-decoherence-and-the-measurement-problem.html">lesson 0001</a>. Quantum Darwinism operates <em>inside</em> unitary quantum mechanics; the global state is still \(\sum_k c_k|s_k\rangle|\mathcal E_k\rangle\), all branches present. It explains why observers <em>within a branch</em> agree on redundant records — it does <strong>not</strong> explain why a single branch is realized, nor derive the Born probabilities. Redundancy buys <em>objective agreement</em>, not <em>single-outcome-ness</em>. So it sharpens and completes the decoherence story of classicality, but leaves the problem of definite outcomes exactly where lesson 0001 left it.</p>
+
+<div class="sidenote">This isn't only theory. The plateau-and-redundancy structure has been seen in the lab — e.g. redundant records imprinted on the nuclear-spin environment of a nitrogen-vacancy center in diamond (Unden et&nbsp;al., 2019), and in photonic cluster states (Ciampini et&nbsp;al., 2018). And for everyday objects the numbers are staggering: a dust grain lit for a fraction of a second has its position recorded redundantly in something like \(10^{8}\) independent fragments of the scattered photons (Riedel &amp; Zurek, 2010).</div>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="redundancy|its redundancy|redundant">
+  <p class="quiz-prompt">In quantum Darwinism, the objectivity of a classical property is quantified by its ⟶ ? in the environment — the number of independent fragments each carrying a full record.</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">How can many observers learn a classical property without disturbing the system?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">They gently share a single measurement of the system itself</button>
+    <button class="quiz-option" data-choice="b">Each reads a different redundant copy held in the environment</button>
+    <button class="quiz-option" data-choice="c">They clone the system's unknown state once for everyone else</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="c">
+  <p class="quiz-prompt">Why does the environment end up broadcasting only <em>one</em> observable (giving a single shared classical reality)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Because the environment is too small to record two of them</button>
+    <button class="quiz-option" data-choice="b">Because observers only ever agree to measure one of them</button>
+    <button class="quiz-option" data-choice="c">Because no-cloning forbids redundant records of two complementary ones</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">The founding statement is <a href="https://arxiv.org/abs/0903.5082" target="_blank" rel="noopener">Zurek, "Quantum Darwinism"</a> (Nat. Phys. 5, 181, 2009) — redundancy, the information plateau, environment-as-witness. For the everyday-photon estimate see <a href="https://arxiv.org/abs/1001.3419" target="_blank" rel="noopener">Riedel &amp; Zurek (2010)</a>; for a broad map of the field (including Spectrum Broadcast Structures) the review <a href="https://arxiv.org/abs/2007.04276" target="_blank" rel="noopener">"Roads to objectivity" (2020)</a>. Experiments: <a href="https://arxiv.org/abs/1809.10456" target="_blank" rel="noopener">Unden et&nbsp;al. (2019)</a> (NV center in diamond).</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any of this. Two threads worth pulling: <em>"Does quantum Darwinism <strong>depend</strong> on Many-Worlds, or is it interpretation-neutral?"</em> (it's largely neutral — it's a fact about where information goes, usable by Copenhagen and Everett alike), and <em>"What's a Spectrum Broadcast Structure, and how is it a sharper notion of objectivity than the mutual-information plateau?"</em> — the natural follow-on.</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0003-where-observables-come-from.html">0003 — Where Observables Come From</a></span>
+  <span>Next up: Spectrum Broadcast Structures / Bell nonlocality (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>
