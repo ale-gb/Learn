@@ -40,6 +40,14 @@
   preferred-basis problem, the commutativity criterion, why interactions monitor position, the
   predictability sieve / coherent states, and the contingency caveat (energy/flux pointer bases).
   Two forward threads seeded in it: decoherence-vs-dissipation timescales, and quantum Darwinism.
-- Candidate next lessons: quantum Darwinism (why observers agree on classical facts — flagged as
-  the natural 0003); the Wigner's-friend no-go theorems; Bell nonlocality done carefully; what
-  actually distinguishes Many-Worlds from Copenhagen operationally; objective-collapse tests.
+- Lesson `0003` (where observables come from) written 2026-07-11 from a learner question about
+  why angular-momentum *components* are observables but the *magnitude* seemingly isn't. Core:
+  observables = self-adjoint generators of the symmetry group; \( \hat J^2 \) IS an observable
+  (the Casimir) but a *label* of the irrep, fixed for an elementary particle's spin; capstone is
+  Wigner's classification (particles = Poincaré irreps labeled by mass & spin Casimirs). Gently
+  corrected the premise (magnitude² is observable). Note: this learner enjoys the symmetry/
+  representation-theory angle — good vein to mine.
+- Candidate next lessons: quantum Darwinism (why observers agree on classical facts); position as
+  a Galilei-boost generator & the origin of \( [\hat x,\hat p]=i\hbar \) (follow-on to 0003);
+  uncertainty relations as representation theory (thread seeded in 0003); the Wigner's-friend
+  no-go theorems; Bell nonlocality done carefully; objective-collapse tests.

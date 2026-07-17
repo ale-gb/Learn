@@ -44,6 +44,22 @@ _Established in lesson 0001 (the learner demonstrated working fluency with these
   universe in a superposition) and the observation of single, definite outcomes. Decoherence
   explains loss of interference and basis selection but **not** why one outcome is realized.
 
+_Established in lesson 0003 (where observables come from)._
+
+- **Generator (of a symmetry)** — the self-adjoint operator \( \hat G \) producing a continuous
+  symmetry via \( U(s)=e^{-is\hat G/\hbar} \) (Stone's theorem). The fundamental observables of
+  QM *are* these generators: momentum ← translations, angular momentum ← rotations, energy ←
+  time translation, charge ← internal phase. Conserved when \( [\hat G,\hat H]=0 \) (Noether).
+- **Casimir invariant** — an operator built from the generators that commutes with *all* of them
+  (e.g. \( \hat J^2 \) for the rotation algebra, \( [\hat J^2,\hat J_i]=0 \)). It is constant on
+  each irreducible representation, so it *labels* the representation rather than varying within
+  it — hence a fixed property (like an elementary particle's spin magnitude), not a dynamical
+  variable.
+- **Complete set of commuting observables (CSCO)** — a maximal set of mutually commuting
+  observables whose joint eigenvalues label states uniquely (e.g. \( \{\hat J^2,\hat J_z\} \),
+  giving \( j \) and \( m \)). The commuting requirement is why you take one component *plus* the
+  Casimir, never all three components.
+
 _Established in lesson 0002 (einselection)._
 
 - **Preferred-basis problem** — the fact that "the density matrix goes diagonal" is empty until

@@ -50,6 +50,20 @@ literature rather than parametric recall.
   Sharpens the Wigner's-friend result into a Bell-like no-go theorem with experiment.
 - Leggett–Garg inequality: original — [Leggett & Garg, PRL 54, 857 (1985)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.54.857); review — [Emary, Lambert & Nori, Rep. Prog. Phys. 77, 016001 (2014)](https://arxiv.org/abs/1304.5133). "Bell inequalities in time" / macroscopic realism.
 
+## Knowledge — symmetry &amp; the origin of observables
+
+- [Book: **Quantum Mechanics: A Modern Development** — L. Ballentine](https://books.google.com/books/about/Quantum_Mechanics_A_Modern_Development_2.html?id=Yi48DQAAQBAJ)
+  Ch. 3 derives the standard observables (momentum, angular momentum, Hamiltonian) and the
+  canonical commutators from a projective representation of the **Galilei group** — the primary
+  source for "observables come from the symmetry group." The anchor for lesson 0003.
+- [Book: **Modern Quantum Mechanics** — Sakurai &amp; Napolitano](https://www.cambridge.org/highereducation/books/modern-quantum-mechanics/DF43277E8AEDF83CBEA43D6C25CB4E39)
+  Ch. 3: angular momentum built explicitly as the generators of rotations, the \( \mathfrak{su}(2) \)
+  algebra, and the \( \{\hat J^2,\hat J_z\} \) / Casimir structure. Standard, clear.
+- [Book: **The Quantum Theory of Fields, Vol. 1** — S. Weinberg](https://www.cambridge.org/core/books/quantum-theory-of-fields/F0EACE18EA5E266C7DFD0E70FD9B7BD0)
+  Ch. 2: Wigner's classification — elementary particles as irreducible representations of the
+  **Poincaré group**, labeled by the two Casimirs (mass, spin). The capstone of lesson 0003.
+  (Wigner's original: "On Unitary Representations of the Inhomogeneous Lorentz Group," *Ann. Math.* 40, 149, 1939.)
+
 ## Knowledge — objective collapse (gravity-induced)
 
 - [Paper: **On Gravity's Role in Quantum State Reduction** — R. Penrose](https://link.springer.com/article/10.1007/BF02105068)
