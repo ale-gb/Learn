@@ -59,6 +59,17 @@ _Established in lesson 0003 (where observables come from)._
   observables whose joint eigenvalues label states uniquely (e.g. \( \{\hat J^2,\hat J_z\} \),
   giving \( j \) and \( m \)). The commuting requirement is why you take one component *plus* the
   Casimir, never all three components.
+- **Superselection rule** — a restriction forbidding coherent superpositions between certain
+  sectors of the Hilbert space (e.g. different electric charge; different mass in Galilean QM;
+  bosons vs fermions). Physical observables are block-diagonal across sectors, so an operator
+  *linking* two sectors (like the relative phase between a charge-0 and charge-1 state) is not
+  observable. A fixed Casimir label (an elementary particle's spin/mass) is effectively such a
+  sector label.
+- **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
+  (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
+  a unitary flow. Some classical observables (radial momentum on \( r>0 \), an oscillator's
+  phase, time-of-arrival) have symmetric operators with **no self-adjoint extension**, so they
+  are not quantum observables at all.
 
 _Established in lesson 0002 (einselection)._
 

@@ -51,6 +51,15 @@
 \[ \hat J^2 \to \hbar^2\,j(j+1), \qquad \hat J_z \to \hbar\,m,\quad m=-j,\dots,+j . \]
 <p>So the magnitude-squared is very much an observable. But being the Casimir gives it a completely different <em>role</em> from the components: it commutes with everything, so it is <strong>constant on each irreducible representation</strong>. It does not point in any direction; it <em>labels which representation you are in</em> — the value of \(j\).</p>
 
+<h3>"But it's a function of non-commuting components — how is that allowed?"</h3>
+<p>The natural objection: \(\hat J^2\) is built from \(\hat J_x,\hat J_y,\hat J_z\), which don't commute — so how can it be a clean observable? The key is that <strong>non-commutativity doesn't stop you from <em>forming</em> operators; it stops you from making them jointly <em>sharp</em></strong>. You may always add and multiply operators. And \(\hat J^2=\hat J_x^2+\hat J_y^2+\hat J_z^2\) is a sum of <em>squares</em> — each \(\hat J_i^2\) is just \(\hat J_i\) times itself, with no ordering ambiguity — so it is a perfectly well-defined, self-adjoint, positive operator. (Contrast a cross-term like \(\hat J_x\hat J_y\), which <em>is</em> order-ambiguous.)</p>
+<p>Why does it then commute with each component? Watch the cancellation, using \([\hat J_x,\hat J_z]=-i\hbar\hat J_y\) and \([\hat J_y,\hat J_z]=+i\hbar\hat J_x\):</p>
+\[ [\hat J_x^2,\hat J_z] = -i\hbar(\hat J_x\hat J_y+\hat J_y\hat J_x),\qquad [\hat J_y^2,\hat J_z] = +i\hbar(\hat J_y\hat J_x+\hat J_x\hat J_y), \]
+<p>and \([\hat J_z^2,\hat J_z]=0\); the two cross-terms are equal and opposite, so \([\hat J^2,\hat J_z]=0\). The non-commutativity is <em>exactly what makes them cancel</em>. Conceptually: commuting with the generators \(\hat J_i\) is the <em>same statement</em> as being <strong>invariant under the rotations they generate</strong> — and a vector's length is rotation-invariant. So \(\hat J^2\) is special because it is the rotational invariant; a <em>generic</em> function of the components neither commutes with them nor is invariant.</p>
+<p>Nor is there any contradiction with "you can't have all three components." Measuring the compatible set \(\{\hat J^2,\hat J_z\}\) makes</p>
+\[ \hat J_x^2+\hat J_y^2 = \hat J^2-\hat J_z^2 = \big[j(j+1)-m^2\big]\hbar^2 \]
+<p>perfectly sharp — yet \(\hat J_x\) and \(\hat J_y\) <em>individually</em> stay maximally uncertain. A particular <em>combination</em> of non-commuting observables can be definite even when the observables themselves cannot: definite length, definite \(\hat J_z\), fuzzy direction — precisely the cone below.</p>
+
 <h2>The resolution: for spin, the magnitude is a fixed label</h2>
 <p>Here is the precise sense in which your intuition was right. Whether \(\hat J^2\) behaves as a "variable you measure" or a "fixed property" depends on whether the physical system can occupy <em>different</em> irreducible representations:</p>
 <table>
@@ -74,6 +83,19 @@
 \[ \hat P^2 = m^2 \quad(\text{mass}), \qquad \hat W^2 = -\,m^2\,j(j+1)\quad(\text{spin}). \]
 <p>So "the electron has mass \(m_e\) and spin \(\tfrac12\)" is literally a statement of <em>which representation</em> the electron is — two Casimir eigenvalues naming the irrep. Mass and spin, the two properties of a particle that never change, are precisely the Casimirs; momentum, position and spin-<em>component</em>, the things that vary and get measured, are the non-commuting generators acting within the representation. The same logic that says "spin components are observables but spin magnitude is a fixed label" is, at bottom, the organizing principle of particle physics.</p>
 
+<h2>Stepping back: what <em>can't</em> be an observable (but could classically)</h2>
+<p>Classically an observable is <em>any</em> real function on phase space: all such functions commute, all have simultaneous definite values, all are automatically real. Quantum mechanics imposes three filters a classical observable never has to pass — it must be a <strong>self-adjoint operator</strong>, mutually measurable observables must <strong>commute</strong>, and it must respect <strong>superselection</strong>. Several perfectly good classical observables don't survive:</p>
+<table>
+<tr><th>Classical observable</th><th>Quantum fate</th><th>Why</th></tr>
+<tr><td>A <strong>phase-space point</strong> — \(x\) and \(p\) both sharp</td><td>Forbidden</td><td>\([\hat x,\hat p]=i\hbar\neq0\): non-commuting, so never jointly sharp. The most basic classical observable is not a quantum one.</td></tr>
+<tr><td>A <strong>generic function \(f(x,p)\)</strong></td><td>No unique / no consistent operator</td><td>Ordering ambiguity (\(\hat x\hat p\neq\hat p\hat x\)); and the <strong>Groenewold–van Hove</strong> theorem shows <em>no</em> quantization can promote all polynomials in \(x,p\) while preserving the bracket structure — only a small subalgebra (the symmetry generators and low-degree combinations) lifts cleanly.</td></tr>
+<tr><td><strong>Radial momentum</strong> \(p_r\)</td><td>Not an observable</td><td>\(\hat p_r\) on the half-line \(r&gt;0\) is symmetric but has <em>no self-adjoint extension</em> — real-valued isn't enough; the operator must be genuinely self-adjoint.</td></tr>
+<tr><td><strong>Phase</strong> of an oscillator</td><td>Not an observable</td><td>No self-adjoint phase operator is conjugate to the number operator \(\hat N\) (whose spectrum is bounded below) — the Susskind–Glogower problem.</td></tr>
+<tr><td><strong>Time</strong> (e.g. time-of-arrival)</td><td>Not an observable</td><td>Pauli's theorem: a self-adjoint \(\hat T\) with \([\hat T,\hat H]=i\hbar\) would force \(\hat H\) unbounded below. Time is a <em>parameter</em>, not an operator.</td></tr>
+<tr><td>Relative phase across a <strong>superselection sector</strong> (charge, mass, boson/fermion)</td><td>Forbidden</td><td>The Hilbert space splits into sectors with no coherent superposition between them; an operator linking two sectors (e.g. reading the phase between a charge-0 and charge-1 state) is not physical.</td></tr>
+</table>
+<p>The unifying reason is exactly the theme of this lesson read in reverse. A classical observable is just a real function on phase space, so it faces none of these constraints — everything commutes, everything is jointly defined, there are no sectors and no self-adjointness subtlety. A quantum observable must be a self-adjoint operator, and the physically admissible ones are cut down further by compatibility (commutation) and superselection. So the passage from classical to quantum doesn't merely blur values — it genuinely <em>removes</em> observables: the ones that can't be made self-adjoint, can't be jointly sharp, or can't respect the sector structure.</p>
+
 <h2>Check your recall</h2>
 
 <div class="quiz" data-answer="generators|generator|the generators">
@@ -93,9 +115,19 @@
   <p class="quiz-feedback"></p>
 </div>
 
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">A classical phase-space point specifies \(x\) and \(p\) together. Why is that not a quantum observable?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Because position and momentum are not real-valued quantities</button>
+    <button class="quiz-option" data-choice="b">Because \(\hat x\) and \(\hat p\) don't commute, so are never jointly sharp</button>
+    <button class="quiz-option" data-choice="c">Because momentum is a symmetry generator but position is not</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
 <div class="primary-source">
 <p class="kicker">Primary sources</p>
-<p style="margin-bottom:0">The cleanest development of "observables come from the symmetry group" is <a href="https://books.google.com/books/about/Quantum_Mechanics_A_Modern_Development_2.html?id=Yi48DQAAQBAJ" target="_blank" rel="noopener">Ballentine, <em>Quantum Mechanics: A Modern Development</em></a>, ch. 3 (generators of the Galilei group; identification of operators with dynamical variables). For angular momentum as the generators of rotation and the \(\{\hat J^2,\hat J_z\}\) structure, Sakurai &amp; Napolitano, <em>Modern Quantum Mechanics</em>, ch. 3. For the capstone — particles as Poincaré irreps labeled by mass and spin — Weinberg, <em>The Quantum Theory of Fields</em>, Vol. 1, ch. 2, and Wigner's original 1939 paper "On Unitary Representations of the Inhomogeneous Lorentz Group."</p>
+<p style="margin-bottom:0">The cleanest development of "observables come from the symmetry group" is <a href="https://books.google.com/books/about/Quantum_Mechanics_A_Modern_Development_2.html?id=Yi48DQAAQBAJ" target="_blank" rel="noopener">Ballentine, <em>Quantum Mechanics: A Modern Development</em></a>, ch. 3 (generators of the Galilei group; identification of operators with dynamical variables). For angular momentum as the generators of rotation and the \(\{\hat J^2,\hat J_z\}\) structure, Sakurai &amp; Napolitano, <em>Modern Quantum Mechanics</em>, ch. 3. For the capstone — particles as Poincaré irreps labeled by mass and spin — Weinberg, <em>The Quantum Theory of Fields</em>, Vol. 1, ch. 2, and Wigner's original 1939 paper "On Unitary Representations of the Inhomogeneous Lorentz Group." On which classical observables fail to become quantum ones — self-adjoint versus merely symmetric operators, and the radial-momentum and phase-operator surprises — see <a href="https://arxiv.org/abs/quant-ph/9907069" target="_blank" rel="noopener">Gieres, "Mathematical surprises and Dirac's formalism in quantum mechanics"</a> (Rep. Prog. Phys. 63, 1893, 2000); the impossibility of consistently quantizing all of \(f(x,p)\) is the Groenewold–van Hove theorem.</p>
 </div>
 
 <p class="ask-your-teacher">I'm your teacher — push on any of this. Two threads worth pulling: <em>"Where does <strong>position</strong> fit — is it also a generator (of Galilei boosts), and does that explain \([\hat x,\hat p]=i\hbar\)?"</em> and <em>"If the uncertainty between \(\hat J_x\) and \(\hat J_y\) is just the symmetry algebra talking, does that mean uncertainty relations are statements about representation theory, not about measurement disturbance?"</em> — the answer is yes, and it's a clarifying way to see them.</p>

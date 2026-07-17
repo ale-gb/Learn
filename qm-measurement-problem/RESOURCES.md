@@ -63,6 +63,12 @@ literature rather than parametric recall.
   Ch. 2: Wigner's classification — elementary particles as irreducible representations of the
   **Poincaré group**, labeled by the two Casimirs (mass, spin). The capstone of lesson 0003.
   (Wigner's original: "On Unitary Representations of the Inhomogeneous Lorentz Group," *Ann. Math.* 40, 149, 1939.)
+- [Paper: **Mathematical surprises and Dirac's formalism in quantum mechanics** — F. Gieres](https://arxiv.org/abs/quant-ph/9907069)
+  Rep. Prog. Phys. 63, 1893 (2000). Why *self-adjoint* (not merely symmetric) is the real
+  requirement for an observable, with the concrete surprises — radial momentum, the phase
+  operator — where a fine classical observable has no self-adjoint quantum counterpart. Backs the
+  "what can't be an observable" section of lesson 0003. (The companion no-go, that not all of
+  \( f(x,p) \) can be consistently quantized, is the **Groenewold–van Hove theorem**.)
 
 ## Knowledge — objective collapse (gravity-induced)
 
