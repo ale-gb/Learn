@@ -24,6 +24,22 @@ literature rather than parametric recall.
   The measurement problem stated carefully, with its history (EPR, Schrödinger's cat) and the
   landscape of responses. A high-trust map of the whole debate.
 
+## Knowledge — why complex numbers (real vs complex QM)
+
+- [Paper: **Division Algebras and Quantum Theory** — J. Baez](https://arxiv.org/abs/1101.5690)
+  (2011). The cleanest account of "which number system?" — \( \mathbb R,\mathbb C,\mathbb H \), local
+  tomography, and why \( \mathbb C \) is singled out. Anchor for lesson 0005's Part II.
+- [Paper: **Quantum theory based on real numbers can be experimentally falsified** — Renou et al.](https://www.nature.com/articles/s41586-021-04160-4)
+  Nat. 600, 625 (2021); [arXiv:2101.10873](https://arxiv.org/abs/2101.10873). A Bell-like network
+  where real and complex QM differ, then tested. Read *with* its tensor-product assumption in mind
+  (and the 2025 debate that a real formulation with an extra \( J \), \( J^2=-1 \), can still mimic \( \mathbb C \)).
+- [Book: **Mathematical Topics Between Classical and Quantum Mechanics** — N. P. Landsman](https://link.springer.com/book/10.1007/978-1-4612-1680-3)
+  (Springer, 1998). The Jordan–Lie algebra of observables, how associativity + positivity force the
+  imaginary unit, and the algebraic route to \( C^* \)-algebras. Anchor for lesson 0005's Part III.
+- Book: **An Introduction to the Mathematical Structure of Quantum Mechanics** — F. Strocchi.
+  Compact, rigorous treatment of the \( C^* \)-algebraic formulation and the GNS construction.
+  Original real-Hilbert-space analysis: E. C. G. Stueckelberg, *Helv. Phys. Acta* 33, 727 (1960).
+
 ## Knowledge — quantum Darwinism & objectivity
 
 - [Paper: **Quantum Darwinism** — W. H. Zurek](https://arxiv.org/abs/0903.5082)

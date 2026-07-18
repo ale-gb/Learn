@@ -81,6 +81,26 @@ _Established in lesson 0004 (quantum Darwinism)._
   only when nearly all of \( \mathcal E \) is captured (the non-redundant quantum/coherence info).
   The plateau is the fingerprint of an objective, classical observable.
 
+_Established in lesson 0005 (why QM needs complex numbers)._
+
+- **Mutually unbiased bases (MUBs)** — bases such that a state sharp in one is uniform (equal
+  probabilities) in the other. \( \mathbb R^2 \) admits at most 2; \( \mathbb C^2 \) admits 3 (the
+  \( x,y,z \) Pauli eigenbases). Needing 3 for spin is one way to see why \( \mathbb R^2 \) fails.
+- **Complex structure \( J \)** — the real-linear operation "multiply by \( i \)," \( J^2=-\mathbb 1 \).
+  It is the *extra* structure that upgrades \( \mathbb R^{2N} \) to \( \mathbb C^N \); its physical job
+  is to make the probability metric \( g \), the dynamical symplectic form \( \omega \), and system
+  composition mutually compatible (\( g(u,v)=\omega(u,Jv) \), a **Kähler** structure).
+- **Jordan–Lie algebra** — the real algebra of observables with a symmetric (Jordan) product
+  \( A\circ B=\tfrac12(AB+BA) \) and an antisymmetric Lie bracket, linked by the Leibniz rule.
+  Demanding a single *associative* positive product forces the combining coefficient to be
+  imaginary (\( \kappa=\tfrac{i\hbar}{2} \)) — *deriving* \( i \) rather than assuming it.
+- **Local tomography** — the requirement that a joint state be determined by local measurements and
+  their correlations. Holds in complex QM (observable counts match); fails in real QM (e.g.
+  \( \sigma_y\otimes\sigma_y \) is a global observable no local real measurement reaches).
+- **GNS construction** (Gelfand–Naimark–Segal) — builds a Hilbert space from a \( C^* \)-algebra and
+  a state \( \omega \): inner product \( \langle A,B\rangle=\omega(A^*B) \), quotient the null space
+  \( \{A:\omega(A^*A)=0\} \), complete. The Hilbert space *emerges*; it is not postulated.
+
 - **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
   (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
   a unitary flow. Some classical observables (radial momentum on \( r>0 \), an oscillator's

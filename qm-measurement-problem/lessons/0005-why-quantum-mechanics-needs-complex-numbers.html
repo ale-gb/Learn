@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0005 — Why Quantum Mechanics Needs Complex Numbers</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0005 · Foundations of QM</p>
+<h1>Why Quantum Mechanics Needs Complex Numbers</h1>
+<p class="lede">A single spin-½ already forces the issue. But the deep reason isn't "states need a phase" — it's that one object, the complex structure \(i\), is what locks together the three things quantum mechanics must satisfy at once: probability, dynamics, and composition.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">"Why complex numbers?" has answers at three depths, and this lesson climbs all three. <strong>(I)</strong> A concrete no-go: one spin-½, à la Stern–Gerlach, cannot be modelled over \(\mathbb R^2\). <strong>(II)</strong> The subtle objection — "isn't \(\mathbb C^N\) just \(\mathbb R^{2N}\)?" — and why the answer is <em>no</em>, from Stone's theorem, the commutator, and the composition of systems (with a real experiment). <strong>(III)</strong> The deepest view: \(i\) is not assumed but <em>emerges</em> from the real algebra of observables, and the Hilbert space with it.</p>
+</div>
+
+<h2>Part I — One spin-½ already breaks \(\mathbb R^2\)</h2>
+<p>The empirical input is minimal. A silver atom's spin can be measured along any spatial axis; along each axis the result is \(\pm\tfrac{\hbar}{2}\); and for any two <em>orthogonal</em> axes, a state sharp along one gives \(50/50\) along the other. The three axes \(x,y,z\) are, in quantum-information language, <strong>mutually unbiased</strong>: knowing the outcome in one basis leaves you maximally ignorant in the others.</p>
+
+<h3>Try to build it over \(\mathbb R^2\)</h3>
+<p>Take the \(S_z\) eigenstates as the canonical basis, \(|{+}z\rangle=\binom{1}{0}\), \(|{-}z\rangle=\binom{0}{1}\). The \(S_x\) eigenstates must be \(50/50\) in the \(z\)-basis — equal-magnitude components — so in \(\mathbb R^2\) they are forced (up to sign) to be</p>
+\[ |{\pm}x\rangle = \tfrac{1}{\sqrt2}\binom{1}{\pm 1}. \]
+<p>Now demand a third basis, \(S_y\), unbiased to <em>both</em>. Write \(|{+}y\rangle=\binom{\cos\theta}{\sin\theta}\). Unbiasedness to \(z\) requires \(\cos^2\theta=\tfrac12\), forcing \(\theta\in\{\tfrac{\pi}{4},\tfrac{3\pi}{4},\dots\}\) — but those are <em>exactly the \(x\)-eigenvectors again</em>. So any real vector unbiased to \(z\) is already an \(x\)-eigenstate, hence <em>perfectly</em> biased (\(100/0\)) with respect to \(x\), not \(50/50\). There is no room in \(\mathbb R^2\) for a third mutually unbiased basis.</p>
+<p>This is a counting fact: \(\mathbb R^2\) admits at most <strong>two</strong> mutually unbiased bases (the two diagonals of a square), while three spatial axes demand <strong>three</strong>. Complexifying to \(\mathbb C^2\) opens exactly the missing room — the state space becomes the Bloch sphere \(S^2\), which carries three MUBs — and the third basis is</p>
+\[ |{\pm}y\rangle = \tfrac{1}{\sqrt2}\binom{1}{\pm i}, \qquad |\langle {+}x|{+}y\rangle|^2 = \Big|\tfrac12(1+i)\Big|^2 = \tfrac12,\quad |\langle{+}z|{+}y\rangle|^2 = \tfrac12. \]
+<p>The imaginary component is precisely what makes \(|{+}y\rangle\) unbiased to both \(z\) and \(x\) at once.</p>
+
+<h3>The same fact, said with operators</h3>
+<p>Over a real Hilbert space, "self-adjoint" means "real symmetric." The real symmetric \(2\times2\) matrices form a <em>3</em>-dimensional space, spanned by</p>
+\[ \mathbb 1=\begin{pmatrix}1&0\\0&1\end{pmatrix},\quad \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad \sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix}, \]
+<p>so there are only <strong>two</strong> independent <em>traceless</em> ones. But spin-½ needs <em>three</em> traceless observables \(S_x,S_y,S_z\) closing into the \(\mathfrak{su}(2)\) algebra. The third, \(\sigma_y=\bigl(\begin{smallmatrix}0&-i\\ i&0\end{smallmatrix}\bigr)\), is Hermitian but <em>not</em> real symmetric; its real cousin \(\bigl(\begin{smallmatrix}0&-1\\ 1&0\end{smallmatrix}\bigr)=-i\sigma_y\) is <em>antisymmetric</em>, and real antisymmetric matrices have <strong>purely imaginary eigenvalues</strong> \(\pm i\). Since measured values are real, an antisymmetric operator cannot be an observable. Real symmetric matrices simply cannot carry the spin algebra — you are forced to complex Hermitian matrices.</p>
+
+<div class="sidenote">The same pressure shows up in the canonical commutator. For Hermitian \(A,B\), the commutator is <em>anti</em>-Hermitian: \([A,B]^\dagger = B^\dagger A^\dagger - A^\dagger B^\dagger = -[A,B]\). So \([\hat x,\hat p]\) must be anti-Hermitian — yet it equals a multiple of the identity, which is Hermitian. The only escape is to make that multiple imaginary: \([\hat x,\hat p]=i\hbar\,\mathbb 1\). The \(i\) is not decoration; it is what reconciles the two.</div>
+
+<h2>Part II — "But isn't \(\mathbb C^N\) just \(\mathbb R^{2N}\)?"</h2>
+<p>Here is the objection a careful reader raises, and it is the right one. A complex amplitude \(c=a+ib\) is a pair of reals \(\binom{a}{b}\); a complex Hilbert space \(\mathbb C^N\) is, as a real vector space, just \(\mathbb R^{2N}\). If "a state needs a magnitude and a phase" were the whole story, you could track the phase with an extra real coordinate and never write an \(i\). So the intuition "\(i\) keeps track of phase, like 3D vectors keep track of force directions" <em>undersells</em> it. The real content is that \(\mathbb C^N\) is \(\mathbb R^{2N}\) <strong>plus one extra piece of structure</strong> — the operation "multiply by \(i\)," a real-linear map \(J\) with \(J^2=-\mathbb 1\) — and that \(J\) is forced to be <em>compatible</em> with three things simultaneously. That triple compatibility is what \(\mathbb R^{2N}\) alone has no reason to provide.</p>
+
+<h3>(a) Observables must also be generators — Stone's theorem</h3>
+<p>In quantum mechanics observables lead a double life: they are what you <em>measure</em>, and they are the <em>generators</em> of continuous symmetries — momentum generates translations, the Hamiltonian generates time evolution, angular momentum generates rotations. A one-parameter group of probability-preserving maps \(U(\theta)\) is, by Stone's theorem, \(U(\theta)=e^{\theta G}\) with an <strong>anti-Hermitian</strong> generator, \(G^\dagger=-G\) (that is exactly the condition making \(U\) unitary).</p>
+<p>Now the clash. A measured quantity needs <em>real</em> eigenvalues (Hermitian). A generator needs to be <em>anti</em>-Hermitian. Over the reals these are irreconcilable: a real skew-symmetric \(G\) (\(G^{\mathsf T}=-G\)) has purely imaginary eigenvalues, so in a real Hilbert space the generator of a symmetry <em>cannot</em> be an observable at all. The imaginary unit is precisely the bridge — it maps one class onto the other:</p>
+\[ G = -\,\tfrac{i}{\hbar}\,A, \qquad G^\dagger=-G \iff A^\dagger = A. \]
+<p>So \(i\) is the isomorphism that lets the very same object be measured (as \(A\), Hermitian) <em>and</em> drive dynamics (as \(G=-iA/\hbar\), anti-Hermitian). Strip out \(i\) and you must give up either real spectra or unitary dynamics.</p>
+
+<h3>(b) The commutator carries a symplectic structure</h3>
+<p>Quantisation turns the classical Poisson bracket into the commutator, \(\{\,\cdot\,,\cdot\,\}\to\frac{1}{i\hbar}[\,\cdot\,,\cdot\,]\). We just saw \([\hat x,\hat p]=i\hbar\,\mathbb 1\) cannot be written over \(\mathbb R\): the commutator of two symmetric operators is antisymmetric, yet the right side is a (symmetric) multiple of the identity. Geometrically this is telling you something: the quantum state space is not just a metric space (an inner product measuring probabilities) — it also carries a <strong>symplectic form</strong> (the antisymmetric structure governing Hamiltonian flow), exactly as classical phase space does. The complex structure \(J\) (=multiplication by \(i\)) is what makes the metric \(g\) and the symplectic form \(\omega\) <em>compatible</em>, via \(g(u,v)=\omega(u,Jv)\). A space with all three fitting together is a <strong>Kähler</strong> space; the projective space of quantum states \(\mathbb{CP}^{N-1}\) is one. \(i\) is the glue of that compatibility, not an accountant's shortcut.</p>
+
+<h3>(c) Systems must compose — local tomography</h3>
+<p>The sharpest argument comes from putting two systems together. A basic demand — <strong>local tomography</strong> — is that the full state of a bipartite system \(AB\) (entanglement included) be fixed by the statistics of <em>local</em> measurements and their correlations, \(\langle O_A\otimes O_B\rangle\). Count the observables for two qubits:</p>
+<table>
+<tr><th></th><th>Complex \(\mathbb C^2\otimes\mathbb C^2\)</th><th>Real \(\mathbb R^2\otimes\mathbb R^2\)</th></tr>
+<tr><td>Global observables (dim)</td><td>\((d_Ad_B)^2 = 16\)</td><td>\(\tfrac{d_Ad_B(d_Ad_B+1)}{2}=10\)</td></tr>
+<tr><td>Spanned by local products</td><td>\(d_A^2\,d_B^2 = 4\times4 = 16\)</td><td>\(3\times 3 = 9\)</td></tr>
+<tr><td>Local tomography?</td><td><strong>holds</strong> (16 = 16)</td><td><strong>fails</strong> (10 &gt; 9)</td></tr>
+</table>
+<p>Over \(\mathbb C\) the counts match exactly: local products of observables span <em>all</em> global observables, so joint local statistics determine everything. Over \(\mathbb R\) they don't — and you can name the missing observable. In the Pauli basis, \(\sigma_i\otimes\sigma_j\) is a real matrix precisely when both factors are real (\(\mathbb 1,\sigma_x,\sigma_z\)) <em>or</em> both are imaginary (\(\sigma_y\)). That gives \(3\times3=9\) products of local real observables, plus one extra: \(\sigma_y\otimes\sigma_y\), which <em>is</em> a legitimate real symmetric global observable but is <strong>not</strong> a product of local real ones (since \(\sigma_y\) alone isn't a real observable). So real quantum mechanics hides a global correlation that no amount of local measurement can reveal — you would need to measure the whole system at once. Complex quantum mechanics has exactly the right amount of structure for local tomography to hold.</p>
+
+<div class="callout">
+  <p class="kicker">This one was actually tested</p>
+  <p style="margin-bottom:0">This is not only philosophy. <a href="https://www.nature.com/articles/s41586-021-04160-4" target="_blank" rel="noopener">Renou et&nbsp;al. (Nature, 2021)</a> designed a Bell-like <em>network</em> experiment in which — <em>under the standard assumption that independent sources combine by tensor product</em> — real and complex quantum mechanics make <em>different</em>, measurable predictions; superconducting-qubit and photonic experiments then confirmed the complex prediction, falsifying real quantum theory under those assumptions. The honest caveat: that assumption is essentially local tomography, and one <em>can</em> still build a real formulation that reproduces everything by carrying an extra real operator \(J\) with \(J^2=-\mathbb 1\) commuting with all observables (Stueckelberg, 1960) — but that operator is simply \(i\) in disguise. Which is the real lesson of Part II: you can hide the complex structure inside \(\mathbb R^{2N}\), but you cannot eliminate it.</p>
+</div>
+
+<h2>Part III — Where \(i\) actually comes from: the algebra of observables</h2>
+<p>Parts I–II show \(\mathbb C\) is <em>needed</em>. The deepest treatment shows it is not even an input — it <em>emerges</em> from the real structure of measurable quantities. This reverses the usual pedagogy, which <em>starts</em> by postulating a complex Hilbert space.</p>
+
+<h3>Start with only what you can measure</h3>
+<p>Let \(\mathcal A_{\mathbb R}\) be the set of observables — a <em>real</em> vector space (you can scale an observable by a real number and add observables). It carries two natural bilinear products:</p>
+<ul>
+<li>a <strong>Jordan product</strong> \(A\circ B\) — symmetric and commutative (you need to square observables to speak of variances), but <em>not</em> associative;</li>
+<li>a <strong>Lie bracket</strong> \(\{A,B\}=-\{B,A\}\) — antisymmetric, obeying the Jacobi identity (observables generate transformations, and composing transformations needs a Lie bracket).</li>
+</ul>
+<p>For these to describe one system, the generators must act as <em>derivations</em> on the products — the Leibniz rule \(\{A,\,B\circ C\}=\{A,B\}\circ C + B\circ\{A,C\}\). A real vector space with \(\circ\) and \(\{\,,\}\) obeying this is a <strong>Jordan–Lie algebra</strong>. There is no \(i\) anywhere in it.</p>
+
+<h3>Demand associativity, and \(i\) is born</h3>
+<p>Physics badly wants a single <em>associative</em> product \(AB\) (to compose measurements, form polynomials, build a \(C^*\)-algebra). The most general one built from the two we have is</p>
+\[ AB = A\circ B + \kappa\,\{A,B\}, \qquad \kappa\in\mathbb ? \]
+<p>Impose associativity, \((AB)C=A(BC)\). The terms <em>linear</em> in \(\kappa\) cancel identically — that is exactly what the Leibniz rule guarantees. What survives equates the non-associativity of the Jordan product to \(\kappa^2\) times a nested Lie bracket. Matching this against the Jordan–Lie structure, and demanding that states be <em>positive</em> (\(\omega(A^2)\ge 0\), so that a genuine probability interpretation and a \(C^*\)-norm exist), forces</p>
+\[ \kappa^2 = -\tfrac{\hbar^2}{4} \;&lt;\;0 \qquad\Longrightarrow\qquad \kappa = \tfrac{i\hbar}{2}. \]
+<p>A <em>real</em> \(\kappa\) (the sign \(\kappa^2&gt;0\)) gives a non-physical "split" algebra with no positive states; only the negative sign works, and it is imaginary. So the associative product is</p>
+\[ AB = A\circ B + \tfrac{i\hbar}{2}\,\{A,B\}, \]
+<p>with \(A\circ B=\tfrac12(AB+BA)\) and the Lie bracket represented by the <em>Hermitian</em> object \(\{A,B\}=\tfrac{1}{i\hbar}(AB-BA)\). Demanding associativity of the observables has <strong>complexified the algebra by itself</strong>: the real Jordan–Lie algebra of observables closes up into a complex \(C^*\)-algebra, with \(i\) generated, not assumed.</p>
+
+<div class="sidenote">Contrast the classical case: there the Jordan product is ordinary (associative, commutative) multiplication of functions, the Lie bracket is the Poisson bracket, and the associativity condition is satisfied with \(\kappa=0\) — the two products stay separate and no \(i\) appears. Quantum mechanics is exactly the case where the observables fail to commute, forcing \(\kappa\neq0\), forcing \(\kappa\) imaginary.</div>
+
+<h3>The Hilbert space is not assumed either — it emerges (GNS)</h3>
+<p>Now we have an abstract complex \(C^*\)-algebra \(\mathcal A\) but still no kets. In this framework a <strong>state</strong> is not a vector; it is a positive linear functional \(\omega:\mathcal A\to\mathbb C\) with \(\omega(\mathbb 1)=1\) — it simply assigns to each observable its expectation value. The <strong>GNS construction</strong> (Gelfand–Naimark–Segal) then builds a Hilbert space out of the algebra and a state, in three moves:</p>
+<ul>
+<li><strong>Inner product from the state:</strong> \(\langle A,B\rangle_\omega := \omega(A^*B)\) — a sesquilinear, positive-semidefinite form on \(\mathcal A\).</li>
+<li><strong>Quotient the null directions:</strong> the "zero-length" elements \(\mathcal N_\omega=\{A:\omega(A^*A)=0\}\) form a subspace; pass to \(\mathcal A/\mathcal N_\omega\), on which the form is a genuine inner product.</li>
+<li><strong>Complete</strong> to get a bona fide complex Hilbert space \(\mathcal H_\omega\). The algebra then acts on it by left multiplication, \(\pi_\omega(A)\,[B]=[AB]\), recovering operators-on-a-Hilbert-space — as a <em>theorem</em>, not a postulate.</li>
+</ul>
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>Complex numbers are not bookkeeping for a phase — if they were, \(\mathbb R^{2N}\) would do. \(i\) is the <strong>complex structure \(J\)</strong> that forces the metric of <em>probability</em>, the symplectic form of <em>dynamics</em>, and the tensor product of <em>composition</em> to all fit together at once — which is why the same object can be measured <em>and</em> generate evolution, why \([\hat x,\hat p]=i\hbar\), and why local measurements suffice to pin down a joint state. Algebraically, \(i\) isn't even assumed: demanding that the real algebra of observables be associative and positive <em>generates</em> it, and the Hilbert space then emerges from a state by GNS.</p>
+</div>
+
+<h2>So what is the intuition?</h2>
+<p>Your instinct — "states carry a phase, and \(i\) tracks it, like 3D vectors track force directions" — is the right <em>flavour</em> but too weak, and the \(\mathbb R^{2N}\) objection is why. Extra components (a second real number per amplitude) you could always bolt on. What you cannot bolt on for free is the <em>compatibility</em>: the demand that the structure preserving probabilities (orthogonal/unitary transformations) be the <em>same</em> structure that generates dynamics (the symplectic/Hamiltonian flow), and that this survive composing systems. The complex unit \(i\) is exactly the object that identifies those structures — it turns "rotate the probability geometry" and "flow under a Hamiltonian" into two faces of one operation, just as, on the plane, multiplication by \(i\) fuses rotation and the metric into a single algebraic act. That fusion, not the mere existence of a phase, is what quantum mechanics cannot do without.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="three|3|three of them">
+  <p class="quiz-prompt">A real Hilbert space \(\mathbb R^2\) admits at most two mutually unbiased bases; spin measured along \(x,y,z\) needs how many?</p>
+  <input class="quiz-input" type="text" placeholder="a number">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">Why can't a real Hilbert space let a symmetry generator also be an observable?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Real vector spaces have no continuous symmetry groups at all</button>
+    <button class="quiz-option" data-choice="b">A real skew-symmetric generator has purely imaginary eigenvalues</button>
+    <button class="quiz-option" data-choice="c">Real observables cannot be added together to form new ones</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="c">
+  <p class="quiz-prompt">In the algebraic derivation, what forces the combining coefficient \(\kappa\) to be imaginary?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">The Jacobi identity fails unless \(\kappa\) is a complex phase</button>
+    <button class="quiz-option" data-choice="b">The Jordan product must stay commutative under the new product</button>
+    <button class="quiz-option" data-choice="c">Associativity plus positivity of states force \(\kappa^2&lt;0\)</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">For the "which number system?" question told cleanly (\(\mathbb R,\mathbb C,\mathbb H\), local tomography, and why \(\mathbb C\) wins), <a href="https://arxiv.org/abs/1101.5690" target="_blank" rel="noopener">John Baez, "Division Algebras and Quantum Theory"</a> (2011). For the experimental falsification of real quantum theory (with its tensor-product assumption), <a href="https://www.nature.com/articles/s41586-021-04160-4" target="_blank" rel="noopener">Renou et&nbsp;al., Nature 600, 625 (2021)</a> ([arXiv:2101.10873](https://arxiv.org/abs/2101.10873)). For the algebraic derivation of \(i\) from the Jordan–Lie algebra and the emergence of the Hilbert space via GNS, N. P. Landsman, <em>Mathematical Topics Between Classical and Quantum Mechanics</em> (Springer, 1998), and F. Strocchi, <em>An Introduction to the Mathematical Structure of Quantum Mechanics</em>. The original real-Hilbert-space analysis is E. C. G. Stueckelberg, Helv. Phys. Acta 33, 727 (1960).</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any step. Two threads worth pulling: <em>"Where do the <strong>quaternions</strong> \(\mathbb H\) fail — they're an even richer number system, so why not quaternionic quantum mechanics?"</em> (they break the tensor product / local tomography the other way, and have no good composite rule), and <em>"Is the recent claim that real QM 'can't be falsified after all' a real loophole, or just \(i\) smuggled back in?"</em> — a live 2025 debate, and a clean test of the Part II thesis.</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0004-quantum-darwinism.html">0004 — Quantum Darwinism</a></span>
+  <span>Next up: quaternionic QM &amp; why \(\mathbb C\) is the Goldilocks field (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>

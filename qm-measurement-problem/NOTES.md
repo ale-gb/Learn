@@ -51,7 +51,15 @@
   = redundancy: the environment broadcasts many copies of the pointer observable; the information
   plateau & \( R_\delta \); no-cloning ⇒ only one objective basis; honest boundary (agreement, not
   definite outcomes — same limit as 0001). Experiments (Unden NV centers, Ciampini photonic).
-- Candidate next lessons: Spectrum Broadcast Structures (sharper objectivity, follow-on to 0004);
+- Lesson `0005` (why QM needs complex numbers) written 2026-07-11 from a rich conversation, at
+  three depths: (I) Stern–Gerlach/MUBs + real-symmetric operators can't carry su(2); (II) why not
+  \( \mathbb R^{2N} \) — Stone (observable=generator), commutator/Kähler, local tomography +
+  \( \sigma_y\otimes\sigma_y \) + Renou 2021 experiment (with the honest tensor-product caveat and
+  the 2025 debate); (III) Jordan–Lie → \( i \) via associativity+positivity, and GNS. Double-checked
+  all statements (MUB counts, 10 vs 9 observable counting, κ²<0). Verified refs: Baez 1101.5690,
+  Renou Nature 2021, Landsman, Strocchi, Stueckelberg 1960.
+- Candidate next lessons: quaternionic QM & why \( \mathbb C \) is the "Goldilocks" field (follow-on
+  to 0005); Spectrum Broadcast Structures (sharper objectivity, follow-on to 0004);
   position as a Galilei-boost generator & the origin of \( [\hat x,\hat p]=i\hbar \) (follow-on to
   0003); uncertainty relations as representation theory (thread seeded in 0003); the Wigner's-friend
   no-go theorems; Bell nonlocality done carefully; objective-collapse tests.
