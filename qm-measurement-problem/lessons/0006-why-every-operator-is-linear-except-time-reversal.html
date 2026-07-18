@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0006 — Why Every Operator Is Linear (Except Time Reversal)</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0006 · Foundations of QM</p>
+<h1>Why Every Operator Is Linear — Except Time Reversal</h1>
+<p class="lede">Sakurai declares all his operators linear "with the sole exception of the time-reversal operator." The exception isn't a quirk: it is forced by the demand that reversing the flow of time keep energies positive — which means flipping the very \(i\) that <a href="0005-why-quantum-mechanics-needs-complex-numbers.html">lesson 0005</a> showed is essential.</p>
+
+<div class="callout">
+  <p class="kicker">The remark you flagged</p>
+  <p style="margin-bottom:0">Sakurai writes \(X\big(c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\big)=c_\alpha X|\alpha\rangle+c_\beta X|\beta\rangle\) (eq. 1.2.22) and adds: <em>with the sole exception of the time-reversal operator, all operators in this book are linear.</em> Two questions hide in your margin "why?": <strong>why is linearity the default</strong>, and <strong>why is time reversal the one thing that escapes it?</strong> The answers are different — and together they explain a deep piece of quantum structure.</p>
+</div>
+
+<h2>Why linearity is the default</h2>
+<p>The founding axiom of quantum mechanics is <strong>superposition</strong>: states live in a <em>linear</em> space, and if \(|\alpha\rangle\) and \(|\beta\rangle\) are possible states, so is \(c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\). Two things then have to respect that linear structure:</p>
+<ul>
+<li><strong>Observables.</strong> An observable is built from its eigenstates by spectral decomposition, \(A=\sum_a a\,|a\rangle\langle a|\) — manifestly a linear map. Its expectation values and probabilities are read off linearly.</li>
+<li><strong>Time evolution.</strong> The Schrödinger equation \(i\hbar\,\partial_t|\psi\rangle=H|\psi\rangle\) is linear in \(|\psi\rangle\), so evolution \(U(t)=e^{-iHt/\hbar}\) maps superpositions to superpositions — a superposition of solutions is a solution.</li>
+</ul>
+<p>So "operators are linear" is not an extra postulate bolted on; it is what it <em>means</em> for the apparatus (observables, evolution, the whole eigenvalue machinery) to live on a linear state space. Sakurai's eq. 1.2.22 is essentially the statement of that structure. The interesting question is how anything could possibly avoid it.</p>
+
+<h2>The loophole: symmetries only need to preserve <em>probabilities</em></h2>
+<p>The escape hatch is that one special class of operators is asked to do <em>less</em> than respect the full linear structure. A <strong>symmetry</strong> need only map states to states while preserving the physically observable quantity — the transition probability \(|\langle\psi|\phi\rangle|^2\). It does <em>not</em> have to preserve the inner product \(\langle\psi|\phi\rangle\) itself, only its modulus.</p>
+<p>That weaker requirement is the crack through which non-linearity enters, and <strong>Wigner's theorem</strong> says exactly how wide the crack is:</p>
+
+<div class="key-idea">
+  <p class="kicker">Wigner's theorem</p>
+  <p>Any symmetry — any map on states preserving \(|\langle\psi|\phi\rangle|^2\) — can be represented by an operator of one of exactly <strong>two</strong> kinds: either <strong>unitary and linear</strong>, or <strong>antiunitary and antilinear</strong>. There is no third option, and nothing in between.</p>
+</div>
+
+<p>An <strong>antilinear</strong> operator pulls scalars out complex-conjugated,</p>
+\[ \Theta\big(c_\alpha|\alpha\rangle+c_\beta|\beta\rangle\big)=c_\alpha^{*}\,\Theta|\alpha\rangle+c_\beta^{*}\,\Theta|\beta\rangle, \]
+<p>and <strong>antiunitary</strong> means it also conjugates inner products, \(\langle\Theta\psi|\Theta\phi\rangle=\langle\phi|\psi\rangle=\langle\psi|\phi\rangle^{*}\). Note this still preserves \(|\langle\psi|\phi\rangle|^2\) — so it is a perfectly legitimate symmetry — while breaking eq. 1.2.22. This is the <em>only</em> way an operator in quantum mechanics is allowed to be non-linear.</p>
+
+<h2>Why almost everything is still unitary (linear)</h2>
+<p>If antilinearity is on the menu, why is it so rare? Because most symmetries are <strong>continuous</strong> — connected to the identity by a smooth family (rotate by angle \(\theta\), translate by distance \(a\), evolve for time \(t\), with \(\theta,a,t\to0\) giving the identity). The identity is linear. And you cannot deform linear into antilinear continuously: "conjugate the scalars" is an all-or-nothing property (a matrix element either carries \(c\) or \(c^{*}\); there is no halfway). So a continuous family starting at the linear identity stays unitary the whole way.</p>
+<p>That single observation sweeps up almost every operator in the book: rotations, translations, boosts, gauge transformations, and time <em>evolution</em> itself are all continuous, hence all unitary and linear. Only <strong>discrete</strong> symmetries — parity \(P\), charge conjugation \(C\), time reversal \(T\) — are disconnected from the identity, so only they are <em>eligible</em> to be antiunitary. As it happens \(P\) and \(C\) are still unitary; time reversal is the one that is forced into the other option.</p>
+
+<h2>Why time reversal is <em>forced</em> to be antiunitary</h2>
+<p>Two arguments, each decisive; they are the same fact seen twice.</p>
+
+<h3>Argument 1 — the canonical commutator</h3>
+<p>Time reversal leaves positions alone but flips momenta (a movie run backwards has particles in the same places moving the opposite way): \(\Theta\,\hat x\,\Theta^{-1}=\hat x\), \(\Theta\,\hat p\,\Theta^{-1}=-\hat p\). Apply \(\Theta\) to the canonical commutator \([\hat x,\hat p]=i\hbar\):</p>
+\[ \Theta[\hat x,\hat p]\Theta^{-1}=[\hat x,-\hat p]=-\,i\hbar . \]
+<p>The left side must equal \(\Theta\,(i\hbar)\,\Theta^{-1}\). If \(\Theta\) were <em>linear</em>, the scalar would pass straight through, \(\Theta(i\hbar)\Theta^{-1}=i\hbar\) — contradicting the \(-i\hbar\) we just derived. If \(\Theta\) is <em>antilinear</em>, it conjugates the scalar, \(\Theta(i\hbar)\Theta^{-1}=(i\hbar)^{*}=-i\hbar\) — and everything is consistent. The commutator alone forces \(\Theta\) to complex-conjugate.</p>
+
+<h3>Argument 2 — the arrow of time and the energy spectrum</h3>
+<p>This is the physical heart of it. Time reversal must turn forward evolution into backward evolution, \(\Theta\,U(t)\,\Theta^{-1}=U(-t)\), i.e. \(\Theta\,e^{-iHt/\hbar}\,\Theta^{-1}=e^{+iHt/\hbar}\). Test each option:</p>
+<ul>
+<li><strong>If \(\Theta\) were linear:</strong> \(\Theta e^{-iHt/\hbar}\Theta^{-1}=e^{-i(\Theta H\Theta^{-1})t/\hbar}\), which equals \(e^{+iHt/\hbar}\) only if \(\Theta H\Theta^{-1}=-H\). But that <em>inverts the entire energy spectrum</em>: every state of energy \(E\) is sent to one of energy \(-E\), so the Hamiltonian is unbounded below — no ground state, no stable matter. Catastrophe.</li>
+<li><strong>If \(\Theta\) is antilinear:</strong> it flips the exponent's \(i\), so \(\Theta e^{-iHt/\hbar}\Theta^{-1}=e^{+i(\Theta H\Theta^{-1})t/\hbar}\), which equals \(e^{+iHt/\hbar}\) precisely when \(\Theta H\Theta^{-1}=+H\). Energy is <em>unchanged</em>, the spectrum is preserved, the ground state survives — and time still runs backwards.</li>
+</ul>
+<p>So antiunitarity is exactly the property that lets time reversal reverse the dynamics <em>while keeping energies positive</em>. A linear time-reversal would buy you backward evolution only at the ruinous price of negative energies. The \(i\) in \(e^{-iHt/\hbar}\) has to be flipped, and flipping \(i\) is an antilinear act.</p>
+
+<div class="callout">
+  <p class="kicker">The tie to lesson 0005</p>
+  <p style="margin-bottom:0">This is the complex structure from <a href="0005-why-quantum-mechanics-needs-complex-numbers.html">lesson 0005</a> coming back around. There we saw the \(i\) in \(i\hbar\,\partial_t\) and in \([\hat x,\hat p]=i\hbar\) is not optional — it is the structure fusing probability and dynamics. Time reversal is precisely the operation that must <strong>reverse the flow generated by that \(i\)</strong>, and the only way to do so without wrecking the energy spectrum is to conjugate it. Time reversal is antiunitary <em>because</em> quantum mechanics is complex. \(\Theta\) is, concretely, complex conjugation dressed up by a unitary.</p>
+</div>
+
+<h2>What \(\Theta\) actually is</h2>
+<p>Every antiunitary operator factorizes as \(\Theta=U\,K\), where \(K\) is complex conjugation (in a chosen basis) and \(U\) is unitary. Two standard cases:</p>
+<ul>
+<li><strong>Spinless particle:</strong> \(\Theta=K\). Time reversal just conjugates the wavefunction, \(\psi(\mathbf x)\to\psi^{*}(\mathbf x)\); a momentum eigenstate \(e^{i\mathbf p\cdot\mathbf x/\hbar}\) becomes \(e^{-i\mathbf p\cdot\mathbf x/\hbar}\) — momentum reversed, as it must be.</li>
+<li><strong>Spin-½:</strong> spin is an angular momentum, so it flips too (\(\Theta\,\mathbf S\,\Theta^{-1}=-\mathbf S\)), which requires \(\Theta=-i\sigma_y K\). A short computation gives \(\Theta^{2}=-\mathbb 1\).</li>
+</ul>
+
+<div class="sidenote">That sign is physical. In general \(\Theta^2=(-1)^{2j}\): \(+1\) for integer spin, \(-1\) for half-integer spin. When \(\Theta^2=-1\) and the Hamiltonian is time-reversal invariant, every energy level is <em>at least doubly degenerate</em> — <strong>Kramers degeneracy</strong> — because \(|\psi\rangle\) and \(\Theta|\psi\rangle\) are guaranteed orthogonal. It is why an odd number of electrons in any electric field (however messy) always leaves a two-fold spin degeneracy, liftable only by a magnetic field (which is itself \(T\)-odd). A concrete, measurable consequence of one operator's antilinearity.</div>
+
+<h2>The resolution, in one breath</h2>
+<p>Linearity is the default because quantum states superpose and observables and evolution must respect that. The <em>only</em> licensed exception is the antiunitary alternative in Wigner's theorem, available solely to discrete symmetries. Time reversal is driven into it by a hard physical requirement: to run dynamics backwards while keeping the energy spectrum bounded below, it must conjugate the \(i\) of quantum mechanics — and conjugating \(i\) is exactly what makes an operator antilinear. Sakurai's "sole exception" is the fingerprint of the complex structure of the theory.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="probabilities|probability|transition probabilities|the probabilities">
+  <p class="quiz-prompt">A symmetry is not required to preserve the inner product itself — only the modulus \(|\langle\psi|\phi\rangle|^2\), i.e. the transition ⟶ ?</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">Why are continuous symmetries (rotations, translations, evolution) always unitary rather than antiunitary?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Because antiunitary operators fail to preserve any probabilities</button>
+    <button class="quiz-option" data-choice="b">You can't deform the linear identity into an antilinear operator continuously</button>
+    <button class="quiz-option" data-choice="c">Because only Hermitian operators can generate continuous symmetries</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="c">
+  <p class="quiz-prompt">If time reversal were <em>linear</em>, what would reversing the dynamics (\(U(t)\to U(-t)\)) force upon the Hamiltonian?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Nothing changes: the spectrum and ground state are untouched</button>
+    <button class="quiz-option" data-choice="b">The Hamiltonian would have to become non-Hermitian</button>
+    <button class="quiz-option" data-choice="c">\(H\to-H\): the energy spectrum inverts, with no ground state</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">The direct treatment is Sakurai &amp; Napolitano, <em>Modern Quantum Mechanics</em>, §4.4 (time reversal) — where the antiunitarity, \(\Theta=UK\), and \(\Theta^2=(-1)^{2j}\) are all worked out. For Wigner's theorem itself (the unitary-or-antiunitary dichotomy) the cleanest modern statement is Weinberg, <em>The Quantum Theory of Fields</em>, Vol. 1, §2.2 and Appendix A; a standalone treatment is in Ballentine, <em>Quantum Mechanics: A Modern Development</em>, ch. 13. The original is E. P. Wigner (1931/1932); Kramers degeneracy is H. A. Kramers (1930).</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any step. Two threads worth pulling: <em>"Why are parity \(P\) and charge conjugation \(C\) <strong>unitary</strong>, when \(T\) isn't — what singles \(T\) out?"</em> (it's the one that touches the \(i\hbar\,\partial_t\)), and <em>"Derive Kramers degeneracy carefully — why must \(|\psi\rangle\) and \(\Theta|\psi\rangle\) be orthogonal when \(\Theta^2=-1\)?"</em> — a clean, satisfying two-line proof.</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0005-why-quantum-mechanics-needs-complex-numbers.html">0005 — Why QM Needs Complex Numbers</a></span>
+  <span>Next up: Kramers degeneracy &amp; the discrete symmetries C, P, T (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>

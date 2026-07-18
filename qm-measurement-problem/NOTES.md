@@ -58,8 +58,16 @@
   the 2025 debate); (III) Jordan–Lie → \( i \) via associativity+positivity, and GNS. Double-checked
   all statements (MUB counts, 10 vs 9 observable counting, κ²<0). Verified refs: Baez 1101.5690,
   Renou Nature 2021, Landsman, Strocchi, Stueckelberg 1960.
-- Candidate next lessons: quaternionic QM & why \( \mathbb C \) is the "Goldilocks" field (follow-on
-  to 0005); Spectrum Broadcast Structures (sharper objectivity, follow-on to 0004);
+- Lesson `0006` (why every operator is linear except time reversal) written 2026-07-11 from a
+  Sakurai margin question. Linearity = superposition axiom; the loophole is that symmetries need only
+  preserve \( |\langle\cdot|\cdot\rangle|^2 \), so Wigner's theorem allows unitary OR antiunitary;
+  continuous symmetries must be unitary; T is forced antiunitary (commutator argument + the
+  energy-spectrum argument: a linear T needs \( H\to-H \), no ground state). \( \Theta=UK \),
+  \( \Theta^2=(-1)^{2j} \), Kramers. Deliberately linked to 0005 (T conjugates the \( i \)). All
+  statements double-checked (incl. \( \Theta^2=-1 \) for spin-½).
+- Candidate next lessons: Kramers degeneracy & C/P/T discrete symmetries (follow-on to 0006);
+  quaternionic QM & why \( \mathbb C \) is the "Goldilocks" field (follow-on to 0005); Spectrum
+  Broadcast Structures (sharper objectivity, follow-on to 0004);
   position as a Galilei-boost generator & the origin of \( [\hat x,\hat p]=i\hbar \) (follow-on to
   0003); uncertainty relations as representation theory (thread seeded in 0003); the Wigner's-friend
   no-go theorems; Bell nonlocality done carefully; objective-collapse tests.

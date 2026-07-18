@@ -101,6 +101,24 @@ _Established in lesson 0005 (why QM needs complex numbers)._
   a state \( \omega \): inner product \( \langle A,B\rangle=\omega(A^*B) \), quotient the null space
   \( \{A:\omega(A^*A)=0\} \), complete. The Hilbert space *emerges*; it is not postulated.
 
+_Established in lesson 0006 (why operators are linear except time reversal)._
+
+- **Wigner's theorem** — any symmetry (a map on states preserving \( |\langle\psi|\phi\rangle|^2 \))
+  is represented by an operator that is either **unitary and linear** or **antiunitary and
+  antilinear** — exactly two options, nothing between. Continuous symmetries (connected to the
+  identity) must be unitary; only discrete symmetries can be antiunitary.
+- **Antilinear / antiunitary operator** — antilinear: pulls scalars out conjugated,
+  \( \Theta(c|\psi\rangle)=c^*\Theta|\psi\rangle \); antiunitary: also conjugates inner products,
+  \( \langle\Theta\psi|\Theta\phi\rangle=\langle\psi|\phi\rangle^* \) (so still preserves
+  \( |\langle\cdot|\cdot\rangle|^2 \)). The one licensed way an operator in QM is non-linear.
+- **Time reversal \( \Theta \)** — the antiunitary symmetry \( \Theta=UK \) (\( K \) = complex
+  conjugation): fixes position, flips momentum and spin. Forced to be antiunitary because reversing
+  the dynamics \( U(t)\to U(-t) \) while keeping \( \Theta H\Theta^{-1}=H \) (energy bounded below)
+  requires conjugating the \( i \) in \( e^{-iHt/\hbar} \).
+- **Kramers degeneracy** — when \( \Theta^2=-\mathbb 1 \) (half-integer spin) and \( H \) is
+  time-reversal invariant, every level is at least doubly degenerate, because \( |\psi\rangle \) and
+  \( \Theta|\psi\rangle \) are orthogonal. A measurable consequence of \( \Theta \)'s antilinearity.
+
 - **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
   (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
   a unitary flow. Some classical observables (radial momentum on \( r>0 \), an oscillator's
