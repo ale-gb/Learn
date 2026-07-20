@@ -81,6 +81,19 @@ literature rather than parametric recall.
   Sharpens the Wigner's-friend result into a Bell-like no-go theorem with experiment.
 - Leggett–Garg inequality: original — [Leggett & Garg, PRL 54, 857 (1985)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.54.857); review — [Emary, Lambert & Nori, Rep. Prog. Phys. 77, 016001 (2014)](https://arxiv.org/abs/1304.5133). "Bell inequalities in time" / macroscopic realism.
 
+## Knowledge — the measurement-update (Lüders) rule
+
+- G. Lüders, "Über die Zustandsänderung durch den Meßprozeß," *Ann. Phys. (Leipzig)* 8, 322 (1951);
+  English translation "Concerning the state-change due to the measurement process," *Ann. Phys.* 15,
+  663 (2006). The original statement of the projection postulate for general (degenerate) observables.
+- [Paper: **Discriminating between Lüders and von Neumann measuring devices: An NMR investigation** (2016)](https://arxiv.org/abs/1607.05723)
+  *Phys. Lett. A* 380, 3612. The direct experimental test (implementing the Hegerfeldt–Mayato 2012
+  protocol) — data favour Lüders' rule. Anchor for lesson 0007's experiment section.
+- [Paper: **Experimental realization of quantum Zeno dynamics** — Schäfer et al. (2014)](https://www.nature.com/articles/ncomms4194)
+  *Nat. Commun.* 5, 3194. Projection onto a degenerate subspace with coherent evolution surviving
+  inside it — the Lüders "coherence within the eigenspace" prediction, in a BEC. (Zeno derivation:
+  Misra & Sudarshan, *J. Math. Phys.* 18, 756, 1977; first observation: Itano et al., *PRA* 41, 2295, 1990.)
+
 ## Knowledge — symmetry &amp; the origin of observables
 
 - [Book: **Quantum Mechanics: A Modern Development** — L. Ballentine](https://books.google.com/books/about/Quantum_Mechanics_A_Modern_Development_2.html?id=Yi48DQAAQBAJ)

@@ -65,7 +65,15 @@
   energy-spectrum argument: a linear T needs \( H\to-H \), no ground state). \( \Theta=UK \),
   \( \Theta^2=(-1)^{2j} \), Kramers. Deliberately linked to 0005 (T conjugates the \( i \)). All
   statements double-checked (incl. \( \Theta^2=-1 \) for spin-½).
-- Candidate next lessons: Kramers degeneracy & C/P/T discrete symmetries (follow-on to 0006);
+- Lesson `0007` (Lüders' rule) written 2026-07-12. Context (von Neumann's degenerate gap) → the rule
+  (selective P_k rho P_k / Tr, non-selective sum P_k rho P_k) → justification at 3 levels (minimal
+  disturbance + repeatability + the non-disturbance theorem; the unitary measurement-model derivation
+  U=sum P_k ⊗ V_k, which ties to decoherence lesson 0001; conditional-state reading) → experiment
+  (repeatability/QND, quantum Zeno [Itano 1990] & Zeno dynamics on a degenerate subspace [Schäfer
+  2014], the direct NMR discrimination [Hegerfeldt-Mayato 2012 protocol; arXiv:1607.05723] favouring
+  Lüders). Checked the measurement-model algebra (U unitary; trace → sum P_k rho P_k) and repeatability.
+- Candidate next lessons: POVMs & generalized measurements (follow-on to 0007); Kramers degeneracy &
+  C/P/T discrete symmetries (follow-on to 0006);
   quaternionic QM & why \( \mathbb C \) is the "Goldilocks" field (follow-on to 0005); Spectrum
   Broadcast Structures (sharper objectivity, follow-on to 0004);
   position as a Galilei-boost generator & the origin of \( [\hat x,\hat p]=i\hbar \) (follow-on to

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0007 — Lüders' Rule: The State After a Measurement</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0007 · Foundations of QM</p>
+<h1>Lüders' Rule: The State After a Measurement</h1>
+<p class="lede">The Born rule tells you the <em>probabilities</em> of outcomes. Lüders' rule tells you the <em>state that's left behind</em> — and, for degenerate observables, it is the uniquely gentle answer: erase only what the measurement could distinguish, disturb nothing else.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">Every earlier lesson leaned on "the state collapses onto the measured outcome." For a sharp (non-degenerate) observable that's unambiguous. But when eigenvalues are <em>degenerate</em>, the naive rule is ill-defined, and von Neumann's 1932 prescription gives a basis-dependent answer. Gerhart Lüders (1951) found the correct, unique rule. It is worth doing precisely — it's what "collapse" actually <em>is</em>, it's derivable from unitary quantum mechanics plus the Born rule, and it has been tested.</p>
+</div>
+
+<h2>The setup and the gap Lüders filled</h2>
+<p>Write an observable through its spectral decomposition into <em>eigenprojectors</em>,</p>
+\[ A = \sum_k a_k\,P_k, \qquad P_j P_k = \delta_{jk}P_k,\quad P_k^\dagger = P_k,\quad \sum_k P_k = \mathbb 1, \]
+<p>where \(P_k\) projects onto the whole eigenspace of eigenvalue \(a_k\). If \(a_k\) is <strong>non-degenerate</strong>, \(P_k=|a_k\rangle\langle a_k|\) has rank 1 and everything is easy. If \(a_k\) is <strong>degenerate</strong>, \(P_k\) has rank \(\ge 2\) — and now "collapse onto the eigenstate" is ambiguous, because there is a whole subspace of them. Von Neumann's original recipe resolved this by secretly picking a basis inside each eigenspace, so his post-measurement state <em>depended on that arbitrary choice</em>. Lüders' rule removes the arbitrariness by using only the projector \(P_k\), which the observable \(A\) actually determines.</p>
+
+<h2>What the rule says</h2>
+<p>For a system in state \(\rho\) (a density operator), measuring \(A\):</p>
+
+<h3>Selective — you read the outcome \(a_k\)</h3>
+<p>The outcome \(a_k\) occurs with the Born probability, and the state updates to the (renormalized) projected state:</p>
+\[ p_k = \mathrm{Tr}(P_k\,\rho), \qquad \rho \;\longrightarrow\; \rho_k = \frac{P_k\,\rho\,P_k}{\mathrm{Tr}(P_k\,\rho)}. \]
+<p>For a pure state this is the familiar \( |\psi\rangle \to P_k|\psi\rangle/\big\|P_k|\psi\rangle\big\| \).</p>
+
+<h3>Non-selective — you measure but don't (or can't) read the result</h3>
+<p>Averaging over outcomes with their probabilities gives</p>
+\[ \rho \;\longrightarrow\; \rho' = \sum_k p_k\,\rho_k = \sum_k P_k\,\rho\,P_k. \]
+
+<div class="callout">
+  <p class="kicker">The one place it differs from von Neumann</p>
+  <p style="margin-bottom:0">For a <em>non-degenerate</em> \(A\), \(\sum_k P_k\rho P_k\) is just full decoherence in the eigenbasis — Lüders and von Neumann agree. For a <em>degenerate</em> \(A\) they split: Lüders' \(\sum_k P_k\rho P_k\) kills the coherences <em>between</em> different eigenvalues but <strong>preserves every coherence inside a single eigenspace</strong>; von Neumann's basis-refined rule dephases <em>within</em> the eigenspace too, destroying superpositions the measurement of \(A\) had no power to distinguish. A superposition of two states sharing the same eigenvalue \(a_k\) survives a Lüders measurement of \(A\) untouched.</p>
+</div>
+
+<h2>How it is justified — three levels</h2>
+
+<h3>1. It is the <em>minimally disturbing</em> update (repeatability + non-disturbance)</h3>
+<p>Lüders' rule is singled out by two physical demands beyond the Born rule.</p>
+<p><strong>Repeatability.</strong> Measure \(A\) again immediately: the outcome \(a_k\) recurs with certainty. Check it —</p>
+\[ \mathrm{Tr}(P_k\,\rho_k) = \frac{\mathrm{Tr}(P_k\,P_k\rho P_k)}{\mathrm{Tr}(P_k\rho)} = \frac{\mathrm{Tr}(P_k\rho)}{\mathrm{Tr}(P_k\rho)} = 1, \]
+<p>using \(P_k^2=P_k\) and cyclicity of the trace. A measurement that didn't do this couldn't be called a measurement of \(A\).</p>
+<p><strong>Non-disturbance (Lüders' theorem).</strong> The non-selective map disturbs <em>exactly</em> the observables incompatible with \(A\), and nothing more. Concretely, an observable \(B\) is left statistically untouched — \(\sum_k P_k B P_k = B\) — <strong>if and only if</strong> \([B,P_k]=0\) for all \(k\) (i.e. \(B\) is compatible with \(A\)). The easy direction is immediate: if \(P_kB=BP_k\), then</p>
+\[ \sum_k P_k B P_k = \sum_k B\,P_k P_k = B\sum_k P_k = B. \]
+<p>The converse — that <em>no other</em> update short of Lüders' leaves all compatible observables alone — is Lüders' 1951 result, and it is what pins the rule down uniquely. In words: the Lüders update is the gentlest change consistent with having learned the value of \(A\).</p>
+
+<h3>2. It is <em>derived</em> from unitary quantum mechanics (the measurement model)</h3>
+<p>Lüders' rule is not an independent mystery bolted onto the theory; it follows from an ordinary unitary interaction with a pointer plus the Born rule applied to <em>that pointer</em>. Couple the system to an apparatus, initially \(|0\rangle_A\), by the ideal unitary</p>
+\[ U = \sum_k P_k \otimes V_k, \qquad V_k|0\rangle_A = |k\rangle_A \ \text{(orthonormal pointer states)}, \]
+<p>with each \(V_k\) unitary — one checks \(U^\dagger U=\sum_k P_k\otimes \mathbb 1=\mathbb 1\), so \(U\) is unitary. Let it act:</p>
+\[ U\big(\rho\otimes|0\rangle\langle0|\big)U^\dagger = \sum_{k,k'} \big(P_k\,\rho\,P_{k'}\big)\otimes |k\rangle\langle k'|. \]
+<p>Now two moves recover both forms of the rule:</p>
+<ul>
+<li><strong>Ignore the pointer</strong> (trace it out). Since \(\langle k'|k\rangle=\delta_{kk'}\), the off-diagonal apparatus terms vanish and \(\mathrm{Tr}_A\) leaves \(\displaystyle\sum_k P_k\rho P_k\) — the <em>non-selective</em> Lüders map.</li>
+<li><strong>Read the pointer</strong> and find it at position \(k\) (an ordinary projective measurement <em>of the apparatus</em>): the system is left in \(P_k\rho P_k/\mathrm{Tr}(P_k\rho)\) with probability \(\mathrm{Tr}(P_k\rho)\) — the <em>selective</em> Lüders update.</li>
+</ul>
+<p>The whole content of Lüders' rule is packed into the <em>form</em> of \(U\): because it couples through the eigen<em>projectors</em> \(P_k\) — not through a finer basis inside each eigenspace — the apparatus records <em>which eigenvalue</em> and no more. Choose instead a coupling \(U_{\text{vN}}=\sum_{k,i}|k,i\rangle\langle k,i|\otimes W_{k,i}\) that also resolves a basis \(\{|k,i\rangle\}\) within the eigenspaces, and you get von Neumann's rule — but that is physically a <em>different, finer</em> measurement, and its answer depends on the basis. Lüders' rule is what you get by measuring \(A\) and <em>only</em> \(A\).</p>
+
+<div class="sidenote">This is the same machinery as <a href="0001-decoherence-and-the-measurement-problem.html">lesson 0001</a>. The non-selective map \(\sum_k P_k\rho P_k\) is exactly decoherence in the eigenbasis of \(A\) (the improper mixture), and "read the pointer" is the selective collapse. Lüders' rule is the measurement-update postulate written out at the level of eigenspaces; the derivation here is just the ideal-measurement model of that lesson, specialized.</div>
+
+<h3>3. It is the right <em>conditional</em> state</h3>
+<p>Read information-theoretically, \(\rho_k = P_k\rho P_k/\mathrm{Tr}(P_k\rho)\) is the quantum analogue of Bayesian conditioning: it is the update that incorporates the fact "\(A=a_k\)" while changing the state as little as possible (it maximises fidelity to \(\rho\) among states supported in the eigenspace). Learn the least-committal thing the outcome tells you, and disturb the rest not at all.</p>
+
+<h2>How it is verified experimentally</h2>
+<p>Three layers of evidence, from the coarse structure down to the sharp Lüders-vs-von-Neumann distinction.</p>
+<ul>
+<li><strong>Repeatability and QND measurements.</strong> Quantum non-demolition setups (trapped ions, superconducting circuits, cavity QED) show that re-measuring an observable returns the same value — the repeatability built into the rule — and leave the projected state intact for further use.</li>
+<li><strong>The quantum Zeno effect and Zeno dynamics.</strong> Misra &amp; Sudarshan (1977) showed that <em>frequent</em> Lüders projections freeze a system's evolution; this was seen by <a href="https://doi.org/10.1103/PhysRevA.41.2295" target="_blank" rel="noopener">Itano et&nbsp;al. (1990)</a> in trapped ions and since in every platform. The sharper version — projecting onto a <em>degenerate subspace</em> and watching coherent evolution continue <em>inside</em> it (<strong>quantum Zeno dynamics</strong>) — was realised with a Bose–Einstein condensate by <a href="https://www.nature.com/articles/ncomms4194" target="_blank" rel="noopener">Schäfer et&nbsp;al. (2014)</a>. That the confined dynamics stays coherent is precisely Lüders' "coherence within the eigenspace survives," not von Neumann's dephasing.</li>
+<li><strong>A direct discrimination.</strong> Hegerfeldt &amp; Mayato (2012) designed a protocol whose statistics differ depending on which rule governs a degenerate measurement. An NMR implementation, <a href="https://arxiv.org/abs/1607.05723" target="_blank" rel="noopener">"Discriminating between Lüders and von Neumann measuring devices" (2016)</a>, ran it and found the data <strong>favour Lüders' rule</strong> — the intra-eigenspace coherence is preserved, as Lüders predicts and von Neumann does not.</li>
+</ul>
+
+<div class="key-idea">
+  <p class="kicker">The one idea</p>
+  <p>After measuring \(A=\sum_k a_k P_k\), the state becomes \(\rho\to P_k\rho P_k/\mathrm{Tr}(P_k\rho)\) if you read \(a_k\), and \(\rho\to\sum_k P_k\rho P_k\) if you don't. Built from the eigen<strong>projectors</strong>, this is the <em>minimally disturbing</em> update: it kills coherences <em>between</em> eigenvalues (which the measurement can tell apart) and preserves everything <em>within</em> an eigenspace (which it cannot). It is repeatable, it is <em>derivable</em> from a unitary pointer coupling plus the Born rule, and — for degenerate observables, where it genuinely differs from von Neumann's rule — it is the one experiment confirms.</p>
+</div>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="projectors|eigenprojectors|the projectors|projector">
+  <p class="quiz-prompt">Lüders' rule is basis-independent for degenerate observables because it is built only from the observable's eigen- ⟶ ? , not from any chosen basis inside an eigenspace.</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">For a degenerate observable, how do the Lüders and von Neumann post-measurement states differ?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Lüders violates the Born rule; von Neumann respects it</button>
+    <button class="quiz-option" data-choice="b">Lüders keeps coherence within an eigenspace; von Neumann destroys it</button>
+    <button class="quiz-option" data-choice="c">Lüders applies only to pure states; von Neumann to mixed states</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="c">
+  <p class="quiz-prompt">In the measurement-model derivation, what recovers the <em>non-selective</em> Lüders map \(\sum_k P_k\rho P_k\)?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Applying the pointer coupling \(U\) twice in succession</button>
+    <button class="quiz-option" data-choice="b">Reading the pointer and post-selecting one outcome</button>
+    <button class="quiz-option" data-choice="c">Tracing out the pointer after the coupling \(U\)</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">The original is G. Lüders, "Über die Zustandsänderung durch den Meßprozeß," <em>Ann. Phys. (Leipzig)</em> 8, 322 (1951) — English translation "Concerning the state-change due to the measurement process," <em>Ann. Phys.</em> 15, 663 (2006). For the Zeno derivation from repeated projections, Misra &amp; Sudarshan, <em>J. Math. Phys.</em> 18, 756 (1977); its first observation, <a href="https://doi.org/10.1103/PhysRevA.41.2295" target="_blank" rel="noopener">Itano et&nbsp;al., PRA 41, 2295 (1990)</a>; Zeno dynamics on a degenerate subspace, <a href="https://www.nature.com/articles/ncomms4194" target="_blank" rel="noopener">Schäfer et&nbsp;al., Nat. Commun. 5, 3194 (2014)</a>. The direct discrimination: Hegerfeldt &amp; Mayato, <em>PRA</em> 85, 032116 (2012), and the NMR test <a href="https://arxiv.org/abs/1607.05723" target="_blank" rel="noopener">arXiv:1607.05723</a> (<em>Phys. Lett. A</em> 380, 3612, 2016).</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any step. Two threads worth pulling: <em>"Is the <strong>non-selective</strong> Lüders map the same thing as decoherence, or is there a real difference?"</em> (it's the same map — the difference is only whether you keep the pointer record, which is exactly the selective/non-selective split), and <em>"Does Lüders' rule survive for <strong>continuous-spectrum</strong> observables like position, where there are no normalisable eigenstates?"</em> — where it must be replaced by POVMs and approximate (unsharp) measurements.</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0006-why-every-operator-is-linear-except-time-reversal.html">0006 — Why Every Operator Is Linear (Except Time Reversal)</a></span>
+  <span>Next up: POVMs &amp; generalized measurements (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>

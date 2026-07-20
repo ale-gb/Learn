@@ -119,6 +119,20 @@ _Established in lesson 0006 (why operators are linear except time reversal)._
   time-reversal invariant, every level is at least doubly degenerate, because \( |\psi\rangle \) and
   \( \Theta|\psi\rangle \) are orthogonal. A measurable consequence of \( \Theta \)'s antilinearity.
 
+_Established in lesson 0007 (Lüders' rule)._
+
+- **Lüders' rule** — the measurement-update (projection) postulate for a general observable
+  \( A=\sum_k a_k P_k \). *Selective* (outcome \( a_k \) read): \( \rho\to P_k\rho P_k/\mathrm{Tr}(P_k\rho) \)
+  with probability \( \mathrm{Tr}(P_k\rho) \). *Non-selective*: \( \rho\to\sum_k P_k\rho P_k \). Built
+  from the eigen*projectors*, so basis-independent; the minimally-disturbing, repeatable update.
+- **Selective vs non-selective measurement** — selective keeps the outcome (and collapses to the
+  conditional state); non-selective averages over outcomes (\( \sum_k P_k\rho P_k \), = decoherence
+  in the eigenbasis). The two differ only by whether the pointer record is kept.
+- **Lüders vs von Neumann (degenerate case)** — for a degenerate observable, Lüders' rule preserves
+  coherence *within* each eigenspace, killing only coherence *between* eigenvalues; von Neumann's
+  basis-refined rule dephases within the eigenspace too (a physically finer measurement). Experiment
+  (NMR, arXiv:1607.05723) favours Lüders.
+
 - **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
   (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
   a unitary flow. Some classical observables (radial momentum on \( r>0 \), an oscillator's
