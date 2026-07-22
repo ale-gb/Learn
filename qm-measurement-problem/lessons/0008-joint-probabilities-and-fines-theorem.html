@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0008 — Joint Probabilities, Commutativity &amp; Fine's Theorem</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0008 · Foundations of QM</p>
+<h1>When Does a Joint Probability Exist? Commutativity &amp; Fine's Theorem</h1>
+<p class="lede">The Born rule gives \(P(a)\) for one observable; Lüders' rule gives sequential statistics. But is there a genuine <em>joint</em> distribution \(P(a,b)\) for two observables at once? The answer — exactly when they commute — runs from a two-line proof through quasi-probability negativity all the way to Bell's theorem, which Arthur Fine recast as the <em>non-existence</em> of such a distribution.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">Earlier lessons gave single-observable statistics (<a href="0003-where-observables-come-from.html">0003</a>) and the measurement update (<a href="0007-luders-rule.html">0007</a>). This one is the <em>joint</em>-statistics story, and it ties three things usually taught separately into one thread: (i) commuting observables have a real joint distribution — non-commuting ones do not; (ii) the "distributions" you can still write down for incompatible observables go <strong>negative</strong>; (iii) in a Bell experiment, the existence of a joint distribution is <em>equivalent</em> to the Bell inequalities — Fine's theorem. The obstruction to a joint probability <em>is</em> quantum non-classicality.</p>
+</div>
+
+<h2>The precise question</h2>
+<p>Fix a state \(\rho\) and two observables with spectral projectors \(A=\sum_a a\,P^A_a\), \(B=\sum_b b\,P^B_b\). We do <em>not</em> merely want some table of numbers \(P(a,b)\ge0\) summing to the two marginals — any pair of marginals has infinitely many such tables (the product, for one). We want a <strong>joint observable</strong>: a single measurement, described by a family of effects \(E_{ab}\ge 0\) with \(\sum_{ab}E_{ab}=\mathbb 1\), that returns the pair \((a,b)\) at once and whose two marginals are genuinely the measurements of \(A\) and \(B\), in <em>every</em> state:</p>
+\[ \sum_b E_{ab}=P^A_a,\qquad \sum_a E_{ab}=P^B_b,\qquad P_\rho(a,b)=\mathrm{Tr}(\rho\,E_{ab}). \]
+<p>Call the observables <strong>jointly measurable</strong> if such an \(E_{ab}\) exists. If the \(E_{ab}\) are moreover orthogonal projectors (a <em>sharp</em> joint observable), we ask the strongest version.</p>
+
+<h2>Commuting \(\iff\) a genuine (sharp) joint distribution</h2>
+<p>The exact criterion, with both directions provable in a few lines.</p>
+
+<div class="key-idea">
+  <p class="kicker">Theorem</p>
+  <p>A <em>sharp</em> joint observable \(\{E_{ab}\}\) with marginals \(P^A_a\) and \(P^B_b\) exists <strong>if and only if</strong> \([A,B]=0\) — and then it is forced to be \(E_{ab}=P^A_a P^B_b\).</p>
+</div>
+
+<p><strong>(\(\Leftarrow\)) Commuting gives one.</strong> If \([A,B]=0\) then \([P^A_a,P^B_b]=0\), so each \(P^A_a P^B_b\) is again a projector, and \(\{P^A_a P^B_b\}\) is an orthogonal resolution of the identity: \(\sum_{ab}P^A_aP^B_b=\big(\sum_aP^A_a\big)\big(\sum_bP^B_b\big)=\mathbb 1\). Set \(E_{ab}=P^A_aP^B_b\); the marginal is \(\sum_b P^A_aP^B_b=P^A_a\big(\sum_bP^B_b\big)=P^A_a\) (and likewise for \(B\)). So \(P_\rho(a,b)=\mathrm{Tr}(\rho\,P^A_aP^B_b)\ge 0\) is an honest joint probability with the right marginals.</p>
+
+<p><strong>(\(\Rightarrow\)) A sharp joint observable forces commuting.</strong> Suppose orthogonal projectors \(E_{ab}\) (so \(E_{ab}E_{a'b'}=\delta_{aa'}\delta_{bb'}E_{ab}\)) have those marginals. Then</p>
+\[ P^A_a\,P^B_{b} = \Big(\sum_{b'}E_{ab'}\Big)\Big(\sum_{a'}E_{a'b}\Big) = \sum_{a',b'}E_{ab'}E_{a'b} = E_{ab}, \]
+<p>because orthogonality kills every term except \(a'=a,\ b'=b\). Running the two factors in the other order gives, identically, \(P^B_{b}\,P^A_a=E_{ab}\). Hence \(P^A_a P^B_b=P^B_b P^A_a\) for all \(a,b\), so \(A\) and \(B\) commute. \(\;\blacksquare\)</p>
+
+<p>So "does \(P(a,b)\) exist?" has a crisp operational answer: <strong>a joint measurement of \(A\) and \(B\) is possible exactly when they are compatible</strong>. This is why the complete set of commuting observables of <a href="0003-where-observables-come-from.html">lesson 0003</a> is the right notion of "a maximal set of simultaneously definite quantities."</p>
+
+<div class="sidenote">A caveat that matters. If you <em>drop sharpness</em> and allow unsharp \(E_{ab}\ge0\) that are not projectors (POVMs), some non-commuting pairs become <em>jointly measurable</em> — at the price of added noise, their marginals being <em>smeared</em> versions of \(A\) and \(B\) (Arthurs–Kelly joint position–momentum measurement is the classic case). Sharp joint measurability is equivalent to commuting; approximate joint measurability is a graded, noise-limited affair. The lesson's statements are about the sharp case unless said otherwise.</div>
+
+<h2>Non-commuting: the distribution goes negative</h2>
+<p>If you insist on a formal joint distribution for non-commuting \(A,B\) — a fixed rule, linear in \(\rho\), with the correct marginals in every state — you <em>can</em> write one, but it stops being a probability. The <strong>Kirkwood–Dirac</strong> distribution</p>
+\[ Q_\rho(a,b)=\mathrm{Tr}\big(\rho\,P^B_b P^A_a\big) \]
+<p>has exactly the right marginals — \(\sum_a Q_\rho(a,b)=\mathrm{Tr}(\rho\,P^B_b)=P_B(b)\) and \(\sum_b Q_\rho(a,b)=\mathrm{Tr}(\rho\,P^A_a)=P_A(a)\) — but its "effects" \(P^B_bP^A_a\) are not positive (not even Hermitian when \([A,B]\neq0\)), so \(Q_\rho(a,b)\) is in general <strong>complex or negative</strong>. The continuous-variable analogue is the <strong>Wigner function</strong> \(W(x,p)\): correct \(x\) and \(p\) marginals, but negative in patches for every non-classical state (by Hudson's theorem it is non-negative <em>only</em> for Gaussian pure states).</p>
+<p>That negativity is not a defect of a clumsy definition — it is <em>forced</em>, and it is meaningful: Wigner (and Kirkwood–Dirac) negativity is a diagnostic of non-classicality and a genuine <strong>resource</strong> — necessary for quantum computational speed-up ("magic") and tied to contextuality. The impossibility of a bona fide \(P(a,b)\) for incompatible observables and the power of quantum mechanics are the same fact.</p>
+
+<h2>Fine's theorem: joint probability \(=\) Bell inequalities</h2>
+<p>Now the deepest turn, and the one you asked about. Move from one pair to a <strong>Bell/CHSH experiment</strong>: Alice measures \(A_1\) <em>or</em> \(A_2\) (outcomes \(\pm1\)), Bob measures \(B_1\) <em>or</em> \(B_2\) (outcomes \(\pm1\)); the four cross-pairs \((A_i,B_j)\) commute (spacelike separated) and are measured, giving correlations \(\langle A_iB_j\rangle\). The same-wing pairs \(A_1,A_2\) (and \(B_1,B_2\)) do <em>not</em> commute and are never measured together. Ask: is there one joint distribution \(P(a_1,a_2,b_1,b_2)\) over all four returning the four measured correlations?</p>
+
+<p>Arthur Fine (<a href="https://faculty.washington.edu/afine/PRL1982.pdf" target="_blank" rel="noopener">PRL 48, 291, 1982</a>; and J. Math. Phys. 23, 1306) proved that <strong>five statements are equivalent</strong>:</p>
+<ol>
+<li>a deterministic local hidden-variable model exists;</li>
+<li>a factorizable stochastic (local) model exists;</li>
+<li>a single joint distribution \(P(a_1,a_2,b_1,b_2)\) exists, returning the measured pairwise correlations;</li>
+<li>well-defined, mutually compatible joint distributions exist for all the pairs and triples (including the non-commuting same-wing ones);</li>
+<li>the Bell/CHSH inequalities hold.</li>
+</ol>
+
+<p>The easy directions frame the result; the hard ones are Fine's. <strong>(3\(\Rightarrow\)5)</strong> is a one-line algebraic bound: if the four \(\pm1\)-valued quantities have a joint distribution, then pointwise</p>
+\[ S = a_1b_1 + a_1b_2 + a_2b_1 - a_2b_2 = a_1(b_1+b_2)+a_2(b_1-b_2) = \pm 2, \]
+<p>since for \(b_1,b_2\in\{\pm1\}\) one of \(b_1\pm b_2\) is \(0\) and the other is \(\pm2\). Averaging, \(|\langle S\rangle|=\big|\langle A_1B_1\rangle+\langle A_1B_2\rangle+\langle A_2B_1\rangle-\langle A_2B_2\rangle\big|\le 2\) — the CHSH inequality. <strong>(1\(\Rightarrow\)3)</strong> is also easy: a hidden variable \(\lambda\) assigning definite values \(a_i(\lambda),b_j(\lambda)\) induces a joint distribution by integrating over \(\lambda\). Fine's real work was the <em>converses</em> — <strong>(5\(\Rightarrow\)3)</strong>, explicitly constructing a joint distribution from correlations that obey all the CHSH inequalities, and <strong>(2\(\Rightarrow\)1)</strong>, reducing any stochastic local model to a deterministic one. Chaining them closes the loop.</p>
+
+<p>The consequence is stark. Quantum mechanics reaches \(|\langle S\rangle| = 2\sqrt2\) (Tsirelson's bound), violating CHSH. By Fine's equivalence, that violation is <em>identical</em> to the statement that <strong>no joint distribution \(P(a_1,a_2,b_1,b_2)\) exists</strong>. Bell's theorem, read through Fine, is not first of all about "spooky action": it is that the incompatible observables of a Bell experiment cannot be embedded in a single classical probability space.</p>
+
+<div class="callout">
+  <p class="kicker">The marginal problem, and a caution</p>
+  <p style="margin-bottom:0">Structurally this is a <em>marginal problem</em> (Vorob'ev): you are handed the joint distributions of overlapping <em>compatible</em> contexts \(\{A_i,B_j\}\) and asked whether they glue into one global distribution. Bell/CHSH is exactly the gluing (consistency) condition, and quantum contextuality/nonlocality is its failure — the modern sheaf-theoretic view of Abramsky–Brandenburger. <strong>Caution — interpretation, not fact:</strong> Fine used this to argue that Bell's theorem is "really" about joint distributions rather than locality. That reading is influential but <em>contested</em>; most physicists hold that the locality assumption is doing essential work, and that dropping it (superdeterminism, retrocausality) is what the no-joint-distribution result actually costs you. State the theorem as a theorem; flag the moral as a debate.</p>
+</div>
+
+<h2>How it is verified experimentally</h2>
+<ul>
+<li><strong>Loophole-free Bell tests.</strong> The direct experimental confirmation that <em>no joint distribution exists</em> is the observation of a genuine CHSH violation with the detection and locality loopholes closed — achieved in 2015 by <a href="https://www.nature.com/articles/nature15759" target="_blank" rel="noopener">Hensen et&nbsp;al.</a> (Delft, entangled NV-centre electron spins), and by Giustina et&nbsp;al. and Shalm et&nbsp;al. (Vienna and NIST, entangled photons). By Fine's theorem, each such violation <em>is</em> a demonstration that the four observables admit no common joint probability.</li>
+<li><strong>Directly measured negativity.</strong> The quasi-probabilities themselves have been reconstructed and shown to go negative: Wigner-function negativity is routinely mapped in cavity QED, trapped ions, and optical tomography, and Kirkwood–Dirac negativity/nonreality has been read out via weak measurements. You can literally watch the "joint distribution" for incompatible observables dip below zero.</li>
+</ul>
+
+<h2>The one idea</h2>
+<p>A joint probability for two quantum observables is not always available: a <em>sharp</em> one exists precisely when they commute (proved above, both ways), and when they don't, the best you can write is a quasi-probability that must go negative. Scale this up to a Bell experiment and the existence of a joint distribution over the incompatible observables becomes <em>equivalent</em> to the Bell inequalities and to local hidden variables — Fine's theorem. So quantum mechanics' refusal to supply joint probabilities for incompatible quantities is not a technical nuisance; it is the same thing as Wigner negativity, as contextuality, and as the violation of Bell's inequality — the signature that the quantum world has no single classical sample space underneath it.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="commute|they commute|commuting|commutativity">
+  <p class="quiz-prompt">A sharp joint observable with the correct marginals for two observables \(A,B\) exists if and only if \(A\) and \(B\) ⟶ ?</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">For non-commuting \(A,B\), the Kirkwood–Dirac distribution \(\mathrm{Tr}(\rho\,P^B_bP^A_a)\)…</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Has the wrong marginals, so it is discarded outright</button>
+    <button class="quiz-option" data-choice="b">Has the right marginals but can be negative or complex</button>
+    <button class="quiz-option" data-choice="c">Is always a valid non-negative probability distribution</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="c">
+  <p class="quiz-prompt">Fine's theorem says a joint distribution over the four Bell-experiment observables exists if and only if…</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">The two wings are measured at exactly the same instant</button>
+    <button class="quiz-option" data-choice="b">The quantum state involved is separable rather than entangled</button>
+    <button class="quiz-option" data-choice="c">The Bell/CHSH inequalities hold (equivalently, a local hidden-variable model exists)</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">The theorem is A. Fine, <a href="https://faculty.washington.edu/afine/PRL1982.pdf" target="_blank" rel="noopener">"Hidden Variables, Joint Probability, and the Bell Inequalities," PRL 48, 291 (1982)</a>, with the companion "Joint distributions, quantum correlations, and commuting observables," J. Math. Phys. 23, 1306 (1982). Background: Bell, Physics 1, 195 (1964); Clauser–Horne–Shimony–Holt, PRL 23, 880 (1969). The loophole-free tests: <a href="https://www.nature.com/articles/nature15759" target="_blank" rel="noopener">Hensen et&nbsp;al., Nature 526, 682 (2015)</a>; Giustina et&nbsp;al., PRL 115, 250401 (2015); Shalm et&nbsp;al., PRL 115, 250402 (2015). Quasi-probabilities and negativity: Wigner (1932); Kirkwood (1933)/Dirac (1945); Hudson (1974); and, for negativity as a resource, Howard et&nbsp;al., Nature 510, 351 (2014). The marginal-problem/contextuality view: Abramsky &amp; Brandenburger, New J. Phys. 13, 113036 (2011).</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any step. Two threads worth pulling: <em>"Show me the (5\(\Rightarrow\)3) construction — how do you actually <strong>build</strong> the joint distribution from CHSH-satisfying correlations?"</em> (Fine gives an explicit formula in terms of the correlators), and <em>"How does Kochen–Specker contextuality fit — is it the single-system version of this same no-joint-distribution obstruction?"</em> (yes, and the marginal-problem framing makes the analogy exact).</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0007-luders-rule.html">0007 — Lüders' Rule</a></span>
+  <span>Next up: Kochen–Specker contextuality &amp; the marginal problem (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>

@@ -72,6 +72,19 @@
   (repeatability/QND, quantum Zeno [Itano 1990] & Zeno dynamics on a degenerate subspace [Schäfer
   2014], the direct NMR discrimination [Hegerfeldt-Mayato 2012 protocol; arXiv:1607.05723] favouring
   Lüders). Checked the measurement-model algebra (U unitary; trace → sum P_k rho P_k) and repeatability.
+- Lesson `0008` (joint probabilities & Fine's theorem) written 2026-07-22 from a learner question about
+  Arthur Fine's result that \( P(A,B) \) exists only if \( [A,B]=0 \). Three layers: (i) the sharp
+  theorem — a sharp joint observable with the right marginals exists **iff** \( [A,B]=0 \), forced to be
+  \( E_{ab}=P^A_aP^B_b \); both directions proved in full (⟸ commuting projectors resolve the identity;
+  ⟹ orthogonality collapses the double sum to \( E_{ab} \) in both orderings). Sidenote on POVM/unsharp
+  joint measurability (Arthurs–Kelly). (ii) Non-commuting → Kirkwood–Dirac \( \mathrm{Tr}(\rho P^B_bP^A_a) \)
+  has correct marginals but goes complex/negative; Wigner/Hudson; negativity as a resource. (iii) Fine's
+  five-fold equivalence (LHV ⟺ factorizable stochastic ⟺ single joint dist ⟺ compatible pair/triple
+  dists ⟺ CHSH); (3⇒5) CHSH \( \pm2 \) algebraic bound proved; Tsirelson \( 2\sqrt2 \); marginal-problem
+  (Vorob'ev)/Abramsky–Brandenburger framing; **flagged the "Bell is really about joint distributions,
+  not locality" moral as Fine's contested interpretation, not fact.** Experiments: loophole-free Bell
+  2015 (Hensen/Giustina/Shalm) + directly measured quasi-probability negativity. Nav forward → Kochen–Specker.
+  All statements double-checked (both proof directions, KD marginals, CHSH bound, five-fold attribution).
 - Candidate next lessons: POVMs & generalized measurements (follow-on to 0007); Kramers degeneracy &
   C/P/T discrete symmetries (follow-on to 0006);
   quaternionic QM & why \( \mathbb C \) is the "Goldilocks" field (follow-on to 0005); Spectrum

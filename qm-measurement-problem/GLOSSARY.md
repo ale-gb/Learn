@@ -133,6 +133,29 @@ _Established in lesson 0007 (Lüders' rule)._
   basis-refined rule dephases within the eigenspace too (a physically finer measurement). Experiment
   (NMR, arXiv:1607.05723) favours Lüders.
 
+_Established in lesson 0008 (joint probabilities & Fine's theorem)._
+
+- **Joint measurability / joint observable** — two observables \( A,B \) are *jointly measurable* if
+  there is a single measurement (effects \( E_{ab}\ge0 \), \( \sum_{ab}E_{ab}=\mathbb 1 \)) whose two
+  marginals reproduce \( A \) and \( B \) in every state. For **sharp** (projective) observables this
+  is possible **iff** \( [A,B]=0 \), and then \( E_{ab}=P^A_aP^B_b \). Dropping sharpness (POVMs) lets
+  some non-commuting pairs be jointly measured at the cost of added noise (smeared marginals).
+- **Kirkwood–Dirac distribution** — the quasi-probability \( Q_\rho(a,b)=\mathrm{Tr}(\rho\,P^B_bP^A_a) \).
+  Has the correct \( A \)- and \( B \)-marginals, but for non-commuting \( A,B \) is complex/negative
+  (its "effects" \( P^B_bP^A_a \) are not even Hermitian). Continuous-variable analogue: the **Wigner
+  function** (correct \( x,p \) marginals, negative except for Gaussian pure states — Hudson's theorem).
+- **Quasi-probability negativity** — the forced negativity/nonreality of any joint distribution for
+  incompatible observables. Not a defect but a **resource**: Wigner/Kirkwood–Dirac negativity is a
+  diagnostic of non-classicality, tied to contextuality and to quantum computational "magic."
+- **Fine's theorem** — for a Bell/CHSH experiment, five statements are equivalent: a deterministic
+  local hidden-variable model exists; a factorizable stochastic model exists; a single joint
+  distribution over all four observables exists (returning the measured correlations); compatible
+  joint distributions exist for all pairs/triples; the Bell/CHSH inequalities hold. Hence a CHSH
+  violation *is* the non-existence of a joint distribution. (A. Fine, PRL 48, 291, 1982.)
+- **Marginal problem (Vorob'ev)** — given joint distributions on overlapping compatible contexts,
+  do they glue into one global joint distribution? Bell/CHSH is exactly the gluing condition;
+  contextuality/nonlocality is its failure (sheaf-theoretic view of Abramsky–Brandenburger).
+
 - **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
   (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
   a unitary flow. Some classical observables (radial momentum on \( r>0 \), an oscillator's

@@ -94,6 +94,29 @@ literature rather than parametric recall.
   inside it — the Lüders "coherence within the eigenspace" prediction, in a BEC. (Zeno derivation:
   Misra & Sudarshan, *J. Math. Phys.* 18, 756, 1977; first observation: Itano et al., *PRA* 41, 2295, 1990.)
 
+## Knowledge — joint probabilities, quasi-probability & Fine's theorem
+
+- [Paper: **Hidden Variables, Joint Probability, and the Bell Inequalities** — A. Fine](https://faculty.washington.edu/afine/PRL1982.pdf)
+  PRL 48, 291 (1982). The theorem: for a Bell experiment, a joint distribution over all four
+  observables exists **iff** the CHSH inequalities hold, **iff** a (deterministic or stochastic)
+  local hidden-variable model exists. The primary source behind lesson 0008. Companion: "Joint
+  distributions, quantum correlations, and commuting observables," *J. Math. Phys.* 23, 1306 (1982).
+- Foundational Bell/CHSH: J. S. Bell, *Physics* 1, 195 (1964); Clauser, Horne, Shimony, Holt,
+  PRL 23, 880 (1969). Tsirelson's \( 2\sqrt2 \) bound: B. S. Cirel'son, *Lett. Math. Phys.* 4, 93 (1980).
+- [Paper: **Loophole-free Bell inequality violation using electron spins separated by 1.3 km** — Hensen et al.](https://www.nature.com/articles/nature15759)
+  Nature 526, 682 (2015). The first loophole-free Bell test — by Fine's theorem, a direct
+  demonstration that the four observables admit no joint distribution. (Photon versions the same
+  year: Giustina et al., PRL 115, 250401; Shalm et al., PRL 115, 250402.)
+- [Paper: **Contextuality supplies the 'magic' for quantum computation** — Howard et al.](https://www.nature.com/articles/nature13460)
+  Nature 510, 351 (2014). Quasi-probability negativity/contextuality as the *resource* powering
+  quantum speed-up — why the impossibility of a joint distribution is not a nuisance but the point.
+  (Wigner-function origin: E. Wigner, *Phys. Rev.* 40, 749, 1932; non-negativity only for Gaussian
+  pure states: R. L. Hudson, *Rep. Math. Phys.* 6, 249, 1974. Kirkwood–Dirac: Kirkwood 1933 / Dirac 1945.)
+- [Paper: **The sheaf-theoretic structure of non-locality and contextuality** — Abramsky & Brandenburger](https://arxiv.org/abs/1102.0264)
+  New J. Phys. 13, 113036 (2011). Recasts Bell/Kochen–Specker as a **marginal problem** (Vorob'ev):
+  when do compatible local distributions glue into a global one? The unifying modern framing for
+  lesson 0008's "no single classical sample space" moral. (SEP: `quantum-contextuality`.)
+
 ## Knowledge — symmetry &amp; the origin of observables
 
 - [Book: **Quantum Mechanics: A Modern Development** — L. Ballentine](https://books.google.com/books/about/Quantum_Mechanics_A_Modern_Development_2.html?id=Yi48DQAAQBAJ)
