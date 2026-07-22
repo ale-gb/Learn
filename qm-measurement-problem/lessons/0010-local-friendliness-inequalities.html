@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0010 — Local Friendliness Inequalities: A Bound Stronger Than Bell's</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0010 · Foundations of QM</p>
+<h1>Local Friendliness: A Bound Stronger Than Bell's</h1>
+<p class="lede">The Frauchiger–Renner paradox is a single-shot logical contradiction — sharp, but not a number you can measure. Bong, Wiseman, Cavalcanti and collaborators (2020) turned the same tension into an <em>inequality</em>: a testable bound obeyed by any world in which observed events are absolute and settings are freely, locally chosen. Quantum mechanics violates it. Because its assumptions are strictly weaker than Bell's, violating it says strictly more than violating a Bell inequality — and it was confirmed in a six-photon experiment.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">This closes a three-lesson arc. <a href="0008-joint-probabilities-and-fines-theorem.html">Lesson 0008</a> gave the local polytope and CHSH; <a href="0009-frauchiger-renner-paradox.html">lesson 0009</a> gave Frauchiger–Renner and its assumptions (Q, C, S). Local Friendliness (LF) is the synthesis: it takes FR's "are observed events absolute?" question and casts it as a Bell-type inequality, so it becomes an experimentally testable, device-independent constraint. The result is the sharpest knife in the drawer — it forces a choice between the <em>absoluteness of facts</em> and <em>locality</em> that Bell's theorem alone leaves open.</p>
+</div>
+
+<h2>The gap Bell leaves open</h2>
+<p>Recall the logic of <a href="0008-joint-probabilities-and-fines-theorem.html">Bell/CHSH</a>. <em>Local causality</em> — every outcome fixed by a local hidden variable \(\lambda\), with \(p(a,b|x,y,\lambda)=p(a|x,\lambda)\,p(b|y,\lambda)\) — implies \(|\langle S\rangle|\le 2\). Experiment violates it, so local causality is false. But local causality bundles <em>two</em> ideas: that outcomes are definite pre-existing facts, <em>and</em> that they are locally determined. Bell tells you the bundle fails; it does not tell you <em>which strand</em> to cut. A committed realist can keep "measurement outcomes are absolute facts" and instead sacrifice locality (Bohmian mechanics does exactly this). Bell leaves that escape open.</p>
+
+<p>Local Friendliness closes it — by weakening the assumptions until only the strand worth arguing about remains.</p>
+
+<h2>The three assumptions</h2>
+<p>LF derives its inequalities from three premises, each operationally meaningful and each strictly weaker than "local causality."</p>
+<ul>
+  <li><strong>Absoluteness of Observed Events (AOE).</strong> Every event <em>actually observed by any observer</em> has a single, absolute value — the same for everyone, whether or not anyone else looks. This is weaker than a full hidden-variable assignment: it commits only to the outcomes that <em>are</em> observed, not to predetermined values for every counterfactual measurement. (It is the inequality-friendly cousin of FR's assumption (S), <em>single outcomes</em>.)</li>
+  <li><strong>Locality.</strong> The probability of the events on one wing is unchanged by the freely-chosen measurement setting on the distant, spacelike-separated wing. (In the causal reformulation of Cavalcanti–Wiseman this is <strong>Local Agency</strong>: a freely chosen intervention is uncorrelated with any events outside its future light cone.)</li>
+  <li><strong>No-Superdeterminism (free choice).</strong> The setting choices \(x,y\) are freely made — statistically independent of the relevant pre-existing variables. Without this, any correlation can be faked, so it is the standard background assumption of every Bell-type argument.</li>
+</ul>
+
+<div class="key-idea">
+  <p class="kicker">The strategic point</p>
+  <p>Bell's local causality \(=\) (roughly) AOE <em>for every possible measurement</em> \(+\) Locality. LF keeps AOE only for events that are <em>genuinely observed</em>, and drops the predetermination of counterfactual outcomes. Fewer constraints \(\Rightarrow\) a <strong>larger</strong> set of allowed correlations. So the LF conditions are strictly weaker, and anything that violates an LF inequality also violates a Bell inequality — but not conversely.</p>
+</div>
+
+<h2>The polytope picture</h2>
+<p>Correlations \(\{p(a,b|x,y)\}\) live in a space; three nested convex bodies matter (compare the local polytope of <a href="0008-joint-probabilities-and-fines-theorem.html">lesson 0008</a>):</p>
+\[ \textbf{Local (Bell)}\ \subseteq\ \textbf{Local Friendliness}\ \subseteq\ \textbf{No-signalling}. \]
+<p>The local polytope is cut out by the Bell/CHSH inequalities; the no-signalling polytope by the condition that neither wing's marginals depend on the other's setting. LF sits strictly between them: its assumptions are weaker than local causality (so it contains the local set) but stronger than mere no-signalling (so it is contained in that set). Its boundary is a new family of <strong>LF inequalities</strong>.</p>
+
+<div class="sidenote">How much bigger is LF than Local? It depends on the number of settings. In the simplest bipartite scenario — <em>two</em> settings and two outcomes per side — the LF polytope <strong>equals</strong> the local polytope: LF says nothing beyond CHSH. A genuine gap opens only once one party has <em>three</em> settings. That is exactly why the experiment gives one super-observer three settings. (In richer scenarios the LF polytope has hundreds of facets — 932 for three settings on each side — most of them not Bell inequalities at all.)</div>
+
+<h2>The extended Wigner's-friend scenario</h2>
+<p>Put the friends back inside the boxes (the <a href="0009-frauchiger-renner-paradox.html">lesson 0009</a> cast, now bipartite and symmetric). Two entangled systems are shared. Inside Alice's lab, her friend <strong>Charlie</strong> measures his half and records an outcome; inside Bob's lab, <strong>Debbie</strong> measures hers. Then the two super-observers act from outside:</p>
+<ul>
+  <li><strong>Alice</strong> picks a setting \(x\in\{1,2,3\}\). Setting \(x=1\) means <em>open the lab and report what Charlie saw</em> (her outcome becomes Charlie's recorded value). Settings \(x=2,3\) are super-observer measurements on the <em>whole lab</em> in a basis that superposes Charlie's branches — the coherent <em>reversal</em> measurements of <a href="0009-frauchiger-renner-paradox.html">lesson 0009</a>.</li>
+  <li><strong>Bob</strong> picks \(y\in\{1,2\}\) and likewise can either read Debbie's result or perform a reversal measurement.</li>
+  <li>The measurements on the two labs are <strong>spacelike separated</strong>, so Locality applies to the super-observers' setting choices.</li>
+</ul>
+<p>The "peek" settings are what tie the abstract inequality to <em>observed</em> events: when Alice opens the lab, she certifies Charlie's outcome as a fact, which is precisely what AOE asserts exists all along.</p>
+
+<h2>An LF inequality, and its violation</h2>
+<p>Grant the three assumptions. AOE gives Charlie's and Debbie's outcomes absolute values; Locality plus free choice make the joint distribution of those absolute values independent of the distant setting. Assembling the observable correlations \(\langle A_x B_y\rangle=\sum ab\,p(a,b|x,y)\) then forces them into the LF polytope. In the three-setting scenario one of its facets is a CHSH-shaped inequality among the reversal settings:</p>
+\[ \big|\langle A_2 B_1\rangle+\langle A_2 B_2\rangle+\langle A_3 B_1\rangle-\langle A_3 B_2\rangle\big|\ \le\ 2, \]
+<p>with Alice's peek setting \(A_1\) doing the work of pinning Charlie's outcome to an absolute fact. (This is one representative facet; the full LF polytope for the scenario has many more.) The algebra of the bound is identical to CHSH from <a href="0008-joint-probabilities-and-fines-theorem.html">lesson 0008</a> — the classical maximum is \(2\) — but the <em>premises</em> are the three LF assumptions, not local causality.</p>
+
+<p>Quantum mechanics, using entanglement and the reversal measurements, drives the left-hand side up to Tsirelson's \(2\sqrt2\approx 2.83\). The LF bound is broken.</p>
+
+<div class="key-idea">
+  <p class="kicker">Why this says strictly more than Bell</p>
+  <p>Because <strong>Local</strong> \(\subseteq\) <strong>LF</strong>, stepping outside the LF polytope means stepping outside the local one too — so an LF violation entails a Bell violation automatically. The converse fails: a correlation can be Bell-nonlocal yet still sit inside LF. Violating LF therefore refutes a <em>weaker</em>, more defensible package of assumptions: \(\{\text{AOE},\ \text{Locality},\ \text{No-Superdeterminism}\}\). At least one of the three must be false. In particular — and this is the strand Bell left uncut — <strong>you can no longer rescue the absoluteness of observed events merely by giving up locality</strong>. Keep Locality (to honour relativity) and free choice, and AOE must go: facts become perspectival, relative to observers. That is the Relational-QM / QBist reading, now forced by an inequality rather than argued by interpretation.</p>
+</div>
+
+<h2>The experiment, and the honest caveat</h2>
+<p>Bong <em>et&nbsp;al.</em> realised the scenario with a <strong>six-photon</strong> setup. The "friends" Charlie and Debbie are not people but <strong>photonic qubits</strong>: a friend's measurement is encoded in which path a photon takes, and the super-observer's reversal measurement coherently recombines those paths (physically undoing the friend's measurement — possible precisely because a photon's "memory" is a single controllable qubit). Alice used three settings, Bob two; the measured correlations violated the Local Friendliness inequality by about <strong>five standard deviations</strong>, and of course the Bell bound along with it.</p>
+
+<div class="callout">
+  <p class="kicker">What the experiment does and doesn't settle</p>
+  <p style="margin-bottom:0">The theorem's teeth depend on assumption <strong>(Q)</strong> from <a href="0009-frauchiger-renner-paradox.html">lesson 0009</a>: that a measurement by the "friend" is a genuine observed event. A single photon is manifestly not a conscious observer, so the experiment is a <em>proof of principle</em> — it shows the quantum predictions are as advertised and the reversal is realisable, not that a person's memory can be coherently un-measured. The open physical question is whether a system complex enough to count as a real observer can still be reversed (unitary at observer scale), or whether something — gravitation, spontaneous collapse (see <a href="0001-decoherence-and-the-measurement-problem.html">lesson 0001</a>'s Penrose aside), sheer irreversibility — forbids it. If reversal is forbidden at observer scale, the friend's box can never be coherently remeasured and the LF argument never gets started. That is the loophole every interpretation that keeps AOE must lean on.</p>
+</div>
+
+<h2>Local Friendliness vs Frauchiger–Renner</h2>
+<p>The two no-go results are siblings; knowing how they differ sharpens both.</p>
+<ul>
+  <li><strong>Form.</strong> FR (<a href="0009-frauchiger-renner-paradox.html">0009</a>) is a <em>single-shot logical</em> contradiction: a chain of probability-one inferences clashes with one Born-rule amplitude (\(p(\text{ok},\text{ok})=\tfrac1{12}\neq 0\)). LF is a <em>statistical inequality</em> violated on average — so it is robust to noise and directly measurable.</li>
+  <li><strong>Assumptions.</strong> FR needs universality (Q), a composability/consistency axiom (C), and single outcomes (S). LF pares these to three cleaner, individually operational conditions — AOE, Locality, No-Superdeterminism — and crucially makes <strong>Locality explicit and separable</strong>. That is what lets LF force the AOE-vs-locality dilemma that FR's (C) somewhat obscures.</li>
+  <li><strong>Strength.</strong> Both are "strong" no-go theorems in the same family (and both trace back to Wigner's friend and, structurally, to <a href="0008-joint-probabilities-and-fines-theorem.html">Fine's</a> "no global sample space"). LF's achievement is to be simultaneously weaker in assumptions <em>and</em> experimentally testable.</li>
+</ul>
+
+<div class="sidenote"><strong>Interpretation, not settled fact</strong> — the same caution as <a href="0009-frauchiger-renner-paradox.html">lesson 0009</a>. Which single assumption a given interpretation "really" abandons (Many-Worlds → AOE via branching; Bohm → restricts Q so a friend isn't a mere qubit; RQM/QBism → AOE, facts are relational; superdeterminism/retrocausality → No-Superdeterminism) is a live dispute, and some views arguably reject more than one. The theorem and the \(2\sqrt2\) violation are rigorous; the taxonomy is a map.</div>
+
+<h2>The one idea</h2>
+<p>Bell's theorem refutes local causality but leaves an escape: keep your outcomes absolute and blame locality. Local Friendliness slams that escape. By assuming only that observed events are absolute, that freely-chosen settings act locally, and that choices are free, it derives a Bell-type inequality — and quantum mechanics, in an extended Wigner's-friend scenario with coherent reversal measurements, violates it (to \(2\sqrt2\), by five sigma with six photons). So at least one of those three must fall. If you will not give up locality or free choice, you must give up the absoluteness of observed events themselves: in a quantum world, a measurement outcome may be a fact <em>for one observer</em> without being a fact <em>simpliciter</em>. Bell showed the classical world-picture was too small; Local Friendliness shows even "there are absolute facts" may not fit inside it.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">How do the three correlation sets nest?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">No-signalling \(\subseteq\) Local Friendliness \(\subseteq\) Local</button>
+    <button class="quiz-option" data-choice="b">Local \(\subseteq\) Local Friendliness \(\subseteq\) No-signalling</button>
+    <button class="quiz-option" data-choice="c">Local Friendliness \(\subseteq\) Local \(\subseteq\) No-signalling</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="c">
+  <p class="quiz-prompt">Why is violating a Local Friendliness inequality a <em>strictly stronger</em> result than violating a Bell inequality?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Because LF inequalities are harder to state mathematically</button>
+    <button class="quiz-option" data-choice="b">Because LF requires faster-than-light signalling to derive</button>
+    <button class="quiz-option" data-choice="c">Because LF's assumptions are strictly weaker, so an LF violation rules out a weaker (and thus more compelling) set of premises — and entails a Bell violation too</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz" data-answer="absoluteness of observed events|AOE|absoluteness|observed events">
+  <p class="quiz-prompt">If you insist on keeping Locality and free choice, which of the three LF assumptions must you abandon? (Name it.)</p>
+  <input class="quiz-input" type="text" placeholder="the assumption">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="a">
+  <p class="quiz-prompt">In the six-photon experiment, what plays the role of a "friend"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">A photonic qubit (the friend's outcome is encoded in a photon's path), so the reversal measurement can coherently undo it</button>
+    <button class="quiz-option" data-choice="b">A conscious human observer sealed in an isolated laboratory</button>
+    <button class="quiz-option" data-choice="c">A classical computer running a measurement-simulation program</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">The theorem and experiment: K.-W. Bong, A. Utreras-Alarcón, F. Ghafari, Y.-C. Liang, N. Tischler, E. G. Cavalcanti, G. J. Pryde &amp; H. M. Wiseman, <a href="https://www.nature.com/articles/s41567-020-0990-x" target="_blank" rel="noopener">"A strong no-go theorem on the Wigner's friend paradox," <em>Nat. Phys.</em> <strong>16</strong>, 1199 (2020)</a> (preprint <a href="https://arxiv.org/abs/1907.05607" target="_blank" rel="noopener">arXiv:1907.05607</a>). Causal reformulation (Local Agency): E. G. Cavalcanti &amp; H. M. Wiseman, <a href="https://www.mdpi.com/1099-4300/23/8/925" target="_blank" rel="noopener">"Implications of Local Friendliness violation for quantum causality," <em>Entropy</em> <strong>23</strong>, 925 (2021)</a>. Antecedents in this workspace: <a href="0008-joint-probabilities-and-fines-theorem.html">0008</a> (CHSH, the local polytope, Fine's theorem), <a href="0009-frauchiger-renner-paradox.html">0009</a> (Frauchiger–Renner, Wigner's friend, Brukner's <em>Entropy</em> <strong>20</strong>, 350). Broader context: SEP, <em>Relational Quantum Mechanics</em>; the Unitary Foundation's Local-Friendliness bibliography.</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on the structure. Three threads worth pulling: <em>"Walk me through why the LF polytope literally equals the Bell polytope at two settings but not at three — where does the extra freedom enter?"</em>; <em>"Is 'Locality' here exactly no-signalling, or something more? — and how does Cavalcanti–Wiseman's Local Agency make it a causal, not merely operational, condition?"</em>; and <em>"If reversal is forbidden at observer scale (collapse, gravity), does the whole LF/FR family of paradoxes simply dissolve — and is that a physical prediction we could test?"</em> (yes — it is exactly what macroscopic-superposition and objective-collapse experiments probe).</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0009-frauchiger-renner-paradox.html">0009 — The Frauchiger–Renner Paradox</a></span>
+  <span>Next up: Kochen–Specker contextuality &amp; the marginal problem (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>

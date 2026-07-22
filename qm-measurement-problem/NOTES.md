@@ -107,6 +107,26 @@
   ok-branch \( =-1/\sqrt6\,|\uparrow\rangle \), \( \langle\mathrm{ok}_B|\!\rightarrow\rangle=0 \),
   \( p(\mathrm{ok},\mathrm{ok})=1/12 \), all four joint probs \( (1/12,1/12,1/12,3/4) \) sum to 1.
   Citations confirmed via WebSearch (FR Nat.Commun.9,3711; Brukner; Bong).
+- Lesson `0010` (Local Friendliness inequalities) written 2026-07-22, completing the 0008→0009→0010
+  Bell/FR/LF arc (learner-requested sequel to 0009). Core: LF (Bong et al. 2020) casts FR's
+  "are observed events absolute?" as a *testable Bell-type inequality*. Three assumptions — **AOE**
+  (absoluteness of observed events), **Locality** (Cavalcanti–Wiseman: Local Agency), **No-Superdeterminism** —
+  strictly weaker than Bell's local causality, so the polytope nests **Local ⊆ LF ⊆ No-signalling**;
+  LF = Local at 2 settings, strict once a party has 3 (why the experiment gives a super-observer 3
+  settings; 932 facets at 3×3). Representative CHSH-form facet
+  \( |\langle A_2B_1\rangle+\langle A_2B_2\rangle+\langle A_3B_1\rangle-\langle A_3B_2\rangle|\le2 \),
+  QM → \( 2\sqrt2 \). The strategic payoff (the strand Bell leaves uncut): an LF violation forbids
+  *simultaneously* keeping AOE + Locality + free choice, so — unlike Bell — you can't save absolute
+  facts by dropping locality; keep locality ⇒ AOE falls ⇒ facts perspectival (RQM/QBism). Experiment:
+  six photons, friend = photonic qubit (path), reversal recombines paths; violation ~5σ. Honest caveats
+  kept: qubit-friend ⇒ proof-of-principle (leans on assumption Q from 0009); interpretation taxonomy is
+  a heuristic; the "reversal forbidden at observer scale" loophole (ties to 0001 Penrose/collapse).
+  Also added an explicit LF-vs-FR contrast (statistical/robust inequality vs single-shot logical
+  contradiction; LF makes Locality separable). Facts verified via WebSearch: Nat. Phys. 16, 1199 (2020) /
+  arXiv 1907.05607; six-photon, ~5σ; AOE+Locality+No-Superdeterminism; Local⊆LF⊆NS; Cavalcanti–Wiseman
+  Entropy 23, 925 (2021) Local Agency. (Could not WebFetch the PDFs — org egress policy blocks arXiv/NCBI/MDPI;
+  relied on WebSearch snippets + prior knowledge. The exact algebraic facet is given as *representative*,
+  not the sole facet, to avoid over-claiming coefficients.)
 - Candidate next lessons: POVMs & generalized measurements (follow-on to 0007); Kramers degeneracy &
   C/P/T discrete symmetries (follow-on to 0006);
   quaternionic QM & why \( \mathbb C \) is the "Goldilocks" field (follow-on to 0005); Spectrum

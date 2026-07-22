@@ -134,6 +134,12 @@ literature rather than parametric recall.
 - [Exposition: **Understanding the Frauchiger–Renner argument** (arXiv:2008.08538)](https://arxiv.org/abs/2008.08538)
   and Nurgalieva & del Rio on the multi-agent modal logic — for making the nested "who-knows-what"
   reasoning of the chain fully explicit. Interpretation-neutral background: SEP, *Relational Quantum Mechanics*.
+- [Paper: **Implications of Local Friendliness violation for quantum causality** — Cavalcanti & Wiseman](https://www.mdpi.com/1099-4300/23/8/925)
+  Entropy 23, 925 (2021). The causal reformulation of the LF theorem: recasts "Locality" as **Local
+  Agency** (a free intervention is uncorrelated with events outside its future light cone) and sharpens
+  what LF violation costs. The theory anchor for lesson 0010's assumption analysis and the
+  Local ⊆ LF ⊆ No-signalling polytope hierarchy. (Multipartite/facet structure: Utreras-Alarcón et al.,
+  "Local Friendliness polytopes in multipartite scenarios," arXiv:2407.20346.)
 
 ## Knowledge — symmetry &amp; the origin of observables
 

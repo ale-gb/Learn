@@ -179,7 +179,26 @@ _Established in lesson 0009 (Frauchiger–Renner paradox)._
 - **Local Friendliness (Bong et al.)** — a strictly stronger Wigner's-friend no-go than FR: the
   conjunction of **absoluteness of observed events** and **local agency** yields inequalities
   (a strengthening of CHSH) that quantum correlations violate; tested photonically (a photon as
-  proxy "friend").
+  proxy "friend"). Fully developed in lesson 0010.
+
+_Established in lesson 0010 (Local Friendliness inequalities)._
+
+- **Absoluteness of Observed Events (AOE)** — the assumption that every *actually observed* event has
+  a single absolute value, the same for all observers, whether or not anyone else looks. Weaker than a
+  full hidden-variable assignment (it commits only to observed, not counterfactual, outcomes); the
+  inequality-friendly cousin of FR's assumption (S). Denying it makes facts *perspectival* (relational).
+- **Locality / Local Agency** — the LF locality premise: events on one wing are unaffected by the
+  freely-chosen setting on the distant spacelike wing (operationally, no-signalling). Cavalcanti–Wiseman's
+  **Local Agency** upgrades it to a causal principle: a free intervention is uncorrelated with any events
+  outside its future light cone.
+- **Local Friendliness polytope** — the convex set of correlations allowed by {AOE, Locality,
+  No-Superdeterminism}. Nests strictly: **Local (Bell) ⊆ LF ⊆ No-signalling**. Equals the local
+  polytope for 2 settings per side; strictly larger (new facets) once a party has 3 settings — which is
+  why an LF violation *entails* a Bell violation but not conversely, making it strictly stronger.
+- **LF inequality** — a facet of the LF polytope. In the simplest 3-setting scenario one facet is
+  CHSH-shaped, \( |\langle A_2B_1\rangle+\langle A_2B_2\rangle+\langle A_3B_1\rangle-\langle A_3B_2\rangle|\le2 \),
+  bound 2, violated by QM up to \( 2\sqrt2 \) — but derived from the weaker LF assumptions, not local
+  causality. Confirmed in a six-photon experiment (~5σ).
 
 - **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
   (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
