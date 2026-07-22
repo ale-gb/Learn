@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0009 — The Frauchiger–Renner Paradox: Quantum Theory Applied to Its Own Users</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<p class="kicker">Lesson 0009 · Foundations of QM</p>
+<h1>The Frauchiger–Renner Paradox: When Quantum Theory Is Turned on Its Own Users</h1>
+<p class="lede">Relational reasoning in quantum mechanics is <em>consistent</em> — as long as you only ever compare outcomes through actual physical interactions between commuting, jointly-measurable observables. Frauchiger and Renner (2018) found the breaking point: let agents apply quantum theory <em>to each other</em>, treat every measurement outcome as an absolute fact, and chain their certain inferences across frames that never physically meet — and quantum mechanics contradicts itself. This lesson builds the consistency result first, then shows exactly where and why it fails.</p>
+
+<div class="callout">
+  <p class="kicker">Why this lesson</p>
+  <p style="margin-bottom:0">This is the multi-agent sequel to two earlier threads. From <a href="0008-joint-probabilities-and-fines-theorem.html">lesson 0008</a>: commuting observables have a genuine joint distribution — you will see Part 1 <em>is</em> that theorem, worn as "relational consistency." From <a href="0007-luders-rule.html">lesson 0007</a>: the projection postulate is what one observer applies to their own measurement while treating a distant observer <em>unitarily</em>. Frauchiger–Renner (FR) is what happens when those two moves — collapse for me, unitary for you — are pushed to a nested extreme. The payoff is a theorem sharper than Wigner's friend: no interpretation keeps <em>all</em> of "quantum theory is universal," "facts are absolute," and "agents' conclusions compose." At least one must go.</p>
+</div>
+
+<h2>Part 1 — Relational consistency: why single-observer reasoning recovers the Born rule</h2>
+<p>Start with the reassuring half. Two parties, Alice and Bob, share \(\mathcal H_A\otimes\mathcal H_B\) in an arbitrary (possibly entangled) state \(|\Psi\rangle\). Alice measures a local observable with orthogonal projectors \(\{P_a\}\) on \(\mathcal H_A\); Bob measures \(\{Q_b\}\) on \(\mathcal H_B\). Because they act on different tensor factors, they commute exactly:</p>
+\[ [\,P_a\otimes I_B,\; I_A\otimes Q_b\,]=0 . \]
+<p>We now compute everything <em>from Alice's reference frame</em>: Alice collapses her own state (she made a measurement — <a href="0007-luders-rule.html">Lüders</a>), but she has not interacted with Bob, so relative to her, Bob's measurement is not a collapse — it is just a unitary that couples Bob's system to his memory register.</p>
+
+<p><strong>Step 1 — Alice measures.</strong> She obtains \(a\) with probability \(p(a)=\langle\Psi|(P_a\otimes I_B)|\Psi\rangle\), and updates her description of the whole universe by the projection postulate:</p>
+\[ |\Psi_a\rangle=\frac{(P_a\otimes I_B)|\Psi\rangle}{\sqrt{p(a)}} . \]
+
+<p><strong>Step 2 — Bob measures, unitarily (from Alice's view).</strong> Bob's apparatus enacts \(U_B=I_A\otimes U_{S_B\to\text{mem}}\), entangling his spin with his notebook. Alice, having not looked, simply evolves her state: \(|\Psi_a'\rangle=U_B|\Psi_a\rangle\).</p>
+
+<p><strong>Step 3 — Alice walks into Bob's lab</strong> and reads his notebook for outcome \(b\). That reading is a projector \(\Pi_b\) on Bob's <em>memory register</em>. The probability she finds \(b\), given she already got \(a\), is \(p(b|a)=\langle\Psi_a'|(I_A\otimes\Pi_b)|\Psi_a'\rangle\).</p>
+
+<p>Now substitute and simplify. Because \(P_a\otimes I_B\) acts only on \(A\) while \(U_B,\Pi_b\) act only on \(B\), everything on the two wings commutes, and \(P_a^\dagger P_a=P_a\):</p>
+\[ p(b|a)=\frac{1}{p(a)}\,\langle\Psi|\,P_a\otimes\big(U_B^\dagger\,\Pi_b\,U_B\big)\,|\Psi\rangle . \]
+<p>The Heisenberg-evolved notebook projector \(U_B^\dagger\Pi_b U_B\) is exactly Bob's original system observable \(Q_b\) — this is what "an ideal measurement" <em>means</em>: the pointer ends up perfectly correlated with \(Q_b\) (the same isometric premeasurement we lean on again below). Hence</p>
+\[ p(a,b)=p(a)\,p(b|a)=\langle\Psi|(P_a\otimes Q_b)|\Psi\rangle . \]
+
+<div class="key-idea">
+  <p class="kicker">The consistency theorem — and its debt to lesson 0008</p>
+  <p>Computed honestly from one observer's frame, the relational joint statistics \(p(a,b)\) equal the ordinary global Born rule for the commuting pair \(P_a\otimes Q_b\). There is no frame-dependence, no paradox. And this is <em>precisely</em> the joint-measurability theorem of <a href="0008-joint-probabilities-and-fines-theorem.html">lesson 0008</a>: because \([P_a\otimes I,\,I\otimes Q_b]=0\), a genuine sharp joint observable exists — it is \(E_{ab}=P_a\otimes Q_b\) — and \(p(a,b)=\mathrm{Tr}\!\big(|\Psi\rangle\langle\Psi|\,E_{ab}\big)\) is an honest probability. Microcausality (spacelike operators commute) is what guarantees that different agents' physically-compared observations glue into one consistent story.</p>
+</div>
+
+<p>Hold onto the italicised clause: <strong>physically compared</strong>, and <strong>commuting</strong>. Alice learned Bob's result by physically entering his lab and projecting onto his notebook — a real interaction between operators that commute. The entire consistency rests on that. Frauchiger–Renner is engineered to violate both conditions at once: it chains inferences across measurements that are <em>never</em> jointly performed, on the same wing, where the relevant operators do <em>not</em> commute.</p>
+
+<h2>Part 2 — Frauchiger–Renner: nesting the friends</h2>
+<p>Now put observers <em>inside</em> the boxes. Four agents: a friend \(F_A\) and a friend \(F_B\) sealed in isolated labs, plus two "super-observers" Alice and Bob who can measure those entire labs coherently from outside. Two systems: a biased quantum coin \(R\) and a spin \(S\).</p>
+
+<ul>
+  <li><strong>Prepare &amp; branch.</strong> \(F_A\) measures the coin \(R=\sqrt{\tfrac13}\,|h\rangle+\sqrt{\tfrac23}\,|t\rangle\) in \(\{|h\rangle,|t\rangle\}\), then prepares the spin conditionally: \(h\Rightarrow|{\downarrow}\rangle\), and \(t\Rightarrow|{\rightarrow}\rangle=\tfrac1{\sqrt2}(|{\uparrow}\rangle+|{\downarrow}\rangle)\), and sends \(S\) to \(F_B\).</li>
+  <li><strong>The global state</strong> (writing \(\sqrt{\tfrac23}\cdot\tfrac1{\sqrt2}=\sqrt{\tfrac13}\)) is the little Hardy-type state
+  \[ |\Psi\rangle=\sqrt{\tfrac13}\,\Big(\,|h\rangle|{\downarrow}\rangle+|t\rangle|{\uparrow}\rangle+|t\rangle|{\downarrow}\rangle\,\Big). \]</li>
+  <li><strong>\(F_B\) measures \(S\)</strong> in \(\{|{\uparrow}\rangle,|{\downarrow}\rangle\}\) and records the result.</li>
+  <li><strong>Alice measures \(F_A\)'s whole lab</strong> (coin + friend's memory) in the <em>reversal</em> basis \(|\text{ok}\rangle_A=\tfrac1{\sqrt2}(|h\rangle-|t\rangle)\), \(|\text{fail}\rangle_A=\tfrac1{\sqrt2}(|h\rangle+|t\rangle)\).</li>
+  <li><strong>Bob measures \(F_B\)'s whole lab</strong> in \(|\text{ok}\rangle_B=\tfrac1{\sqrt2}(|{\downarrow}\rangle-|{\uparrow}\rangle)\), \(|\text{fail}\rangle_B=\tfrac1{\sqrt2}(|{\downarrow}\rangle+|{\uparrow}\rangle)\).</li>
+</ul>
+
+<div class="sidenote">Those \(|\text{ok}\rangle\) measurements are the crux. Measuring \(F_A\)'s lab in a basis <em>superposing</em> \(|h\rangle\) and \(|t\rangle\) is a measurement that does <strong>not</strong> commute with \(F_A\)'s own \(\{|h\rangle,|t\rangle\}\) measurement — it partially <em>undoes</em> it. This is the same non-commutativity that Part 1 forbade. Physically it is a Wigner's-friend "reversal": interfering the branches of a sealed observer. That is why the FR labs must be perfectly isolated and coherent — and why the experiment is a thought experiment for macroscopic friends.</div>
+
+<h3>The chain of certainties</h3>
+<p>Assume, with FR, that each sealed measurement produces a single absolute fact that any agent may reason about. Then each agent draws a <em>probability-one</em> inference — these are certainties, not statistics, which is what makes the eventual clash lethal.</p>
+
+<p><strong>Conclusion 1 (Alice → spin).</strong> Rewrite \(|\Psi\rangle\) in Alice's basis using \(|h\rangle=\tfrac1{\sqrt2}(|\text{fail}\rangle_A+|\text{ok}\rangle_A)\), \(|t\rangle=\tfrac1{\sqrt2}(|\text{fail}\rangle_A-|\text{ok}\rangle_A)\). Collecting terms,</p>
+\[ |\Psi\rangle=\underbrace{\sqrt{\tfrac16}\,|\text{fail}\rangle_A\big(|{\uparrow}\rangle+2|{\downarrow}\rangle\big)}_{\text{norm}^2=5/6}\;-\;\underbrace{\sqrt{\tfrac16}\,|\text{ok}\rangle_A\,|{\uparrow}\rangle}_{\text{norm}^2=1/6}. \]
+<p>In the \(|\text{ok}\rangle_A\) branch the two \(|{\downarrow}\rangle\) contributions (from \(|h\rangle|{\downarrow}\rangle\) and \(|t\rangle|{\downarrow}\rangle\)) cancel, leaving only \(|{\uparrow}\rangle\). So <strong>if Alice gets \(\text{ok}\), the spin is certainly \(|{\uparrow}\rangle\)</strong>: \(A=\text{ok}\Rightarrow S={\uparrow}\).</p>
+
+<div class="sidenote"><strong>Correcting a tempting shortcut.</strong> It is tempting to "simplify" the fail branch to \(\sqrt{\tfrac23}\,|\text{fail}\rangle_A|{\rightarrow}\rangle\). It is <em>not</em> \(|{\rightarrow}\rangle\): the internal spin state there is \((|{\uparrow}\rangle+2|{\downarrow}\rangle)/\sqrt5\), and \(\sqrt{\tfrac23}\,|{\rightarrow}\rangle-\tfrac1{\sqrt6}|\text{ok}\rangle|{\uparrow}\rangle\) is not even normalised (\(\tfrac23+\tfrac16=\tfrac56\neq1\)). Only the <em>ok</em> branch matters for the argument, and it is exactly \(-\tfrac1{\sqrt6}|\text{ok}\rangle_A|{\uparrow}\rangle\). Every conclusion below uses only that branch. <em>(Verified symbolically and numerically before publishing.)</em></div>
+
+<p><strong>Conclusion 2 (\(F_B\) → coin).</strong> Look at the original \(|\Psi\rangle\): the <em>only</em> term containing \(|{\uparrow}\rangle\) is \(\sqrt{\tfrac13}\,|t\rangle|{\uparrow}\rangle\). So if the spin is \(|{\uparrow}\rangle\), the coin was certainly \(t\): \(S={\uparrow}\Rightarrow R=t\). (Equivalently: \(F_B\) reasons "I saw \({\uparrow}\), so \(R\) must have been \(t\).")</p>
+
+<p><strong>Conclusion 3 (\(F_A\) → Bob fails).</strong> If \(R=t\), then \(F_A\) knows she prepared \(S=|{\rightarrow}\rangle\). But Bob's \(\text{ok}\) outcome is orthogonal to that:</p>
+\[ \langle\text{ok}_B|{\rightarrow}\rangle=\tfrac12\big(\langle{\downarrow}|-\langle{\uparrow}|\big)\big(|{\uparrow}\rangle+|{\downarrow}\rangle\big)=\tfrac12(1-1)=0 . \]
+<p>So Bob cannot get \(\text{ok}\): \(R=t\Rightarrow B=\text{fail}\).</p>
+
+<div class="callout">
+  <p class="kicker">A rigor note the argument actually needs</p>
+  <p style="margin-bottom:0">The inner product \(\langle\text{ok}_B|{\rightarrow}\rangle\) was computed as if Bob measures the bare spin \(S\). By the time Bob acts, \(S\) has already been coupled to \(F_B\)'s memory. The shortcut is legitimate only if that premeasurement is an <strong>isometry</strong> — it embeds \(\mathcal H_S\) into the lab and preserves inner products, \(|{\uparrow}\rangle_S|0\rangle_{F_B}\mapsto|{\uparrow}\rangle_{F_B}\), \(|{\downarrow}\rangle_S|0\rangle_{F_B}\mapsto|{\downarrow}\rangle_{F_B}\) with the images orthonormal. Then \(\langle\text{ok}_B|{\rightarrow}\rangle=0\) transfers exactly to Bob's measurement on the whole lab. FR assume exactly this ideal (reversible, information-preserving) friend. It is the same ideal-measurement assumption that made \(U_B^\dagger\Pi_bU_B=Q_b\) work in Part 1 — worth stating out loud rather than silently measuring \(S\) as a stand-in for the lab.</p>
+</div>
+
+<p><strong>Transitivity.</strong> Chain them: \(A=\text{ok}\;\Rightarrow\;S={\uparrow}\;\Rightarrow\;R=t\;\Rightarrow\;B=\text{fail}\). Every step is a certainty, so the composite is a certainty:</p>
+\[ A=\text{ok}\ \Longrightarrow\ B=\text{fail}\qquad\text{(they can never both get ok).} \]
+
+<h3>The Born-rule contradiction</h3>
+<p>Now just ask quantum mechanics directly for the joint probability of both super-observers getting \(\text{ok}\). From Conclusion 1's rewrite, \(\langle\text{ok}_A|\Psi\rangle=-\tfrac1{\sqrt6}\,|{\uparrow}\rangle\). Project onto \(|\text{ok}\rangle_B\):</p>
+\[ \langle\text{ok}_A|\langle\text{ok}_B|\Psi\rangle=\Big(-\tfrac1{\sqrt6}\Big)\langle\text{ok}_B|{\uparrow}\rangle=\Big(-\tfrac1{\sqrt6}\Big)\Big(-\tfrac1{\sqrt2}\Big)=\tfrac1{\sqrt{12}}, \]
+\[ p(\text{ok}_A,\text{ok}_B)=\Big|\tfrac1{\sqrt{12}}\Big|^2=\tfrac1{12}\neq 0 . \]
+
+<div class="key-idea">
+  <p class="kicker">The clash</p>
+  <p>The agents' chain of certain inferences says \(A=\text{ok}\Rightarrow B=\text{fail}\), i.e. \(p(\text{ok},\text{ok})=0\). The Born rule, applied to the very same experiment, says \(p(\text{ok},\text{ok})=\tfrac1{12}\). Run it \(12\) times and roughly once <em>both</em> super-observers announce "ok" — the outcome the logical chain declared impossible. Quantum theory, used to model agents who themselves use quantum theory, has contradicted itself.</p>
+</div>
+
+<h2>What has to give: the three assumptions</h2>
+<p>FR distil the contradiction to <em>three</em> premises that cannot all hold. Naming them makes visible which one each inference secretly used.</p>
+<ul>
+  <li><strong>(Q) Universality.</strong> Quantum theory applies to everything, including macroscopic agents and their labs — so Alice and Bob may model \(F_A,F_B\) unitarily and perform the \(|\text{ok}\rangle\) reversal measurements at all. <em>(Used the moment we treat a sealed friend as a coherent quantum system.)</em></li>
+  <li><strong>(C) Consistency.</strong> Different agents' conclusions can be Boolean-combined: if \(F_B\) is <em>certain</em> \(R=t\), Alice may import that certainty into her own chain. <em>(Used at every "\(\Rightarrow\)" that crosses from one agent's frame to another's.)</em></li>
+  <li><strong>(S) Single outcomes.</strong> Each measurement yields one absolute, observer-independent fact — so "the spin <em>is</em> \({\uparrow}\)" and "\(F_B\) saw \({\uparrow}\)" name the same settled event. <em>(Used to treat each conclusion as a fact reasoners share.)</em></li>
+</ul>
+
+<p>The theorem is that \(Q\wedge C\wedge S\) is inconsistent. So every interpretation of quantum mechanics must reject at least one:</p>
+<ul>
+  <li><strong>Many-Worlds</strong> denies <strong>(S)</strong> — both outcomes occur; "the" fact of Alice's result isn't singular, so the chain never had shared facts to combine.</li>
+  <li><strong>Bohmian mechanics</strong> restricts <strong>(Q)</strong> — the fundamental beables are particle positions, not the wavefunction of an observer; modelling a friend as a mere unitary object is where it balks.</li>
+  <li><strong>Relational QM and QBism</strong> reject the absolute reading of <strong>(S)</strong> and the Boolean combination in <strong>(C)</strong> — facts are indexed to observers, and stitching one frame's certainties into another's is illegitimate until the frames physically intersect (precisely the licence Part 1 required and FR withholds).</li>
+</ul>
+
+<div class="callout">
+  <p class="kicker">Interpretation, not settled fact</p>
+  <p style="margin-bottom:0">The "which axiom does each interpretation drop" map above is a standard pedagogical heuristic, <em>not</em> a community consensus. Proponents dispute which of \(Q,C,S\) their framework really rejects; some argue a given view violates more than one at once, or that the \(Q/C/S\) slicing is not the most natural way to describe its commitments at all. What is <em>rigorous</em> is the theorem — \(Q\wedge C\wedge S\Rightarrow\bot\) — and the number \(p(\text{ok},\text{ok})=\tfrac1{12}\). Treat the taxonomy as a map for orientation, and expect experts to redraw its borders.</p>
+</div>
+
+<h2>How Part 1 and Part 2 fit together</h2>
+<p>The two halves are one point seen twice. <strong>Part 1:</strong> when observers compare notes through real interactions between <em>commuting</em> observables, relational reasoning is provably consistent and reproduces the Born rule — this is <a href="0008-joint-probabilities-and-fines-theorem.html">lesson 0008</a>'s joint-distribution theorem in disguise. <strong>Part 2:</strong> FR builds a scenario whose lethal step is a measurement (the \(|\text{ok}\rangle\) reversal) that <em>does not commute</em> with a friend's earlier measurement and that is <em>never jointly performed</em> with the inferences chained to it. The moment you assume those cross-frame certainties compose anyway — as if a single joint distribution over all four incompatible outcomes existed — you are asserting exactly the classical embedding that <a href="0008-joint-probabilities-and-fines-theorem.html">Fine's theorem</a> already told us quantum mechanics forbids. FR is Fine's "no global sample space," dramatised with observers standing in for the observables.</p>
+
+<h2>Lineage and sharper cousins</h2>
+<p>FR is the modern apex of the <strong>Wigner's-friend</strong> lineage (Wigner, 1961): an observer inside a box, and a super-observer who can interfere the box's branches. Two strengthenings are worth knowing. Brukner recast the tension as a <strong>no-go theorem for observer-independent facts</strong> using a Bell-type inequality, moving from FR's single deterministic run to a statistical, testable form. Bong et al. proved a stronger <strong>"local friendliness"</strong> no-go — pitting the absoluteness of observed events against local agency — and ran a proof-of-principle photonic test (with a single photon standing in for the "friend"). The through-line: the more carefully you insist that a sealed observer's outcome is an absolute fact <em>and</em> that quantum theory applies to that observer, the more sharply quantum correlations refuse to let those facts live in one shared classical world.</p>
+
+<h2>The one idea</h2>
+<p>Quantum theory reasons about agents flawlessly as long as their conclusions are compared through actual physical interactions between compatible, jointly-measurable observables — Part 1, which is the commuting-observables joint distribution of lesson 0008. Frauchiger–Renner is the demonstration that if you additionally demand that every sealed measurement is an absolute fact <em>and</em> that isolated agents' certain inferences may be chained across frames that never physically meet, you can derive \(p(\text{ok},\text{ok})=0\) while the Born rule delivers \(\tfrac1{12}\). Something in \(\{\)universality, single outcomes, composable facts\(\}\) must be surrendered. Quantum mechanics does not merely resist a God's-eye view of nature; turned on its own users, it forbids one.</p>
+
+<h2>Check your recall</h2>
+
+<div class="quiz" data-answer="commute|they commute|commuting|commutativity|microcausality">
+  <p class="quiz-prompt">In Part 1, what property of Alice's and Bob's local observables guarantees that single-frame relational reasoning reproduces the global Born rule \(p(a,b)=\langle\Psi|P_a\otimes Q_b|\Psi\rangle\)?</p>
+  <input class="quiz-input" type="text" placeholder="one word">
+  <button class="quiz-check">Check</button>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="c">
+  <p class="quiz-prompt">The Frauchiger–Renner contradiction is that the agents' chain of certain inferences and the Born rule disagree about…</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">whether the coin \(R\) was fair or biased</button>
+    <button class="quiz-option" data-choice="b">the value of the spin \(S\) that \(F_B\) records</button>
+    <button class="quiz-option" data-choice="c">\(p(\text{ok}_A,\text{ok}_B)\): the chain says \(0\), the Born rule says \(1/12\)</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="b">
+  <p class="quiz-prompt">FR prove that three assumptions are jointly inconsistent. They are:</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">Locality, realism, and free choice</button>
+    <button class="quiz-option" data-choice="b">Universality of QM (Q), composability of agents' conclusions (C), and single absolute outcomes (S)</button>
+    <button class="quiz-option" data-choice="c">Unitarity, linearity, and the Born rule</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="quiz quiz-mc" data-answer="a">
+  <p class="quiz-prompt">Why does the \(|\text{ok}\rangle_A\) measurement break the reassuring consistency of Part 1?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-choice="a">It superposes \(|h\rangle,|t\rangle\), so it does not commute with \(F_A\)'s own measurement and is never jointly performed with the inferences chained to it</button>
+    <button class="quiz-option" data-choice="b">It is performed faster than light</button>
+    <button class="quiz-option" data-choice="c">It violates conservation of energy in the lab</button>
+  </div>
+  <p class="quiz-feedback"></p>
+</div>
+
+<div class="primary-source">
+<p class="kicker">Primary sources</p>
+<p style="margin-bottom:0">The theorem: D. Frauchiger &amp; R. Renner, <a href="https://www.nature.com/articles/s41467-018-05739-8" target="_blank" rel="noopener">"Quantum theory cannot consistently describe the use of itself," <em>Nature Communications</em> <strong>9</strong>, 3711 (2018)</a> (preprint <a href="https://arxiv.org/abs/1604.07422" target="_blank" rel="noopener">arXiv:1604.07422</a>). Ancestor: E. P. Wigner, "Remarks on the mind–body question" (1961), reprinted in <em>Symmetries and Reflections</em>. Sharper cousins: Č. Brukner, <a href="https://www.mdpi.com/1099-4300/20/5/350" target="_blank" rel="noopener">"A No-Go Theorem for Observer-Independent Facts," <em>Entropy</em> <strong>20</strong>, 350 (2018)</a>; K.-W. Bong <em>et&nbsp;al.</em>, <a href="https://www.nature.com/articles/s41567-020-0990-x" target="_blank" rel="noopener">"A strong no-go theorem on the Wigner's friend paradox," <em>Nat. Phys.</em> <strong>16</strong>, 1199 (2020)</a> (Local Friendliness + photonic test). Lucid expositions: Nurgalieva &amp; del Rio on the logic of multi-agent paradoxes; the SEP entry on <em>Relational Quantum Mechanics</em>. Background for the commutativity connection: this workspace's <a href="0008-joint-probabilities-and-fines-theorem.html">lesson 0008</a>.</p>
+</div>
+
+<p class="ask-your-teacher">I'm your teacher — push on any link in the chain. Three threads worth pulling: <em>"Show me explicitly which agent knows what, and when — the FR argument is really a nesting of Alice-reasons-about-Bob-reasoning-about-\(F_B\); where exactly does assumption (C) enter?"</em>; <em>"Is the \(|\text{ok}\rangle\) reversal measurement physically realisable, and what does that demand of a macroscopic 'friend'?"</em> (coherence over an observer-sized Hilbert space — why this stays a thought experiment); and <em>"How is Bong et al.'s Local-Friendliness inequality related to CHSH from <a href="0008-joint-probabilities-and-fines-theorem.html">lesson 0008</a>?"</em> (it is a strictly stronger constraint on the same correlations).</p>
+
+<div class="lesson-nav">
+  <span>&larr; <a href="0008-joint-probabilities-and-fines-theorem.html">0008 — Joint Probabilities &amp; Fine's Theorem</a></span>
+  <span>Next up: Kochen–Specker contextuality &amp; the marginal problem (not yet written)</span>
+</div>
+
+<script src="../assets/quiz.js"></script>
+<script src="../assets/math.js"></script>
+</body>
+</html>

@@ -117,6 +117,24 @@ literature rather than parametric recall.
   when do compatible local distributions glue into a global one? The unifying modern framing for
   lesson 0008's "no single classical sample space" moral. (SEP: `quantum-contextuality`.)
 
+## Knowledge — Wigner's friend & the Frauchiger–Renner paradox
+
+- [Paper: **Quantum theory cannot consistently describe the use of itself** — Frauchiger & Renner](https://www.nature.com/articles/s41467-018-05739-8)
+  Nat. Commun. 9, 3711 (2018); [arXiv:1604.07422](https://arxiv.org/abs/1604.07422). The theorem: four
+  nested agents applying QM to each other reach \( p(\mathrm{ok},\mathrm{ok})=0 \) by inference while the
+  Born rule gives \( 1/12 \), so (Q) universality, (C) composable conclusions, (S) single outcomes cannot
+  all hold. Primary source behind lesson 0009. (Ancestor: Wigner, "Remarks on the mind–body question," 1961.)
+- [Paper: **A No-Go Theorem for Observer-Independent Facts** — Č. Brukner](https://www.mdpi.com/1099-4300/20/5/350)
+  Entropy 20, 350 (2018). Recasts the FR-type tension as a Bell-type inequality on Wigner's-friend
+  correlations — the statistical, testable form of "facts can't be observer-independent."
+- [Paper: **A strong no-go theorem on the Wigner's friend paradox** — Bong et al.](https://www.nature.com/articles/s41567-020-0990-x)
+  Nat. Phys. 16, 1199 (2020). The **Local Friendliness** no-go (absoluteness of observed events + local
+  agency), strictly stronger than a Bell inequality, with a proof-of-principle photonic test. (Also in
+  the "key experiments" section — the experimental anchor for lesson 0009's "sharper cousins.")
+- [Exposition: **Understanding the Frauchiger–Renner argument** (arXiv:2008.08538)](https://arxiv.org/abs/2008.08538)
+  and Nurgalieva & del Rio on the multi-agent modal logic — for making the nested "who-knows-what"
+  reasoning of the chain fully explicit. Interpretation-neutral background: SEP, *Relational Quantum Mechanics*.
+
 ## Knowledge — symmetry &amp; the origin of observables
 
 - [Book: **Quantum Mechanics: A Modern Development** — L. Ballentine](https://books.google.com/books/about/Quantum_Mechanics_A_Modern_Development_2.html?id=Yi48DQAAQBAJ)

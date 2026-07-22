@@ -85,6 +85,28 @@
   not locality" moral as Fine's contested interpretation, not fact.** Experiments: loophole-free Bell
   2015 (Hensen/Giustina/Shalm) + directly measured quasi-probability negativity. Nav forward → Kochen–Specker.
   All statements double-checked (both proof directions, KD marginals, CHSH bound, five-fold attribution).
+- Lesson `0009` (Frauchiger–Renner paradox) written 2026-07-22 by converting a learner-supplied PDF
+  ("Relational Consistency and the Frauchiger–Renner Paradox") into a lesson, with integrations.
+  Two parts: (I) **relational consistency** — computing \( p(a,b) \) from Alice's frame (own collapse,
+  Bob unitary; \( U_B^\dagger\Pi_bU_B=Q_b \)) recovers the global Born rule, guaranteed by
+  \( [P_a\otimes I,I\otimes Q_b]=0 \). Made the bridge explicit: this IS lesson 0008's sharp joint
+  observable \( E_{ab}=P_a\otimes Q_b \). (II) **FR proper** — four nested agents, biased coin + spin,
+  Hardy-type state \( \sqrt{1/3}(|h\downarrow\rangle+|t\uparrow\rangle+|t\downarrow\rangle) \); the
+  chain \( A{=}\mathrm{ok}\Rightarrow S{=}\uparrow\Rightarrow R{=}t\Rightarrow B{=}\mathrm{fail} \)
+  (each a certainty) vs Born \( p(\mathrm{ok},\mathrm{ok})=1/12 \). Q/C/S assumptions + interpretation
+  map (flagged as heuristic, not consensus — matched the PDF's own honest caveat). Digressions added:
+  the \( |\mathrm{ok}\rangle \) reversal measurement is the non-commuting/undoing step that Part 1
+  forbids (ties Part 1↔Part 2 and back to Fine 0008); isometry rigor note for \( \langle\mathrm{ok}_B|\!\rightarrow\rangle=0 \);
+  Wigner's-friend lineage → Brukner Entropy 20,350 → Bong Local Friendliness Nat.Phys.16,1199.
+  **Caught and corrected an error in the source PDF:** it "simplified" the fail branch to
+  \( \sqrt{2/3}|\mathrm{fail}\rangle|\!\rightarrow\rangle \), which is wrong and non-normalized
+  (\( 2/3+1/6=5/6 \)); correct fail branch is \( \sqrt{1/6}|\mathrm{fail}\rangle(|\uparrow\rangle+2|\downarrow\rangle) \),
+  internal state \( (|\uparrow\rangle+2|\downarrow\rangle)/\sqrt5 \). Only the ok branch
+  \( -\tfrac1{\sqrt6}|\mathrm{ok}\rangle|\uparrow\rangle \) matters, so all conclusions and \( 1/12 \)
+  survive. **Verified the full algebra symbolically + numerically (numpy)** before publishing:
+  ok-branch \( =-1/\sqrt6\,|\uparrow\rangle \), \( \langle\mathrm{ok}_B|\!\rightarrow\rangle=0 \),
+  \( p(\mathrm{ok},\mathrm{ok})=1/12 \), all four joint probs \( (1/12,1/12,1/12,3/4) \) sum to 1.
+  Citations confirmed via WebSearch (FR Nat.Commun.9,3711; Brukner; Bong).
 - Candidate next lessons: POVMs & generalized measurements (follow-on to 0007); Kramers degeneracy &
   C/P/T discrete symmetries (follow-on to 0006);
   quaternionic QM & why \( \mathbb C \) is the "Goldilocks" field (follow-on to 0005); Spectrum

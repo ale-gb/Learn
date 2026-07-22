@@ -156,6 +156,31 @@ _Established in lesson 0008 (joint probabilities & Fine's theorem)._
   do they glue into one global joint distribution? Bell/CHSH is exactly the gluing condition;
   contextuality/nonlocality is its failure (sheaf-theoretic view of Abramsky–Brandenburger).
 
+_Established in lesson 0009 (Frauchiger–Renner paradox)._
+
+- **Relational consistency** — the theorem (lesson 0009, Part 1) that computing joint statistics
+  from a single observer's frame (collapse for one's own measurement, unitary for a distant one)
+  reproduces the global Born rule \( p(a,b)=\langle\Psi|P_a\otimes Q_b|\Psi\rangle \). Guaranteed by
+  microcausality \( [P_a\otimes I,\,I\otimes Q_b]=0 \); it *is* lesson 0008's sharp joint observable
+  \( E_{ab}=P_a\otimes Q_b \). Holds only for observables compared through actual physical interaction.
+- **Wigner's friend** — an observer ("friend") sealed in an isolated lab who obtains a definite
+  outcome, together with a super-observer outside who can treat the whole lab (friend included)
+  unitarily and measure it in a basis that *interferes the friend's branches* (a **reversal
+  measurement**). The tension: is the friend's outcome an absolute fact, or only a fact relative
+  to the friend?
+- **Frauchiger–Renner (FR) theorem** — turning quantum theory on agents who themselves use it,
+  four nested observers can chain probability-one inferences to conclude \( p(\mathrm{ok},\mathrm{ok})=0 \),
+  while the Born rule gives \( 1/12 \). Hence three assumptions cannot all hold: **(Q)** universality
+  of QM, **(C)** composability of different agents' conclusions, **(S)** single absolute outcomes.
+  Every interpretation drops at least one (the assignment is a heuristic, not a settled classification).
+- **(Q)/(C)/(S) assumptions** — FR's three premises. (Q): quantum theory applies to macroscopic
+  observers/labs. (C): one agent may import another agent's certainty into a joint Boolean chain.
+  (S): each measurement yields one observer-independent fact. \( Q\wedge C\wedge S \) is inconsistent.
+- **Local Friendliness (Bong et al.)** — a strictly stronger Wigner's-friend no-go than FR: the
+  conjunction of **absoluteness of observed events** and **local agency** yields inequalities
+  (a strengthening of CHSH) that quantum correlations violate; tested photonically (a photon as
+  proxy "friend").
+
 - **Self-adjoint vs symmetric** — an observable must be *self-adjoint*, not merely *symmetric*
   (Hermitian on a domain): only self-adjointness gives the spectral theorem, real spectrum, and
   a unitary flow. Some classical observables (radial momentum on \( r>0 \), an oscillator's
